@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="yes"?>
+<dsSongList xmlns="http://tempuri.org/dsSongList.xsd">
+  <dtSongs>
+    <SongID>23</SongID>
+    <SongName>NieR Automata OST - A Beautiful Song (Opera Boss Theme)</SongName>
+    <SongPath>D:\icyzt\Music\wav files\NieR Automata OST - A Beautiful Song (Opera Boss Theme).wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>24</SongID>
+    <SongName>NieR Automata OST - War to War</SongName>
+    <SongPath>D:\icyzt\Music\wav files\NieR Automata OST - War to War.wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>33</SongID>
+    <SongName>NieR Automata OST - Copied City (Dynamic - Vocals)</SongName>
+    <SongPath>D:\icyzt\Music\wav files\NieR Automata OST - Copied City (Dynamic - Vocals).wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>34</SongID>
+    <SongName>NieR- Automata OST - Copied City (Quiet - Vocals)</SongName>
+    <SongPath>D:\icyzt\Music\wav files\NieR- Automata OST - Copied City (Quiet - Vocals).wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>44</SongID>
+    <SongName>NieR Automata OST - Weight of the World (Japanese)</SongName>
+    <SongPath>D:\icyzt\Music\wav files\NieR Automata OST - Weight of the World (Japanese).wav</SongPath>
+  </dtSongs>
+</dsSongList>

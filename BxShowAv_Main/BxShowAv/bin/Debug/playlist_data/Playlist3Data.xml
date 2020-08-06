@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<dsSongList xmlns="http://tempuri.org/dsSongList.xsd">
+  <dtSongs>
+    <SongID>25</SongID>
+    <SongName>Burn The House</SongName>
+    <SongPath>D:\icyzt\Music\wav files\Nightcore - Burn The House Down.wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>29</SongID>
+    <SongName>NieR- Automata OST - Weight of the World (Emi Evans)</SongName>
+    <SongPath>D:\icyzt\Music\wav files\NieR- Automata OST - Weight of the World (Emi Evans).wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>30</SongID>
+    <SongName>NieR Automata OST - Weight of the World (Japanese)</SongName>
+    <SongPath>D:\icyzt\Music\wav files\NieR Automata OST - Weight of the World (Japanese).wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>48</SongID>
+    <SongName>Eagles - Hotel California (Lyrics)</SongName>
+    <SongPath>D:\icyzt\Music\Download\Eagles - Hotel California (Lyrics).mp3</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>49</SongID>
+    <SongName>Nightcore - Criminal (Lyrics)</SongName>
+    <SongPath>D:\icyzt\Music\Download\NightcoreSleepy\Mp3\Nightcore - Criminal (Lyrics).mp3</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>55</SongID>
+    <SongName>Nightcore - Acapella (Lyrics)</SongName>
+    <SongPath>D:\icyzt\Music\Download\NightcoreSleepy\Mp3\Nightcore - Acapella (Lyrics).mp3</SongPath>
+  </dtSongs>
+</dsSongList>

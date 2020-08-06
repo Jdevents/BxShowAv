@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<dsSongList xmlns="http://tempuri.org/dsSongList.xsd">
+  <dtSongs>
+    <SongID>1</SongID>
+    <SongName>Dave Matthews Band - Mercy</SongName>
+    <SongPath>D:\icyzt\Music\wav files\Dave Matthews Band - Mercy.wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>2</SongID>
+    <SongName>Bubble</SongName>
+    <SongPath>D:\icyzt\Music\wav files\Bubble.wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>3</SongID>
+    <SongName>EveryBody</SongName>
+    <SongPath>D:\icyzt\Music\wav files\Everybody's Circulation - TMABird (Lyrics).wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>4</SongID>
+    <SongName>Grace Kelly</SongName>
+    <SongPath>D:\icyzt\Music\wav files\Grace Kelly.wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>5</SongID>
+    <SongName>BRN</SongName>
+    <SongPath>D:\icyzt\Music\wav files\Nightcore - BRN.wav</SongPath>
+  </dtSongs>
+  <dtSongs>
+    <SongID>6</SongID>
+    <SongName>Mr.Right</SongName>
+    <SongPath>D:\icyzt\Music\wav files\Nightcore - Mr. Right.wav</SongPath>
+  </dtSongs>
+</dsSongList>
