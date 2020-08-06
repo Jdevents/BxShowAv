@@ -103,6 +103,9 @@
     <OutputPath>bin\x64\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxInterop.WMPLib">
+      <HintPath>..\DLL's\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
     <Reference Include="Bass.Net, Version=2.4.5.2, Culture=neutral, PublicKeyToken=b7566c273e6ef480, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Bass.Net.dll</HintPath>
