@@ -1,0 +1,1763 @@
+--------------------------------
+About PVS.MediaPlayer versions:
+--------------------------------
+
+The PVS.MediaPlayer libraries are compiled using different .NET Framework versions so you can use the library on any computer that has .NET Framework version 2.0 up to 4.8 (or higher) installed. All library versions have exactly the same functionality.
+
+If you get the libraries mixed up, you can read the .NET Framework version number by right-clicking on a library file in Windows Explorer and select Properties: Details. The last number in the version number shows the .NET Framework version, e.g. 0.9.7.35 for .NET Framework version 3.5.
+
+--------------------------------
+Replacing a previous (or other .NET Framework version) library version:
+--------------------------------
+
+In your project please remove the reference to PVS.MediaPlayer.dll (or PVS.AVPlayer.dll) and add a reference to the new PVS.MediaPlayer.dll.
+
+--------------------------------
+Questions and Remarks
+--------------------------------
+
+Any questions, remarks, suggestions, comments and/or votes are very much welcome and appreciated at the PVS.MediaPlayer articles at www.codeproject.com. You don't have to check the many comments to see if your question or remark has already been posted. Just ask at the comments section at the end of the articles.
+
+Player article: https://www.codeproject.com/Articles/109714/PVS-AVPlayer-Audio-and-Video-Player-Library
+Sound Recorder article: https://www.codeproject.com/Articles/1116698/PVS-AVPlayer-MCI-Sound-Recorder
+
+More "Brief Instructions On How To Use PVS.MediaPlayer" with examples can be found in the "How To..." applications source code (all source download).
+
+--------------------------------
+Licenses
+--------------------------------
+
+The PVS.MediaPlayer library and the PVS.MediaPlayer sample applications and articles are licensed under The Code Project Open License (CPOL).
+
+PVS.MediaPlayer has built in (part of) the Media Foundation .NET library by nowinskie and snarfle (https://sourceforge.net/projects/mfnet).
+Licensed under either Lesser General Public License v2.1 or BSD.  See license.txt or BSDL.txt for details (http://mfnet.sourceforge.net).
+
+The license texts can be found on codeproject.com and sourceforge.net but are also included in the downloads of PVS.MediaPlayer (folder: PVS.MediaPlayer Licenses).
+
+--------------------------------
+PVS.MediaPlayer library versions:
+--------------------------------
+
+Version 0.97 - October 20, 2019
+
+
+- the library has been renamed from PVS.AVPlayer to PVS.MediaPlayer.
+
+- PVS.MediaPlayer can now also play media files that have a wrong or missing file extension or MIME type (if the file contains a media type that is supported by Media Foundation, of course).
+This issue is solved thanks to a comment by fuujinn in the comments section of the PVS.MediaPlayer article at CodeProject.
+
+- all library tag readers have been replaced by the Media Foundation Shell Metadata provider:
+renamed Player.Media.GetTags to Player.Media.GetMetadata
+renamed MediaTags to Metadata, for example:
+Metadata data = myPlayer.Media.GetMetadata();
+label1.Text = data.Title;
+
+- playback speed settings have been moved to a new Speed class, for example, myPlayer.Speed.Rate = 2; (was myPlayer.Speed = 2;)
+
+- added Player.Speed.Boost:
+this new option increases the maximum possible playing speed of video files (mp4 video may give an increase of the maximum playing speed from 2 to 8 times the normal speed). This is made possible by 'dropping' video frames (= stream thinning). A better (smoother) result can possibly be obtained by using a timer and changing the playback position of media yourself.
+Usage example: myPlayer.Speed.Boost = true; (for a quick test, this option can be activated in the PVSPlayerExample application by typing 9.99 in the speed input box at the bottom left (sets the speed to 8.00, change to other speeds as desired to test), type 1.00 in this box or exit the PVSPlayerExample to disable this option.)
+This option is added to the library thanks to a comment by sauronio in the comments section of the PVS.MediaPlayer article at CodeProject.
+
+- added Player.Overlay.Blend:
+this new option allows the use of the same opacity of display overlays on display clones and screen copies as on the main player display. This option uses the Win32 AlphaBlend function instead of the TransparentBlt function when activated. Use OverlayBlend.Opacity if the overlay does not have a transparent background (for example: PVSPlayerExample "Status Info" overlay). Otherwise use OverlayBlend.Transparent (for example: PVSPlayerExample "Subtitles" overlay).
+Overlay Blend does not work well (or not at all) with certain interface elements, this can in most cases be solved by painting the content yourself, for example with labels use something like e.Graphics.DrawString(Text, Font, b, 0, 0); Usage example: myPlayer.Overlay.Blend = OverlayBlend.Transparent.
+
+- fixed an issue with setting the playback speed to normal speed (1.0) when no media is playing.
+- added display clones layout property CloneLayout.Cover.
+- fixed 'pixel-precision' and 'drag resize' issues with display shapes.
+- the 'newline' character used with subtitles has changed from a single 'carriage return' (code 13, '\r') to a 'carriage return' and 'line feed' (code 10, '\n'), so it's now "\r\n".
+- the display overlay delay (Player.Overlay.Delay) default value has changed from 300 to 200 milliseconds.
+- renamed Player.Media.GetLength to Player.Media.GetDuration - renamed enum MediaLength to MediaPart (for example, MediaPart.BeginToEnd).
+
+- updates and fixes of example applications: PVSPlayerExample preferences settings fixed and others.
+- due to the name change, the PVSPlayerExample preferences folder now also has a different name. You can copy the 'old' preferences file and default playlist to the new folder.
+
+- and others.
+
+- No new sound recorder yet:
+The intention was to include a new Media Foundation-based sound recorder in this version. Although the recorder was largely completed, for reasons that are still unclear, I cannot commit myself to completing the code. Because this update has been postponed for too long, I have decided to first release this update without the new recorder. The recorder will then be included in one of the following updates. Perhaps. Sorry for the delay.
+
+
+Thank you, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.96 - June 14, 2019
+
+
+- PVS.AVPlayer can no longer be used with Windows Vista.
+- added pre-compiled library version for .NET Framework 4.8.
+
+- improved player slider (trackbar) control and added slider manager for video brightness, contrast, hue and saturation, for example, myPlayer.Sliders.Brightness = trackBar1;
+- added Player.Events.MediaVideoColorChanged event, which can inform you when one of the video color attributes (brightness, contrast, hue or saturation) has changed.
+- fixed subtitles TimeShift, GetStartTime/EndTime properties and others. Added "Player.Subtitles.Current" property to get the index of the active subtitle.
+
+- fixed the AVPlayerExample play submenu items 'Sort List' and 'Copy List' that were swapped.
+- fixed AVPlayerExample playlist name issues when opening media or playlists in Windows explorer.
+- AVPlayerExample now uses the PVS.AVPlayer library built-in subtitles option.
+
+- and others.
+
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.95 - May 15, 2019
+
+
+Media Control Interface (MCI) has been replaced by Microsoft Media Foundation (MF) and many other changes, enhancements, and bug fixes have been made to the library and sample applications.
+Some functions, such as the custom mouse events and the sound recorder, have been removed from the library because they are no longer needed or for other reasons.
+
+Although much has changed in the code and the functioning of the library, the use of the library has remained virtually unchanged.
+
+Not all changes are listed here. To replace a previous version with this new version, the article on Code Project and the sample applications can be important sources of information. To help you on your way, here's a list of the most important changes. Sorry for any inconvenience.
+
+Removed:
+
+- Sound recorder
+- Video enabled + events (use hide display window or change videobounds)
+- Signals option (use PositionChanged event)
+- Custom mouse events (no longer needed)
+- MediaPaused and MediaResumed events (now both in MediaPausedChanged)
+- StartPositionNext, EndPositionNext + events (use Play methods params)
+- PlayNext, PlayPrevious (not needed)
+- CursorHide events (CursorHide still available)
+- and others
+
+Name changes:
+
+- BeginPosition = BeginTime (in all names)
+- EndPosition = EndTime (in all names)
+- StartPosition = StartTime (in all names)
+- StopPosition = StopTime (in all names)
+- TagInfo = MediaTags
+- and others
+
+Value changes (now same as the units used by Media Foundation for efficiency and future compatibility):
+
+- Audio volume: float 0.0 - 1.0 (was int 0 - 1000 / if you want to convert the value to the old value: multiply by 1000)
+- Audio balance: float (minus) -1.0 - (plus) 1.0 (was int 0 - 1000 / convert to old value: add 1 then multiply by 500)
+- PositionChanged event: long ticks (was TimeSpan / 1 ms = 10000 ticks / convert to old value: TimeSpan.FromTicks)
+- Live update of the position slider of the player default is set to false
+- and others
+
+
+Sorry this update took a little longer, it was not just because of Media Foundation, but mostly because of me.
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.91 - August 5, 2018
+
+
+- Audio Peak Levels: replaced the "Stereo Mix" device (no longer required for displaying peak levels in PVS.AVPlayer applications) by Windows Core Audio API. Only a small part of this Windows API is used.
+The new functions are only available with Windows Vista or higher.
+
+Peak values are now in the range of 0.0 to 1.0 (inclusive) instead of the "old" values from 0 to 32767. The peak level values are now independent of the system's master volume and are only increased / decreased by the volume (and balance) properties of the PVS.AVPlayer library, although the peak levels still represent all audio output on the system.
+
+The peak level information of PVS.AVPlayer can contain more than 2 (= stereo) values if the audio output channels and/or the playback media contain more than 2 channels, eg with a surround sound system.
+Reading the peak values has not changed: you subscribe to the Player.Events.MediaPeakLevelChanged event. Examples of the use of this event can be found in the "How To..." example projects (all source code download).
+
+Subscribing to the Player.Events.MediaPeakLevelChanged event sets the Player.LastError properties so that you can check if the subscription failed and why.
+
+- The system's master volume (of the default audio device) can be obtained and modified with the Player.Audio.MasterVolume property (Windows Vista or higher only).
+
+- The name of the system's default audio device can be obtained with the Player.Audio.DeviceName property (all Windows versions).
+
+- and some other minor changes.
+
+- updated sample applications: minor fixes and improvements.
+
+
+Thank you, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.90 - June 1, 2018
+
+
+- fixed wma taginfo embedded album art (there are apparently different locations in the wma file where album art can be stored) and further optimized mp3 and wma taginfo.
+
+- added 'Player.PlayResource' to play embedded media by first saving the embedded resource as a file to the temp folder of the system. The file is removed from the temp folder by the player after it has finished playing. This is a more extensive version of the 'Player.Media.ResourceToFile' method, for example: myPlayer.PlayResource("Wildlife.mp4", Properties.Resources.Wildlife, panel1).
+
+- added 'Player.CursorHide' to automatically hide the mouse cursor on (player display) forms during media playback.
+Add any form to a list of forms that hide the mouse cursor when media is playing with, for example:
+
+    C#: myPlayer.CursorHide.Add(this);
+    VB: myPlayer.CursorHide.Add(Me)
+
+The forms are removed from the list by the player when the forms are closed (or when the player is disposed), but they can be removed at any other time with, for example:
+
+    C#: myPlayer.CursorHide.Remove(this);
+    VB: myPlayer.CursorHide.Remove(Me)
+
+When the mouse cursor is automatically hidden, it will only reappear when the mouse is moved or used in some other way (for example when a mouse button is pressed), but not when media has stopped playing. You can show the automatically hidden mouse cursor with, for example: myPlayer.CursorHide.ShowCursor().
+
+The cursor is automatically hidden after a certain number of seconds (default 3 seconds) that can be changed with, for example: myPlayer.CursorHide.Delay = 5 - hide the cursor after 5 seconds
+
+You can be informed of the automatically hiding or displaying of the mouse cursor by subscribing to the MediaCursorHideChanged event, for example:
+
+    C#: myPlayer.Events.MediaCursorHideChanged += MyCursorHideEventHandler;
+    VB: AddHandler myPlayer.Events.MediaCursorHideChanged, AddressOf MyCursorHideEventHandler
+
+the signature of the MediaCursorHideChanged eventhandler is:
+
+    C#: private void MyCursorHideEventHandler(object sender, CursorHideEventArgs e)
+    VB: Private Sub MyCursorHideEventHandler(sender As Object, e As CursorHideEventArgs)
+
+when the mouse cursor is displayed, the sender value is null/Nothing because the re-appearance of the cursor is caused by moving the mouse independently of a particular player.
+
+- a player can have a name by using the new "Name" property, for example: myPlayer.Name = "Player 1".
+
+- renamed 'Player.Display.SetCustomMode' to 'Player.Display.SetMode'.
+
+- renamed 'Player.Display.GetShape' (method) to 'Player.Display.Shape' (get/set property).
+
+- and some other minor changes.
+
+- updated sample applications: minor fixes and improvements.
+
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.87 - April 16, 2018
+
+
+- fixed "Media Signals" option: if there was only one signal created (or in a .msf file), it was not reported. The option has also been further optimized.
+
+- fixed "Subtitles" option: if there was only one subtitle item in a .srt file, it was not reported. The option has also been further optimized.
+Note: the example applications have their own subtitle system (almost the same as that in the library) that has not yet been updated.
+
+- renamed "Player.Display.SetClip" to "Player.Display.SetShape":
+The "custom display window shape" option has been improved and expanded. The player now takes care of all necessary display updates and also offers a number of preset display window shapes.
+
+To set the display window to a shape of your choice, the player needs a region for that shape that is provided by a callback method. Here is a full example that sets an oval shape display (there is a preset for this, but it is just an example - the videoShape and shapeBounds values depend on the Player.Display.SetShape method parameters and can represent the video image or the player's display window)):
+
+public Region OvalShapeCallback(Player player, bool videoShape, Rectangle shapeBounds)
+{
+    System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+    path.AddEllipse(shapeBounds);
+
+    Region shapeRegion = new Region(path);
+    path.Dispose();
+
+    return shapeRegion;
+}
+
+and here's how to activate the shape:
+myPlayer.Display.SetShape(OvalShapeCallback, true, false);
+
+The first "true" parameter indicates that the shape has to be applied to the video image of the display window (use "false" to set the shape to the entire display window);
+the second "false" parameter indicates that the display overlays do not take the shape of the display window (set to "true" to adjust the overlay to the shape of the display window).
+
+If you want to use one of the preset shapes, you don't have to supply a callback method, just use for example:
+myPlayer.Display.SetShape(DisplayShape.Oval);
+
+To reset the custom display window shape to its normal shape, use: myPlayer.Display.SetShape(DisplayShape.Normal);
+
+- added "Player.Events.MediaDisplayShapeChanged" event.
+
+- and some other minor changes.
+
+- updated sample applications: minor fixes and improvements.
+
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.85 - April 3, 2018
+
+
+- renamed 'Player.DisplayClones.Clones' to 'Player.DisplayClones.List'.
+- renamed 'Player.LevelDevice.GetDevices' to 'Player.LevelDevice.List'.
+- renamed 'DisplayMode.ZoomAndCenter' to 'DisplayMode.ZoomCenter' (without the 'And').
+
+- removed the events 'Player.Events.MediaStopped' and 'Player.Events.MediaStoppedNotice'.
+The 'stop events' are now 'included' in the (changed) events 'Player.Events.MediaEnded' and 'Player.Events.MediaEndedNotice'.
+The new signature of the MediaEnded eventhandlers is: void MediaEndedHandler(object sender, EndedEventArgs e) and the EndedEventArgs contains the 'StopReason' enum that indicates why media has stopped or ended playing:
+
+    void MyPlayer_MediaEnded(object sender, EndedEventArgs e)
+    {
+        switch (e.StopReason)
+        {
+            case StopReason.Finished:
+                // media has finished playing
+                break;
+
+            case StopReason.AutoStop:
+                // media is stopped by the player to play next media
+                break;
+
+            case StopReason.UserStop:
+                // media is stopped with the Player.Stop method
+                break;
+        }
+    }
+
+- with the new 'DisplayMode.CoverCenter' a video image covers (fills) the entire display of the player while maintaining the aspect ratio. This means that in most cases a (horizontal or vertical) part of the (centered) video image falls outside the display of the player. 'DisplayMode.CoverCenter' is an alternative to 'DisplayMode.Stretch' if you want to use the entire display of the player (or the entire computer screen in fullscreen mode) without distorting the video image. Usage: myPlayer.Display.Mode = DisplayMode.CoverCenter.
+
+- the new 'DisplayMode.Custom' can be an alternative to the player's built-in display modes or to the 'Player.Video.Bounds' (e.g. persist relative bounds) and 'Player.Display.SetClip' (e.g. clip video image) properties. 'DisplayMode.Custom' calls a user method (callback) to allow for changes to the size and location of the video image when the player updates the video image, e.g. when a new video starts playing or the size of the display window has changed.
+
+The next example uses the DisplayMode.Custom setting to show a 10 pixel wide border (showing the display's background color) around a (stretched) video image, that is updated every time the size of the display changes:
+
+    // set custom display mode ('MyCallbackMethod' can be any name as long as it matches the callback method name):
+    // 'true' indicates that the custom display mode is activated immediately, use 'false' to activate the mode at a later moment:
+    myPlayer.Display.SetCustomMode(MyCallbackMethod, true);
+
+    // custom display mode callback returns the (new) location and size (rectangle) of the video image:
+    // note: the original dimensions of a video are available via the player.Video.SourceSize property:
+    private Rectangle MyCallbackMethod(Player player)
+    {
+        Rectangle bounds = player.Display.Window.ClientRectangle;
+
+        bounds.X      += 10;
+        bounds.Y      += 10;
+        bounds.Width  -= 20;
+        bounds.Height -= 20;
+
+        return bounds;
+    }
+
+    // After setting the DisplayMode.Custom Callback method, DisplayMode.Custom can be used just like the other built-in display modes.
+    // activate the custom display mode 'at a later moment':
+    myPlayer.Display.Mode = DisplayMode.Custom;
+
+You can also easily use the callback method for multiple new display modes.
+
+
+- displaymodes 'CoverCenter' and 'Custom' are added to the displaymodes that are redrawn with 'Player.Display.ResizeRedraw' option.
+
+- optimized the use of the 'Cursors.Default' (= no cursor change) cursor with 'Player.Display.DragEnabled = true'.
+
+- improved (more) 'Player.Position.Step' method and the shuttle slider.
+
+- fixed playback speed setting (report back with Player.Events.MediaSpeedChanged event) when no media is playing.
+
+- fixed mouseclick (if not on thumb) handling on speed and shuttle sliders.
+
+- fixed subtitles when there is just 1 subtitle (would not display).
+
+- improved (more) efficiency looking up subtitle items.
+
+- fixed Player.HasSubtitles (was true only if a subtitle was 'displayed', now true when subtitles are present and activated).
+
+- added Player.HasSignals: returns true when media signals are present and activated.
+
+- reduced 'image flicker' when changes are made to the 'Player.Media.EndPosition' property when media is playing.
+
+- added precompiled library for .Net Framework 4.7.2
+
+- some other minor changes and updated sample applications.
+
+
+- Media Signals:
+
+If you want to execute a certain command at a certain moment during media playback (for example to show additional data or to control external devices), you can use the Player.Events.MediaPositionChanged events.
+
+However, it is now possible to have PVS.AVPlayer send a signal at predetermined moments during media playback, so that you do not have to watch the playback time yourself. For this you can use a .msf (Media Signals File) file that is connected to a specific media file via the name of the file - but you can also create and use media signals directly from your application.
+
+PVS.AVPlayer uses a very efficient method for looking up media signals, so it will not slow down your application.
+
+A .msf media signals file has the same format as a .srt subtitles file. This has the advantage that you can test the contents of a .msf file by temporarily changing the file extension to .srt, using your existing .srt files as a basis for .msf files and creating (more extensive) .msf files with .srt software.
+
+The format of a .msf (.srt) file is as follows (example with 2 signals):
+
+1
+00:00:10,000 --> 00:00:20,000
+Signal message 1
+
+2
+00:01:00,000 --> 00:01:10,000
+Signal message 2
+
+On each first line is the number of the media signal (the numbers do not necessarily have to be consecutive), on the second line the start and end time of the media signal (separated by -->) and below the media signal message itself (text on one or multiple lines). Although the media signal numbers do not have to be consecutive, the times of the different media signals have to be. Moreover, the times of the media signals should not overlap.
+
+Instead of using a file you can also generate media signals via commands, for example:
+myPlayer.Signals.Add(TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(20), "Signal message 1")
+If a signal file is already loaded, the Add commands are added to the media signals from the file (if no overlaps occur). If the Add command is used when no media is playing (and media signals have been created), no .msf file is loaded when the next media starts playing.
+
+At the end of media playback, all media signals are always removed from the player.
+
+A media signal is only 'reported' if the playing time of the relevant media 'enters' the indicated signal period (also during 'seeking', for example via the position slider (also when seeking backwards) - see also Player.Sliders.PositionSkipSignals).
+
+- the interpretation of the media signals (the media signal messages) should be done by your application,
+- do not place a number at the beginning of message lines without text behind it, this is seen as a media signal number
+- if the processing of a media signal takes longer than approx. 100 ms, use a different application thread.
+
+To receive media signals, you must subscribe to the Player.Events.MediaSignal event:
+
+C#: myPlayer1.Events.MediaSignal += MyPlayer1_MediaSignal;
+private void MyPlayer1_MediaSignal(object sender, SignalEventArgs e)
+{
+    // process e.Message
+}
+
+VB.NET: AddHandler myPlayer1.Events.MediaSignal, AddressOf MyPlayer1_MediaSignal
+Private Sub MyPlayer1_MediaSignal(sender As Object, e As SignalEventArgs)
+    ' process e.Message
+End Sub
+
+----
+
+Sorry for any inconvenience caused by the changes made.
+I hope you like this new version of the library
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.80 - February 14, 2018
+
+
+- resolved an error with Progress (= time between the adjustable media Start and Stop positions) timing and the step and shuttle methods. Values can 'fluctuate' due to (MediaPositionChanged) timer interruptions that fired at the 'wrong' moments. Thanks to vtontodonato (article comments) for reporting various bugs, test solutions and valuable suggestions.
+
+- the step and shuttle methods have been rewritten for better precision and performance. Thanks again to vtontodonato.
+Some older .avi files, however, can sometimes still behave a bit 'strange'.
+
+- to step frame-by-frame through a video, use the mouse wheel of the player's shuttle slider while the video is paused (you can of course also use the step method, for example myPlayer.Position.Step(1)).
+
+- scrolling with the mouse wheel of the player's position slider is set in the correct direction (was reversed). Thanks again to vtontodonato.
+
+- the default mousewheel action of the player's position slider has changed to 'off' (not enabled). The mousewheel can be enabled with the Player.Sliders.PositionMouseWheel property.
+
+- the mouse wheel action of the speed slider of the player now changes the speed value by 10 (with shift key: 100). Reminder: normal speed value = 1000, half speed = 500, double speed 2000, etc.
+
+- fixed the Player.Position.ToStop property. It returned a wrong value when no stop position was set, instead of returning the duration to the natural end of the media (the ToStop values in the MediaPositionChanged events already returned the right values).
+
+- and some other minor changes.
+
+- updated sample applications: minor fixes and improvements.
+
+
+Thank you, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.78 - February 1, 2018
+
+
+- fixed an issue with the player's display overlays and mousedown events: a mousedown event was sometimes raised when activating a player's display overlay (for the first time only). It was curiously caused by an apparently incorrectly (?) placed order ('SendToBack') to change the display overlay's z-order.
+
+- fixed the taskbar progress indicator 'stutter' when using the Player.Position.Step method or a shuttle slider (trackbar) controlled by the player.
+
+- added 2 properties to the position slider for easy mouse wheel management:
+Player.Sliders.PositionMouseWheel - change position in milliseconds by using the mouse wheel (default 1000 - set to 0 to disable)
+Player.Sliders.PositionMouseWheelShift - change position in milliseconds by using the mouse wheel + Shift key (default 5000)
+e.g.: Player.Sliders.PositionMouseWheel = 10000; // skip 10 seconds with 1 mousewheel rotation
+
+- added Player.DisplayClones.GetVideoBounds to get the location and size of the video image on a display clone, e.g.:
+Rectangle bounds = myPlayer.Displayclones.GetVideoBounds(panel2);
+
+- relocated/duplicated some methods and properties to other classes e.g. Player.PointTo.SliderValue, Player.Sliders.PointToValue, Player.Sliders.ValueToPoint and others.
+
+----
+
+- About media start and stop positions:
+
+There could be some confusion about the naming of the player position related commands. The new naming is as follows:
+natural begin of a mediafile = Begin
+natural end of a mediafile = End
+selected start position of a mediafile = Start
+selected end position of a mediafile = Stop
+
+Renaming tip: first change all names containing 'Start' to 'Begin' (because there's a new use of the 'Start' keyword)
+
+Old Name:                           New Name (sorry for any inconveniences):
+
+Player.Position.FromStart           Player.Position.FromBegin
+Player.Position.FromEnd             Player.Position.ToEnd
+
+Player.Position.FromStartPosition   Player.Position.FromStart
+Player.Position.FromEndPosition     Player.Position.ToStop
+
+Player.Media.EndPosition            Player.Media.StopPosition
+Player.Media.EndPositionNext        Player.Media.StopPositionNext
+
+Player.Events.MediaPositionChanged: PositionEventArgs:
+StartToEnd                          * REMOVED
+FromStart                           FromBegin
+ToEnd                               ToEnd
+StartToEndPosition                  * REMOVED
+FromStartPosition                   FromStart
+ToEndPosition                       ToStop
+
+----
+
+- updated sample applications: minor fixes and improvements.
+
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.77 - December 7, 2017
+
+
+---- Display Overlay clipping (disabled by default):
+
+Added display overlay clipping: if a part of a display overlay falls outside the parent window (Form) of the player's display (because the display of the player is partially situated outside the window) that part is now no longer shown when overlay clipping is enabled.
+
+As player displays are usually rectangular ('normal') shaped and anchored or docked to stay within it's parent boundaries, this option is disabled by default. You can enable overlay clipping with: Player.Overlay.Clipping = true.
+
+
+---- Display clipping:
+
+Display Overlay clipping inspired the addition of clipping of the display window itself. With display clipping, the usual rectangular shape of the display window of a player can be changed to a different shape. Display clipping uses graphical areas (Regions) to clip the display windows. This could already be done without the use of the PVS.AVPlayer library, but now it is integrated into the library so that it works with displays, display overlays and display clones. The library also provides a simple mechanism for updating the display clipping when it's size or content is changed.
+
+To activate Display clipping, use: myPlayer.Display.SetClip(MyCallbackMethod, true)
+The first parameter is a reference to a callback method that returns the Region to use for the (changed) display clipping. The second parameter indicates whether a display overlay should also be clipped to the shape of the display.
+
+You can create a display clipping callback method like this (use any method name you want, create before using SetClip):
+
+private Region MyCallbackMethod(Player player)
+{
+    GraphicsPath path = new GraphicsPath();
+    path.AddEllipse(player.Display.Window.DisplayRectangle);
+    Region clipRegion = new Region(path);
+    path.Dispose();
+
+    return clipRegion;
+}
+
+Here an ellipse is used as the shape for the display, but any other shape can be used. For more examples of display clipping, please see the "How To..." application (C#/VB.NET) source code.
+
+
+---- IO.Streams:
+
+IO.Streams can not be played directly with MCI. You can play the embedded media in your application by saving it to disk first. PVS.AVPlayer has now a method to do that for you: Player.Media.ResourceToFile saves an embedded resource to the system's temporary folder, e.g.:
+
+string tempFile = myPlayer.Media.ResourceToFile(Properties.Resources.Wildlife, "Wildlife.wmv");
+if (!myPlayer.LastError) myPlayer.Play(tempFile);
+else MessageBox.Show(myPlayer.LastErrorString);
+
+You may want to remove the tempFile when finished playing, e.g.: File.Delete(tempFile); // clean up temp folder
+If you want to save the temporary file to a different folder, enter the full path: e.g. @"C:\Videos\Wildlife.wmv".
+
+
+---- MDI (Multiple Document Interface) Windows:
+
+Fixed player display mouse events on MDI windows. Thanks to Sebastian Putz (article comments) for reporting the error and testing.
+However, MDI windows are not very suitable for use with PVS.AVPlayer (MCI) because:
+
+1. a display overlay in one window is displayed before all other overlapping MDI child windows (MDI child windows are not top-level windows) and the overlay is not clipped (as opposed to the child windows) when they are partially outside the parent MDI window (could be clipped with some code - but useless because of the former problem).
+2. part of a video image may accidentally appear outside the player's display and even in other windows when a MDI child window with a player's display is moved. Dragging a child window with the titlebar differs from dragging the window with the player's display.
+This should reduce problems in both cases (you can omit 'playerDrag' + events if you do not use the player's display drag option):
+
+public MDI_Child()
+{
+    InitializeComponent();
+
+    // ...
+
+    // remove 'video image overflow' when dragging child form
+    this.LocationChanged += Form2_LocationChanged;
+
+    // remove 'video image overflow' when dragging child form by player's display
+    player1.Events.MediaDragDisplayBegin += Player1_MediaDragDisplayBegin;
+    player1.Events.MediaDragDisplayEnd += Player1_MediaDragDisplayEnd;
+}
+
+// used with dragging form by player's display
+private void Player1_MediaDragDisplayBegin(object sender, EventArgs e)
+{
+    _displayDrag = true;
+}
+
+// used with dragging form by player's display
+private void Player1_MediaDragDisplayEnd(object sender, EventArgs e)
+{
+    _displayDrag = false;
+}
+      
+// remove 'video image overflow' on window(s)
+private void Form2_LocationChanged(object sender, EventArgs e)
+{
+    if (_displayDrag) this.Invalidate();
+    else this.MdiParent.Invalidate(true);
+}
+
+
+---- Recorder Saving:
+
+Fixed an error with the recorder's Save method, where saving an 'empty' recording (file length = 0) would return an errorcode in the recorder's LastError property while there was no error. Thanks to habere (article comments) for reporting the error.
+
+About the recorder's Length (LengthBytes and Position) property: the length is rounded down to full seconds (= without the milliseconds part) during recording. Pause the recording to get the actual recording length (= including the milliseconds part).
+
+
+---- Recorder Enums Renamed:
+
+For better readability the enum names of Bits and SampleRate have changed:
+
+Old Name:                  New Name (sorry for any inconveniences):
+Bits.Bits8                 Bits.Bits_08
+Bits.Bits16                Bits.Bits_16
+etc. ...
+
+SampleRate.Samples8000     SampleRate.Samples_8000
+SampleRate.Samples11025    SampleRate.Samples_11025
+etc. ...
+
+
+
+---- Other:
+
+- some other minor changes
+- updated sample applications: fixed Folderview menu enabled error, open m3u files in explorer to play with AVPlayerExample, fixed display clones fullscreen when already maximized, and others.
+
+
+----
+
+Thank you, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.76 - November 2, 2017
+
+
+ - Fixed 'flashing window' when players stop playing movies.
+ When a movie stops playing, MCI (sort of) deactivates and then re-activates the form that contains the player's display window. This causes the form to 'flash' a bit. It seemed like an insoluble problem, but an article comment (thanks 'aswzen'!) resulted in a re-examination and finding a solution.
+
+- If you like to disable the 'flashing window' fix, use: Player.Display.WindowFix = false;
+
+- added pre-compiled library for .NET Framework 4.7.1.
+
+- updated all sample applications.
+
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.75 - October 2, 2017
+
+
+- Fixed an issue with output (peak) level information: disposing a player would also stop level information for all other players (because of the use of shared/static code).
+
+- improved display overlays keeping "close" (z-order) to its display to prevent other (child) windows being displayed between an overlay and it's main (player) window.
+
+- added "relative" start positions for the next media to play in the Player.Media.StartPositionNext method. Specifying milliseconds only in the range of 0 to 100 ms (read as percent) will be interpreted as a "relative" start position, e.g.
+myPlayer.Media.StartPosition = TimeSpan.FromMilliseconds(50)
+will start playing (with the Play method) the next media at 50 percent (half way) of its total length.
+The relative playback position of playing media can be set with the Player.Position.Track and .Progress methods.
+
+- added a method to get the value of a trackbar (slider) at certain coordinates: Player.SliderValue.FromPoint(TrackBar, Point)
+and a method to get the coordinates (e.g. the position of the thumb) of a value on a trackbar (slider): Player.SliderValue.ToPoint(TrackBar, Value).
+Can be used with any trackbar.
+
+- added "Info Label", a kind of ToolTip, that can be used to display text+ labels anywhere you like, e.g. as a moving value label with the thumb of a trackbar (slider). Create an infolabel with: new InfoLabel(), and display an infolabel with: myInfoLabel.Show(string, control, point).
+One infolabel can be used with all controls in your application, but you can create as many as you like (if you need (very) different label layouts).
+More information and a few examples can be found in the "How To..." sample application source code (all source download).
+Also, all other sample applications now use the new infolabels with their trackbars (sliders).
+
+- updated all sample applications.
+
+- and some other minor fixes and changes.
+
+- The following items are from the PVS.AVPlayer Recorder version 0.72 (August 22, 2017) update, that was published only at the recorder article at CodeProject:
+
+Old name:                                New Name (sorry for any inconveniences):
+Player.Display.DragFormEnabled           Player.Display.DragEnabled
+Player.Display.DragFormCursor            Player.Display.DragCursor
+Player.Display.DragFormFullScreen        (option removed)
+
+Player.Events.MediaDragFormBegin         Player.Events.MediaDragBegin
+Player.Events.MediaDragMove              Player.Events.MediaDragMove
+Player.Events.MediaDragFormEnd           Player.Events.MediaDragEnd
+
+Player.Events.MediaOutputLevelChanged    Player.Events.MediaPeakLevelChanged
+Player.OutputLevelEventArgs              Player.PeakLevelEventArgs
+
+- removed option 'Player.Display.DragFormFullScreen': (maximized and) fullscreen forms can no longer be moved by dragging the player's display window;
+
+- if a form with a player taskbar progress indicator (Player.TaskbarProgress.Add) is closed without first removing (Player.TaskbarProgress.Remove) the indicator, the player now 'catches' any errors without notification (as it does with incorrectly removed display clones);
+
+- fixed adding the same forms as taskbar progress indicators of a player;
+- fixed a minor issue with Player.TaskbarProgress set to Progress.Track and 'starting' paused media other than from the beginning of the media;
+
+
+Thank you, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.71 - August 10, 2017
+
+
+- Fixed player mousedown/click: events could 'fall through' some menus (contextmenu(strip)) as could be seen in the AVPlayerExample playlist menu when the mouse was also over the display of the player (with the form drag option enabled).
+
+- added events for MediaDragFormBegin, MediaDragFormMove and MediaDragFormEnd (they were present but not accessible).
+
+- fixed the sample applications icons, these would not appear everywhere as they should, e.g. in the Window's Volume Mixer window they were too big.
+
+- changed the 'copy local' option for the library in the sample applications. As this option was set to false, the sample apps would not run from Visual Studio.
+
+- added a few options to the clone window in AVPlayerExample to play with (and for 'inspiration'), an option to read/write m3u playlists and others.
+
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.70 - August 1, 2017
+
+
+- Added events when Audio or Video tracks are changed: Player.Events.MediaAudioTrackChanged and Player.Events.MediaVideoTrackChanged.
+
+- added the option to drag a form by dragging the display window of a player: Player.Display.DragFormEnabled. If no other display mouse events are activated (that could 'get in the way'), this option can be used to (automatically) catch mousedown events on a display, video or overlay to drag the form the display is on. Specify the (custom) mouse cursor to use with Player.Display.DragFormCursor (default = Cursors.SizeAll) and whether fullscreen forms can be dragged with Player.Display.DragFullScreenForm (default: not enabled).
+
+- added drag form events: Player.Events.MediaDragFormBegin, Player.Events.MediaDragFormMove and Player.Events.MediaDragFormEnd.
+
+- fixed TagInfo.Dispose(). This method could go wrong if the TagInfo.Image was (disposed and) set to null (Nothing) before.
+
+- added pre-compiled library for .NET Framework 4.7.
+
+- added the option to activate taskbar progress indicators (Windows Vista or later only): Player.TaskbarProgress.Add. A player's taskbar progress indicator shows the playback progress of media in the taskbar button of a Form. You can specify any Form you like (not just the form the display of the player is on) and use multiple and/or duplicate Forms. The mode of the progress indicator (progress (default) or track (= 'begin to end')) can be set with: myPlayer.TaskbarProgress.Mode. (This option is based on code by WhoIsRich at: www.stackoverflow.com/questions/1295890/windows-7-progress-bar-in-taskbar-in-c)
+
+- updated all sample applications.
+
+- and some other minor fixes and changes.
+
+
+Thanks again, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.65 - April 7, 2017
+
+
+- improved tag reader: taginfo now contains (for both mp3 and wma (and if available)): artist, title, albumtitle, genre, year, duration, track (string e.g. "7/10") , tracknumber (int e.g. 7) and albumart (image).
+
+- added audio and video track selectors. These options may not always work with every type of media but in most cases it should allow you to switch between multiple audio and/or video tracks (streams) that are available in some media files (thanks to sauronio (article comments)):
+Player.Audio.Track      - gets or set the current active audio track of the playing media (default track = 1)
+Player.Audio.TrackCount - not supported by MCI but should give the number of available audio tracks in the playing media
+Player.Video.Track      - gets or set the current active video track of the playing media (default track = 1)
+Player.Video.TrackCount - not supported by MCI but should give the number of available video tracks in the playing media
+e.g. myPlayer1.Audio.Track = 2
+
+
+Thank you, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.64 - March 20, 2017
+
+
+- Fixed a Slider (Trackbar) bug reported by Sandro (article comments). A player slider ('position track' only) could be set beyond it's maximum or minimum values with the Skip (and maybe others) function and 'crash'. Thanks (again) Sandro!
+
+- fixed 'GetMp3Info': an error detecting an empty (null) string prevented reading ID3v1 (and if that failed the folder- and filename) information.
+
+- added Windows Media Audio (wma/asf) tag reader including embedded pictures (Player.Media.GetTagInfo).
+
+- Moved some methods to the Player Position class and changed some media tags related names (sorry for any inconvenience):
+
+Old name:         New name:
+Player.Skip       Player.Position.Skip
+Player.Step       Player.Position.Step
+Player.Rewind     Player.Position.Rewind
+
+Mp3Info           TagInfo     (class)
+GetMp3Info        GetTagInfo  (methods)
+Mp3ImageSource    ImageSource (enum)
+
+- removed all slider related methods and properties from the Audio, Position and other classes. The slider (Trackbar) options are now available only from the Player.Sliders class, instead of 'Player.Audio.VolumeSlider' please use 'Player.Sliders.AudioVolume' etc.
+
+- in the sound recorder class of version 0.63 were some non-functional methods left over from testing new functionality.
+Forgot to remove them, sorry for that. These have now been removed.
+
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.63 - March 12, 2017
+
+
+- Added an ID3 tag reader for MP3 files with extended album art image options. You can read the following tags from an MP3 file (if available):
+Artist, Title, Album, Year, Duration, Genre and Image (album art picture). You can get the image from the MP3 file or the folder the file is in.
+For more information on MP3 tags please see www.id3.org. PVS.AVPlayer supports ID3v1 and ID3v2 (and maybe others).
+
+To get the MP3 information you can use (for instance): Mp3Info myMp3Info = myPlayer1.Media.GetMp3Info().
+A good moment to get the MP3 information would be in the the MediaStarted eventhandler or just after a Play instruction.
+When done with the Mp3Info please use the (image) dispose method: myMp3Info.Dispose().
+
+Here's an example (uses field Mp3Info _mp3Info):
+
+if (!myPlayer1.HasVideo)
+{
+    _mp3Info = myPlayer1.Media.GetMp3Info(Mp3ImageSource.Mp3Only);
+    label1.Text = _mp3Info.Artist;
+    panel1.BackgroundImage = _mp3Info.Image;
+}
+
+Clean up (e.g. called from MediaEnded/Stopped eventhandlers):
+
+{
+    label1.Text = string.Empty;
+    panel1.BackgroundImage = null;
+    if (_mp3Info != null)
+    {
+        _mp3Info.Dispose();
+        _mp3Info = null;
+    }
+}
+
+- improved memory management and performance for Display Clones with display overlays (uses memory buffer).
+
+- fixed some issues with Display Clones and display overlays (Hold) while nothing or only audio is playing.
+
+- Sound Recorder: fixed the Save command that stopped a recording: you can now continue recording after saving a recording - thanks to Sandro (PVS.AVPlayer article comments).
+
+
+Thank you, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.62 - 2016/12/27 (yyyy/mm/dd)
+
+- display clones fix for players that use display clones on 'another' form: a player 'takes care' of display clones whose display is 'lost' (e.g. by closing a window) while the clones were not first properly removed from the player (by using the DisplayClones.Remove methods). However an error can occur when removing display clones AFTER a window is closed. Of course, trying to access a closed form is never a good idea, but now the player tries to 'catch' this situation as well. For best performance, please remove any display clones from a form BEFORE closing the form.
+
+- display clones flipmode fixed, the video images were one pixel off.
+
+- display clones now show display overlays without video (= overlay hold) while maintaining the aspect ratio.
+
+- the display clones video quality setting (bool) is replaced with CloneQuality (enum) with Normal, High and Auto options. The CloneQuality.Auto option dynamically (= when display sizes change) selects high-quality video when the display of a display clone is smaller than the display of the player, otherwise normal video quality is selected. The CloneQuality.Auto is now the default display clones quality setting.
+
+About the automatic quality setting: showing display clones in normal quality video takes significantly less time than displaying display clones in high-quality video, but when a display clone is smaller than the original image there may occur distortions in the video image.
+
+- Renaming of the display clones class methods and enums:
+
+Old name:         New name:
+
+SetStretchMode    SetLayout
+GetStretchMode    GetLayout
+SetQualityMode    SetQuality
+GetQualityMode    GetQuality
+SetFlipMode       SetFlip
+GetFlipMode       GetFlip
+
+FlipMode          CloneFlip    (enum: FlipNone, FlipX, FlipXY, FlipY)
+HighQuality       CloneQuality (enum: Auto, High, Normal)
+Stretch           CloneLayout  (enum: Stretch, Zoom)
+
+- when the subtitles search method has changed (e.g. change of search directory or file name) subtitles will now be activated if appropriate.
+
+- 'shortcut properties' added for HasAudio, HasAudioLevels, HasVideo, HasOverlay, HasClones and HasSubtitles, e.g myPlayer1.HasAudio.
+
+
+Thanks again, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.61 - 2016/12/06 (yyyy/mm/dd)
+
+- Display Clones bug fix:
+The display clones feature of the PVS.AVPlayer library is somewhat 'experimental' (and maybe even 'not recommended') and although version 0.60 was thoroughly tested (and errors occurred, but within 'acceptable limits'), in 'everyday use' there were just too many errors.
+The updated display clones in the new version 0.61 were tested under 'heavy cpu load' without any errors, so it seems to be all right now. Please leave a comment at the PVS.AVPlayer article at CodeProject if you do encounter problems with the new display clones (or any other library function).
+
+- In the display clones class a few method names have changed and a few options (e.g. rotate and flip) have been added.
+
+
+Thank you, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.60 - 2016/11/21 (yyyy/mm/dd)
+
+- For greater ease of use, a better overview and improved performance of the library's public methods and properties there has been a extensive renaming and grouping of related members by using (lazy initialized) subclasses: e.g. assigning a control as display (old: "myPlayer1.Display = panel1") now uses the Player.Display class (new: "myPlayer1.Display.Window = panel1").
+Although writing new code may now even be more easy, replacing existing code may in some cases become a bit of a puzzle. Therefore, a table is added below to help translate existing code. Sorry for any inconvenience, hope you like it (once you have translated your code :)).
+
+- Player object initializers can no longer be used (because of the new subclasses):
+Please replace something like:
+Player myPlayer1 = new Player
+{
+    Display.Window = panel1,
+    etc.
+}
+with (same as the compiler already does):
+Player myPlayer1 = new Player();
+myPlayer1.Display.Window = panel1;
+etc.
+
+- the small 'How To...' (PVSAVPlayerHowTo) sample projects (for both C# and VB.Net) show how to use the more 'special' new (and older) Player options of the library with one or two lines of easy to understand source code and a short comment for:
+
+ 1. add a display overlay
+ 2. make a display overlay always visible - from application start
+ 3. add one or more display clones
+ 4. add a position slider controlled by the player
+ 5. get continuous playback position information
+ 6. add audio volume and balance sliders controlled by the player
+ 7. get changed audio volume and balance information
+ 8. get continuous audio output (peak) level information
+ 9. get mouse events on display, movie or overlay
+10. get media finished playing information
+11. get subtitles
+
+- improved display clones performance by, among others, using a separated (non user-interface) thread for painting the display clones. But please remember that display clones are displayed by the use of a software 'Bitblt', without any hardware (GPU) acceleration. Some (mostly .wmv) videos are just not very suitable for use with display clones (other than just displaying the video) because they themselves already use a significant amount of CPU time. You can try to reduce the CPU load of the display clones by lowering the framerate and not using high-quality display clone images.
+
+- added SubRip (.srt) subtitles (Player.Subtitles class). To activate subtitles, just subscribe to the Player.MediaSubtitleChanged event.
+There are some convenient options in the Subtitles class, like "Player.Subtitles.TimeShift" to synchronize subtitles.
+
+- fixed paused player output levels: when media playback was paused there were still non-zero output level values present. This issue was reported in the PVS.AVPlayer article comments: thanks Greg!
+
+- and other fixes, changes and improvements.
+
+--------------
+PVS.AVPlayer.Player version 0.60 renaming lookup table:
+--------------
+With any new code you should be able to find your way around with intellisense, but to replace existing code here's a little help (to copy and paste the new names).
+
+Please note:
+'Display' and 'Overlay' are no longer the Controls themselves: get/set them now with 'Display.Window' and 'Overlay.Window'.
+Similar changes are made to 'Position' (now 'Position.Current') and 'ScreenCopy' (now 'ScreenCopy.ToImage()').
+--------------
+
+The names that have changed in the PVS.AVPlayer.Player class version 0.60
+(not listed are unchanged and new methods/properties):
+
+Old name                   - New name
+
+AudioBalance               - Audio.Balance
+AudioBalanceSlider         - Sliders.AudioBalance
+AudioEnabled               - Audio.Enabled
+AudioPresent               - Audio.Present
+AudioVolume                - Audio.Volume
+AudioVolumeSlider          - Sliders.AudioVolume
+
+Display                    - Display.Window
+DisplayClones.Controls     - DisplayClones.GetClones()
+DisplayClones.Overlay      - DisplayClones.ShowOverlay
+DisplayMode                - Display.Mode
+
+EndPosition                - Media.EndPositionNext
+EndPositionMedia           - Media.EndPosition
+
+FormResizeRedraw           - Display.ResizeRedraw
+FormRestoreBounds          - Display.RestoreBounds
+
+FrameRate                  - Video.FrameRate
+
+GetMediaLength             - Media.GetLength
+GetMediaName               - Media.GetName
+GetProgressTimes           - removed (available from event or Media.GetLength)
+GetTrackTimes              - removed (available from event or Media.GetLength)
+
+LevelDeviceCount           - LevelDevice.Count
+LevelDeviceIndex           - LevelDevice.Index
+LevelDeviceName            - LevelDevice.Name
+LevelDevicePresent         - LevelDevice.Present
+LevelDeviceReset           - LevelDevice.Reset
+LevelDevices               - LevelDevice.GetDevices()
+
+MciCommand                 - MciDevice.Command
+MciDeviceId                - MciDevice.Id
+MciDeviceType              - MciDevice.Type
+MciDevicesCount            - MciDevice.Count
+MciRequest                 - MciDevice.Request
+MciWindowHandle            - MciDevice.WindowHandle
+
+Media... (all events)      - Events.Media...
+MediaEnded (as example)    - Events.MediaEnded
+
+MediaStartEndChanged       - Events.MediaStartEndNextChanged
+MediaStartEndMediaChanged  - Events.MediaStartEndChanged
+
+Overlay                    - Overlay.Window
+OverlayCanFocus            - Overlay.CanFocus
+OverlayDelay               - Overlay.Delay
+OverlayHold                - Overlay.Hold
+OverlayMode                - Overlay.Mode
+
+PointToDisplay             - PointTo.Display
+PointToOverlay             - PointTo.Overlay
+PointToVideo               - PointTo.Video
+
+Position                   - Position.FromStart
+PositionProgress           - Position.Progress
+PositionSlider             - Position.Slider
+PositionSliderLiveUpdate   - Position.SliderLiveUpdate
+PositionSliderMode         - Position.SliderMode
+PositionTrack              - Position.Track
+
+ResizeFormRefresh          - Display.ResizeRedraw
+
+ScreenCopy                 - ScreenCopy.ToImage()
+ScreenCopyMode             - ScreenCopy.Mode
+ScreenCopyToClipBoard      - ScreenCopy.ToClipBoard
+ScreenCopyToFile           - ScreenCopy.ToFile
+
+ShowAudioMixerPanel        - SystemPanels.ShowAudioMixer
+ShowAudioOutputPanel       - SystemPanels.ShowAudioDevices
+ShowDisplaySettingsPanel   - SystemPanels.ShowDisplaySettings
+ShowOutputLevelDevicePanel - SystemPanels.ShowLevelDevices
+
+ShuttleSlider              - Sliders.Shuttle
+SpeedSlider                - Sliders.Speed
+
+StartPosition              - Media.StartPositionNext
+StartPositionMedia         - Media.StartPosition
+
+VideoBounds                - Video.Bounds
+VideoEnabled               - Video.Enabled
+VideoMove                  - Video.Move
+VideoPresent               - Video.Present
+VideoSourceSize            - Video.SourceSize
+VideoStretch               - Video.Stretch
+VideoZoom                  - Video.Zoom
+
+--------------
+PVS.AVPlayer.Recorder version 0.60 'translation' table:
+--------------
+
+InputDeviceCount           - InputDevices.Count
+InputDeviceIndex           - InputDevices.Index
+InputDeviceName            - InputDevices.Name
+InputDevices               - InputDevices.GetDevices()
+
+MciCommand                 - MciDevice.Command
+MciOpenDevicesCount        - MciDevice.Count
+MciRequest                 - MciDevice.Request
+
+Recorder... (all events)   - Events.Recorder...
+RecorderStopped (example)  - Events.RecorderStopped
+
+--------------
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.53 - 2016/08/22 (yyyy/mm/dd)
+
+- improved Recorder input device selection and handling. Also there's no longer a default input device (-1 now indicates 'no input device selected' instead of the system's standard input device).
+
+- improved Player and Recorder level device selection and handling.
+- Player and Recorder level devices no longer produce spurious values when activated or changed (now 'captured' by the library).
+
+- Method and Property names changed (for functionality and readability):
+  all outputLevelDevice... names renamed to LevelDevice... e.g. OutputLevelDeviceIndex changed to LevelDeviceIndex.
+  OpenDevices renamed to MciOpenDevicesCount.
+
+- Big Recorder application fixed stopping recording with Play button when 'Silence Deactivaton' active. Only in this case (stop with Play button) a recording was not saved if its length was shorter than the 'Silence Deactivation' time.
+
+
+Display Clones
+--------------
+- Added Player Display Clones for easy cloning (copying) of a player's video display to one or more other display controls.
+Just specify one or more display clones (= Forms and/or Controls (e.g. 'panels')) and call the player's DisplaysAdd method, e.g.:
+----
+Control[] myDisplays = { panel2, panel3, Form2 };
+myPlayer1.DisplaysAdd(myDisplays);
+// or:
+myPlayer1.DisplaysAdd(new Control[] { panel2, panel3, Form2 });
+----
+
+By the way (for the novice programmer), new Control[] does not create new controls, it's just a (new) list of references to Controls.
+
+The new display clones (if not already activated) are added to any existing and active display clones.
+You can also specify the quality (default = High) and frame rate (default = Fps30) as well as whether display overlays (default = Yes) are copied:.
+----
+myPlayer1.DisplaysAdd(myDisplays, CloneQuality.Normal, CloneFrameRate.Fps25, CloneOverlay.No);
+----
+
+You can also use these methods to just change one of the settings of already active display clones, e.g.:
+----
+myPlayer1.DisplaysAdd(null, CloneOverlay.Yes);
+----
+
+For a 'smooth and synchronized' beginning of movies on multiple displays: display cloning can be started before a movie is started.
+Use the player's 'OverlayHold = true' setting to also clone overlays when no media (video) is playing.
+
+Use the DisplaysRemove method to turn off all or the specified display clones (e.g. when playing videos is (long) paused, stopped or display clones are no longer needed) and free the used resources:
+----
+myPlayer1.DisplaysRemove();                         // stop all display clones
+myPlayer1.DisplaysRemove(new Control[] { panel3 }); // stop only display clone 'panel3'
+----
+
+As with the player's screencopy methods you might have to turn off your system's (Windows XP?) video hardware acceleration to be able to use these display clone options (to get 'access' to the video picture on the screen).
+Player display clones behave differently from player displays: they can be used and treated as "normal" windows/controls because there is no MCI video window.
+Since no hardware acceleration is used, display clones may place your computer's CPU under an intense workload. With modest use of display clones that shouldn't be much of a problem but if you get in trouble with your state of the art application, please try changing the clone quality to 'normal' and/or lowering the frame rate. Or reduce the number of display clones and/or their size.
+
+Thanks Greg for motivation (at The Code Project PVS.AVPlayer article comments).
+
+--------------
+
+Thank you, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.52 - 2016/08/01 (yyyy/mm/dd)
+
+- improved selection of the player output level device ('Stereo Mix") and added options to select an output level device.
+The search for the output level device includes names than contain "stereo", "mix", "wave", "loopback", "hear", "sum", "out" and "playback".
+
+Players now also allow selection of a system input device that will be used as the output level device for all players in case the "Stereo Mix" device has an 'unknown' (localized) name (although it's probably a better option that the user renames this device in the Sound Control Panel to "Stereo Mix").
+
+This is what the sample applications do:
+1. If the subscription to the MediaOutputLevelChanged event fails (LastError is true) a menu is added to the player's contextmenu.
+1a. with this error, the application also subscribes to the MediaLevelDeviceChanged event.
+2. Before the newly added menu is opened it's 'filled' with the names of system devices from the player's OutputLevelDevices property.
+2a. If the user selects an item from the new menu, the selected output level device is set (by using the item's index in the menu).
+3. If a new device is set, the MediaLevelDeviceChanged is fired and the application subscribes to the MediaOutputLevelChanged event (which failed the first time). Also if the device changes again, this is repeated (before subscribing again to the event remove a previous subscription (it doesn't matter if there wasn't a previous subscription, but better would be to keep track of subscriptions)).
+(If you have a working 'Stereo Mix' device but want to see if and how this is working, you can temporarily rename your 'Stereo Mix' device (e.g. to 'Test') in the system input devices panel.)
+
+- improved selecting and handling of recorder input devices and recorder input level devices.
+
+- fixed saving recorder files with names that contains spaces (filenames can now contain spaces).
+
+- added recorder LengthBytes property - returns the length in bytes of the current recording. The Length property returns the length in milliseconds and not bytes as intellisense stated by mistake - actually, this is a fix for (and addition to) the Length property.
+
+- added recorder Remove method - allows part of a recording to be removed (deleted, trimmed) before saving the recording to a file.
+
+- renamed MediaPeakLevelChanged to MediaOutputLevelChanged and PeakLevelEventArgs to OutputLevelEventArgs (in the library each word 'peak'is replaced by 'output').
+
+- the player's MediaOutputLevelChanged event now sends a value of -1 (besides the 'normal' values from 0 to 32767) to signal that media playback has paused, stopped or ended. This value allows output level meters with a 'value delay mechanism' to be set immediately to their lowest value. The recorder's RecorderInputLevelChanged event always sends actual values regardless of the recorder state (recording or not).
+
+- the playback position trackbar (position slider) handled by the player is now disabled when no media is playing (because it could still be 'moved' a little bit, which was 'ugly'). The shuttle slider can still be 'moved' (but with no effect of course) when no media is playing.
+
+- events that have custom EventArgs (event data; some are new while others are just reminders):
+player: MediaPositionchanged, MediaStopped, MediaStoppedNotice and MediaOutputLevelChanged.
+recorder: RecorderPositionChanged and RecorderInputLevelChanged.
+
+- added a new article (with sample application 'Big Recorder') on Code Project (www.codeproject.com) with a brief description on how to use the recorder part of the library.
+
+Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.51 - 2016/06/26 (yyyy/mm/dd)
+
+Version 0.51 fixes the right audio channel peak level values and adds a few more improvements.
+
+--------
+
+- Fixed right level audio peak level values, the right channel value (when playing/recording) was always 1 unit too high.
+
+- All audio peak level values, for both players (output) and recorders (input), 8 or 16 bits, are now from 0 to 32767 (included). Player output and Recorder 8-bit input peak levels were previously in the range of 0 to 127.
+
+- Removed Bits value in InputLevelEventArgs (Recorder class). It's no longer needed now all values are in the same range (0-32767). Of course you still can get this setting from the Recorder.Bits property.
+
+- Added data to the Player's PositionChangedEventArgs of the MediaPositionChanged event. Now all major playback position values are available from the PositionChangedEventArgs.
+
+- Added TimerInterval property to Recorder class.
+The TimerInterval properties in both the Player and Recorder class can be used to change the frequency with which the peak level and playback position values (events and player's position slider) are updated.
+
+- The default timer interval for Players and Recorders has changed from 200 to 100 milliseconds (can be changed per Player/Recorder with the TimerInterval properties). The timers are used with the PositionChanged (and player position slider) and PeakLevelChanged events.
+
+- Renamed MediaStoppedEvenArgs to StoppedEventArgs (same as other eventargs naming).
+
+- Renamed enum MediaLength.Total to MediaLength.StartToEnd (same as data naming in PositionChangedEventArgs).
+
+
+Sorry for the many updates and changes. It surely wasn't my intention when I first published the article and library, but the updates just kept coming. The many views of the article, positive comments, votes and ongoing code downloads have certainly contributed to that. But now, unless a major bug pops up, this version will have to do for -at least- a reasonable period of time. No software is ever 'finished' but I think we now have a comprehensive and good quality MCI player/recorder library.
+
+Thank you, Peter 
+
+--------------------------------
+--------------------------------
+
+Version 0.50 - 2016/06/14 (yyyy/mm/dd)
+
+Version 0.50 fixes a few minor issues, adds audio peak level data for players (requires "Stereo Mix" enabled) and sound recorders, enhanced sound recorder and others.
+
+--------
+
+- a few minor issues in the library and sample applications have been fixed.
+
+- the player now more simplifies getting the local coordinates of mouse events with 3 Player.PointTo... methods:
+private void myPlayer1_MediaMouseClick(object sender, MediaMouseEventArgs e)
+{
+    Player player = (Player)sender;
+
+    Point pos1 = player.PointToDisplay(e.Location); // pos1 = mouse coordinates on display
+    Point pos2 = player.PointToOverlay(e.Location); // pos2 = mouse coordinates on overlay
+    Point pos3 = player.PointToVideo(e.Location);   // pos3 = mouse coordinates on video image
+}
+
+--------
+
+- Improved Sound Recorder (previously referred to as Voice Recorder):
+Although it was already possible to select an input device (independant of the standard input device) for a sound recorder and obtain input peak level data from it, it was probably not really easy to do. Now it is.
+
+To get a list of names of all available input devices use: string[] inputDevices = myRecorder.GetInputDevices();.
+You can display the names in a menu and let the user select one or find the device by name (the names are localized and may be shortened to fit the maximum size of 32 characters (MCI is a bit dated))) and set is as input device of a recorder. The index of a device in the names list is also the device number that can be used with a recorder's InputDevice property.
+
+To set a recorder's input device use: myRecorder.InputDevice = 1; (or any other number from 0 to inputDevices.Length - 1).
+Please check the recorder's LastError property to see if the command was successful.
+
+You can have multiple sound recorders each with its own (different from the others) input device (or even with the same input device, but that would not be very useful). 
+
+--------
+
+- Sound Recorder Audio Input Peak Level Data:
+You can get a recorders's input level data from your eventhandler for the recorder's 'RecorderInputLevelChanged' event:
+
+myRecorder.RecorderInputLevelChanged += myRecorder_RecorderInputLevelChanged; // subscribe to the event (example)
+Please check the recorder's LastError property to see if the command (subscription) was successful (this differs from normal subscribing to events because PVS.AVPlayer uses an extended subscription method with these events).  
+
+private void myRecorder_RecorderInputLevelChanged(object sender, InputLevelEventArgs e) // handle the event (example)
+{
+    _bits       = e.Bits        // value Bits.Bits8 (for 8 bits recording) or Bits.Bits16 (for 16 bits recording)
+    _leftLevel  = e.LeftLevel;  // value 0-127 (for 8 bits recording) or 0-32767 (for 16 bits recording)
+    _rightLevel = e.RightLevel; // value 0-127 or 0-32767
+
+    // ...
+}
+
+--------
+
+- Player Audio Output Peak Level Data:
+Players now also provide audio peak level data by ('trick') using the "Stereo Mix" (MCI input) device (one instance for all players). Regrettably, it's not just the audio output level of the player but the output levels of all sounds produced by the computer. In general, this will not be a much of a problem as there's usually just one source (player) making all the noise (also the peak level values are not sent or set to zero (ignoring other sounds) when the player's not playing, paused or when its audio volume is set to zero or disabled).
+
+You can get a player's peak level data from your eventhandler for the player's 'MediaPeakLevelChanged' event:
+
+myPlayer1.MediaPeakLevelChanged += myPlayer1_MediaPeakLevelChanged; // subscribe to the event (example)
+Please check the player's LastError property to see if the command (subscription) was successful. 
+
+private void myPlayer1_MediaPeakLevelChanged(object sender, PeakLevelEventArgs e) // handle the event (example)
+{
+    _leftLevel  = e.LeftLevel;  // value 0-127
+    _rightLevel = e.RightLevel; // value 0-127
+
+    // ...
+}
+
+You can use the player's peak level data to display all sorts of visual feedback, from simple numbers and graph bars (as in the AVPlayerExample application) to the use of realistic VU-meters.
+
+--------
+
+- About the "Stereo Mix" device:
+The "Stero Mix" device is used with PVS.AVPlayer players to get audio output level data and can be used with recorders to record (any) sound output by the computer. Up to Windows 7 the "Stereo Mix" device was installed by default, but with later Windows versions it was omitted (probably for reasons of protecting copyrighted material). Please search the internet for issues with and more information on the "Stereo Mix" device.
+In short it's this: if you want to use the "Stereo Mix" device on your computer and its not available, you either have to enable the "Stereo Mix" device on your computer (in the system sound input control panel - right click and select "Show All" if not visible, then right click the device and select "Enable") or you have to download (free from www.realtek.com (on the home page select "Downloads" and on the next page "High Definition Audio Codecs")) and install it.
+If you add/enable input devices to the computer you have to restart the PVS.AVPlayer (MCI) applications that have to use them. 
+
+
+Happy programming! Thanks, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.48 - 2016/05/15 (yyyy/mm/dd)
+
+So, here's another update. Well, I guess a program's never really finished. And of course I just couldn't leave that overlay bug in place:
+
+- Overlay Bug
+An embarassing bug sometime not long ago crept in when I probably removed the display move eventhandler in my ongoing quest for code efficiency. Now if the left-hand side of a display was moved on a form (e.g. when the entire display was anchored to the right side of a form) it's overlay would get displaced until the next form refresh. It remained unnoticed (by me) for probably quite a long time but it's fixed now.
+
+- Media Stopped Event
+The MediaStopped event has changed. It now comes with data (MediaStoppedEventArgs) that tells you if the media was stopped by the user (Stop function) or automatically by the player (AutoStop) to start playing other media. You might have to adjust your MediaStopped eventhandlers, sorry for any inconvenience.
+
+- New Mouse Events
+Added mouse events for player displays (including the MCI video window (that is sort of displayed on top of a PVS.AVPlayer display)) and display overlays. Just add a player eventhandler the way you are used to, e.g. myPlayer1.MediaMouseClick += myPlayer1_MediaMouseClick; The MediaMouseEventArgs contain information about the pressed mouse button, the mouse position and others.
+
+A player's mouse event handler is registred only if the player has a display and the display (e.g. a panel) is (already) on a Form (otherwise the player's LastError code = 346 ("No Window")).
+
+private void myPlayer1_MediaMouseClick(object sender, MediaMouseEventArgs e)
+{
+    Player player = (Player)sender;
+
+    Point pos1 = player.Display.PointToClient(e.Location);                             // pos1 = mouse coordinates on display
+    if (player.Overlay != null) Point pos2 = player.Overlay.PointToClient(e.Location); // pos2 = mouse coordinates on overlay
+    Point pos3 = player.PointToVideo(e.Location);                                      // pos3 = mouse coordinates on video image
+}
+
+Please, (as always) unsubscribe eventhandlers when they will no longer be used (e.g. myPlayer1.MediaMouseClick -= myPlayer1_MediaMouseClick;).
+
+It's perhaps not quite perfect yet but it might come in handy. It's one controller for all players, doesn't interfere with the standard display/overlay (right button) context menus (for some other drop down menus on an overlay you might have to temporarily disable the mouse events (e.g. in the menu open eventhandlers)), automatically transfers events when a display is replaced by another and more. What's still missing is that you can't (?) permanently change the cursor on the MCI window into anything else than an arrow (except of course when you're using an display overlay).
+
+- Windows 10
+There have been several reports that PVS.AVPlayer would not work well with Windows 10. It's still unclear (to me) what is causing this but it seems that this only happens after a Windows 10 update install. With a Windows 10 'clean' install and maybe new codecs (K-Lite Codec Pack has a Windows 10 version update) there should be no problems at all: PVS.AVPlayer works very well on my old netbook (Acer Aspire One) with Windows 10 installed (updated from Windows 7 Starter).
+
+
+Thanks again and enjoy, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.47 - 2016/02/07 (yyyy/mm/dd)
+
+As the use and downloading of the PVS.AVPlayer library just keeps going (I already thought years ago to have done the last update), I feel obliged to post this 0.47 version update, even if the changes are rather small. As I too am still using (the library and) the sample programs to play my music and videos, a few minor issues have been fixed 'on the way':
+
+- the audio volume can be set to 'true zero'. I previously found this would sometimes result in an error, but it seems I was wrong. I noticed sound was still audible with the player's audiovolume set to 0 (mute, not the AudioEnabled option) while the system sound setting was at high volume, so I tested it again and fixed it.
+- the position slider (trackbar) initially (only before being used) displays the maximum value when used in vertical orientation. It's fixed now.
+- the maximum number of fullscreen players (on different forms) has been changed from 4 to 20, and can easily be changed again in the source code. This large number of fullscreen players will be required only in rare scenarios but it has no negative effect on the library's performance at all.
+- the positioning (centering) of system control panels (e.g. with ShowAudioOutputPanel) has been improved.
+- added (precompiled) library for .NET Framework 4.6.1. Although some versions of the .NET Framework are no longer supported by Microsoft, you'll still find (precompiled) libraries for all the framework versions in the download.
+
+There are also a few minor changes in the sample applications, like 'lazy initialization' (= if you don't use it, it won't be created) of the example display overlays and voicerecorder in AVPlayerExample and subtitles in FolderView.
+
+Please let me know if something is wrong or missing (for you) in the code.
+Thanks! Have fun, Peter
+
+--------------------------------
+--------------------------------
+
+Version 0.46
+
+- added .NET Framework 4.6 library.
+- fixed 'ResizeFormRefresh' function.
+- error reporting 'ScreenCopy', 'VideoZoom' and others fixed.
+- ShuttleSlider Max/Min properties removed.
+- DeviceID check added, reduced (= no) chances on duplicate device aliases (that would prevent creating a player/recorder).
+
+- fixed a few minor issues in the example applications and added a few options.
+
+--------------------------------
+--------------------------------
+
+Version 0.45
+
+- fixed mp4 repeat issues: when repeating ('repeat one') an mp4-file (and maybe other types as well), playback could sometimes come to a halt at the end of the file instead of starting over again. This seems to occur only when a file is repeated from begin to end (and with minimized forms). This issue was addressed before but seems only to have been fully resolved now.
+
+- improved mci notify handling. The internal mci notify handling is now more efficient and also no longer stops media playback with certain (user) mci commands (with Player.MciCommand/Request methods).
+
+- fixed a few minor issues in the example applications and added a few options, like (Drag and) Drop files, Auto/Continue Play, Auto Overlay Selection (AVPlayerExample) and single instance application (FolderView).
+
+--------------------------------
+--------------------------------
+
+Version 0.42
+
+- fixed the positioning of a Display Overlay (with OverlayMode.Video) when a video image is partially (on the top or left) outside of the player's display and the display's position is changed - the Display Overlay would always be positioned as if the video image was both on the top and on the left outside of the display (i.e. in the top-left corner of the player's display).
+
+----
+
+- added property 'FormRestoreBounds' to get the 'original' size and position of a player's parent form when the player is in fullscreen* mode. These values can be used to save (to disk, preferences) and restore the form's bounds (* 'FormRestoreBounds' also gets the form's 'Bounds' (or 'RestoreBounds' if Maximized) if the player is not in fullscreen mode).
+
+To save a fullscreen (or non-fullscreen) player and parent form settings you could use:
+
+ Prefs.FullScreenMode = myPlayer1.FullScreenMode;              // save player setting
+ Prefs.FullScreen = myPlayer1.FullScreen;                      // save player setting
+ Prefs.Maximized = WindowState == FormWindowState.Maximized;   // save form setting
+ Prefs.FormBounds = myPlayer1.FormRestoreBounds;               // save form setting
+ (... save preferences)
+
+To restore a fullscreen (or non-fullscreen) player and parent form settings you could use:
+
+- in form constructor (VB.Net: Form.Load):
+ (... load preferences)
+ StartPosition = FormStartPosition.Manual;                     // restore form setting
+ Bounds = Prefs.Bounds;                                        // restore form setting
+
+- in form constructor or Form_Shown:
+ if (Prefs.Maximized) WindowState = FormWindowState.Maximized; // restore form setting
+ Player1.FullScreenMode = Prefs.FullScreenMode;                // restore player setting
+
+- in Form_Shown:
+ Player1.FullScreen = Prefs.Fullscreen;                        // restore player setting
+
+----
+
+- added 'preferences' to the example application as an example on how to save Player settings (including fullscreen preserving a player's parent Form size and position). The preferences settings are accessible from the display menu (right-click display) only.
+
+--------------------------------
+--------------------------------
+
+Version 0.41
+
+- all methodnames starting with MCI have been renamed to methodnames starting with Mci (partial lowercase) - sorry for any inconvenience;
+- added events for display overlay mode setting change (MediaOverlayModeChanged) and overlay hold setting change (MediaOverlayHoldChanged);
+- fixed slider (trackbar) managers (e.g. myPlayer1.AudioVolumeSlider): when a slider was changed the previous slider's (event) handlers were not properly removed;
+- cleaned up all source code;
+- fixed some minor other issues.
+
+--------------------------------
+--------------------------------
+
+Version 0.4
+
+- Fixed destructor (finalizer) bug: the destructor tries to restore a player's fullscreen display (among others), but if you're quiting the application the display/form may already have been removed (disposed);
+- Cleaned up library source code and added a few comments.
+
+--------------------------------
+--------------------------------
+
+Version 0.37
+
+- Fixed playing audio (mp3) without a display.
+- Full library source code now available.
+- Fixed some minor bugs in the example application.
+
+--------------------------------
+--------------------------------
+
+Version 0.36
+
+Only a few changes/fixes, but just couldn't let them be:
+
+- VideoEnabled fix - this option was 'damaged' in a previous update and has now been fixed. With this option you can switch on/off the display of video of a playing mediafile. However, when a file is started with VideoEnabled set to false there's a short 'display flash' as the video is still displayed for just a brief moment. Maybe this could be 'fixed' somehow, but it's not worth the trouble: if you want to hide the video of a mediafile just move the display (e.g. panel1) out of sight or move the video itself out of sight with something like myPlayer1.VideoBounds = new Rectangle(-50, -50, 40, 40).
+
+- EndPositionMedia fixed - this option sets the playback end position of an already playing mediafile and could (before the fix) sort of freeze playback until another player transport command was used.
+
+- OverlayHold fix - when changing playback from a movie to audio only media (that has not a display size, e.g. MP3) the size of a display Overlay was not changed if the option OverlayHold was active (the overlay now changes to full display size).
+
+- Display Overlays are now updated (when resizing or moving a display) before the video of a mediafile is updated for an 'earlier/faster' redraw of the overlay.
+
+--------------------------------
+--------------------------------
+
+Version 0.35
+
+- Added SleepDisabled - with this option you can prevent the computer from going into 'sleep mode' (this option uses the Win32 native method 'SetThreadExecutionState').
+You can use
+
+    myPlayer1.SleepDisabled = true;
+
+to prevent 'sleep mode' during the use of your application or just during the playback of one or more mediafiles.
+The original (system) 'sleep mode' settings (Energy Saving/Power Options) are restored with
+
+    myPlayer1.SleepDisabled = false;
+
+but only if every player that has set SleepDisabled to true, also has reset (to false) this option.
+This player property is also reset when a player is disposed or when the application is closed.
+
+- When the OverlayCanFocus option is (re-) set to false, the overlay now also loses focus (if the overlay had focus, the display's owner Form is activated).
+
+- Added GetTrackTimes and GetProgressTimes - two new methods that return two TimeSpan values containing the duration 'from the beginning' and 'to the end' of a playing mediafile. This is more efficient than two or more calls to GetMediaLength (you can still use GetMediaLength if you like), e.g. inside your MediaPositionChanged EventHandler (class field: TimeSpan[] trackTimes;):
+
+    myPlayer1_MediaPositionChanged(object sender, EventArgs e)
+    {
+        trackTimes = myPlayer1.GetTrackTimes();
+
+        // myTrackBar1.Value = trackTimes[0].TotalMilliseconds;
+        positionLabel1.Text = trackTimes[0].ToString().Substring(0, 8);
+        positionLabel2.Text = trackTimes[1].ToString().Substring(0, 8);
+    }
+
+- And a few other minor changes/improvements (among others: Finalize added and show Overlay z-order improved).
+
+Example application:
+- Applied SleepDisabled and GetTrackTimes/GetProgressTimes (as above).
+- Subtitles Overlay added simple synchronize adjustment option.
+- PlayList 'remove-item-when-mediafiles-are-playing bug' fixed.
+- Overall text color (gold) made less bright.
+- A few other minor changes/improvements.
+
+--------------------------------
+--------------------------------
+
+Version 0.34
+
+- Added .NET Framework 4.5.1 library.
+
+- Repeat bug fix - if Repeat setting was turned on during media playback and playback position was passed the repeat endposition, playback position was set to endposition OK but halted (with x64 system).
+- shuttle slider improved - shuttle slider and step function remain 'problematic' because media has to be playing (not paused) while performing 'frame step': the playing interferes with the frame stepping. Setting playback speed to 0 (zero) may help when using the step function.
+
+- A few minor bug fixes in the example application, for instance in the 'Message' overlay a long lived bug with more than one space between words could crash the overlay, and application wide flashing buttons are now truly synchronized. Added "All Screens" example display overlay.
+
+--------------------------------
+--------------------------------
+
+Version 0.33
+
+- Speed Settings fix - setting was not handled properly with no media playing.
+- Added easy access to display and sound control panels (for additional settings): ShowVideoSettingsPanel(), ShowAudioMixerPanel() and ShowAudioOutputPanel().
+- Added WaveAudio Recorder Class.
+
+A WaveAudio Recorder class has been added to the library, although the MCI recording options are rather limited.
+
+Basically, you create a recorder, record sound with it and save it to a file.
+Stopping a recording closes the recorder device and deletes the recording - you can save the recording by using the Pause method or using the RecorderSaveRequest event. The recorder remains available for new recordings until you delete it (with myRecorder1.Dispose();).
+
+using PVS.AVPlayer;
+
+// 1. create a recorder
+Recorder myRecorder1 = new Recorder();
+
+// 2. optional: change recorder settings - please see below
+
+// 3. start recording
+myRecorder1.Record();
+if (myRecorder1.LastError) MessageBox.Show(myRecorder1.LastErrorString);
+
+// 4. stop recording - fires the RecorderSaveRequest event that allows saving the recording
+myRecorder1.Stop();
+
+// (4.) or (if you don't want to use the Save event) you can pause the recording (before stopping) to save the recording:
+myRecorder1.Pause();
+if (myRecorder1.Length > 0) myRecorder1.Save(@"C:\MyRecordings\MyRecording.wav");
+myRecorder1.Stop();
+
+Recorder settings.
+
+The options to change the input (microphone) settings for the MCI waveaudio device are rather limited. Besides setting the number of channels (mono (1) or stereo (2)), the number of bits per sample (8 or 16 bits) and the number of samples per second (11025, 22050 or 44100 samples) there seems not much else to be adjustable*, not even the input volume level. Using the system's sound control panel to select and adjust the input device (besides channels, bits, and samplerate) may come to rescue: you can open the control panel with: myRecorder1.ShowAudioInputPanel(this);
+
+* There is, however, a way to select an input device directly: myRecorder1.InputDevice. You can get the number of available inputdevices with myRecorder1.InputDeviceCount and a description (max 31 chars) with myRecorder1.InputDeviceInfo:
+
+int n = myRecorder1.InputDeviceCount;
+if (n > 0)
+{
+    int old = myRecorder1.InputDevice; // save inputdevice #
+
+    string inputList = "";
+    for (int i = -1; i < n; i++) // -1 is (system) default input
+    {
+        myRecorder1.InputDevice = i;
+        inputList += myRecorder1.InputDeviceInfo + "\r\n";
+    }
+    MessageBox.Show(inputList);
+
+    myRecorder1.InputDevice = old; // set back inputdevice #
+}
+else MessageBox.Show("No input devices.");
+
+If you set the inputdevice other than the system default (-1), you may also be able to get input peaklevel values with myRecorder1.Level (and the RecorderLevelChanged event).
+
+--------------------------------
+--------------------------------
+
+Version 0.32
+
+- Position Slider fix - the position slider (trackbar) handled by the player could exceed the maximum value resulting in an errormessage.
+- Overlay Hold fix - setting the option Overlay Hold when the Form (the player's display is on) is not visible (e.g at startup time) would not show the overlay when the Form became visible.
+- MCI.Sendstring fix - when using a return value you had to set the maximum capacity of the return buffer (StringBuilder).
+Now you just can specify the preferred capacity, e.g. StringBuilder resultText = new Stringbuilder(256).
+- Play movie without display fix - it was possible (second time try) to play movies (sound only) without a display. However that may be considered useful, it may cause problems (because an 'internal' display is being used as a 'true' display). If you want to only hear the sound of a movie, you can use the VideoEnabled option or hide the player's display ('panel1').
+- Step (and Shuttle Slider) fix - the Step command triggered Resume events when playback was not paused.
+
+- Main Example Application:
+- Added Voice Recorder (accessible from display menu (right-click display) only) as an example on how to use the direct MCI access functions of the library to add functionality,
+- Playback Speed input box,
+- Quick access to system media settings (control panels display, sound and volume mixer),
+- Mouse scrollwheel fix (with 'Stretch Video' and others) assuming value of 120
+- and some other minor improvements.
+
+--------------------------------
+--------------------------------
+
+Version 0.31
+
+- Added library "MediaEndedNotice" event:
+the "MediaEndedNotice" event is fired together with, but just before, the "MediaEnded" event - as a main application process may use the "MediaEnded" event to play new ("next") mediafiles, other "MediaEnded" event "listeners" (e.g. Display Overlays) may receive their "MediaEnded" event AFTER the main application already started a new mediafile. And that's where things might go wrong. Therefore you can use the "MediaEnded" event as normal (and play next mediafiles) and use the "MediaEndedNotice" event with secondary running processes (like a player driven dynamic overlay (like the "SubTitles" example overlay)) just to stop the process (or any action other than playing a new mediafile);
+
+- Added library "MediaStoppedNotice" event:
+the "MediaStoppedNotice" event is fired together with, but just before, the "MediaStopped" event - please see explanation above.
+
+- Main Example Application:
+- added Display Overlay "MP3 Karaoke",
+- changed Display Overlay "Scribble" (preserve and scaling),
+- re-installed non-transparent position slider (to minimize flicker),
+- default playlist (and screencopy) now stored in user AppData folder,
+- some minor other changes.
+
+- Scheduled for next update:
+- example apps m3u playlists;
+- "Mini MP3 Player" example application.
+
+--------------------------------
+--------------------------------
+
+Version 0.3
+
+- Improved Display Overlay Handling;
+
+- The main form does not get deactivated when a Display Overlay is activated (unless you choose to do so in the overlay's activation event code);
+
+- Changing Display Overlays (e.g. when next media is played) on minimized forms sets the new overlay without (direct) activation. This prevents taskbar notifications and firing the VisibleChanged event;
+
+- Synchronization of Display Overlays with the main form when restoring from a minimized windowstate is now a built-in PVS.AVPlayer option: OverlayDelay. When a form is restored from minimized, an overlay's visibility is delayed until the main form is visible. The OverlayDelay option is by default enabled (300 ms) but can be changed with:
+
+    myPlayer1.OverlayDelay = ms; // set delay time (100-1000 ms)
+    myPlayer1.OverlayDelay = 0;  // disable overlay delay
+
+--------------------------------
+--------------------------------
+
+Version 0.28
+
+- Improved support for newer codecs/filters.
+- Some minor other improvements and fixes.
+- Updated example applications, including easy skinning trackbar example (please see FolderView example sourcecode).
+
+--------------------------------
+--------------------------------
+
+Version 0.27
+
+- Added .NET Framework 4.5 library.
+
+- The library is now compiled for 'Any CPU' and marked as (fully) CLS-compliant.
+The use of 32-bit or 64-bit library code depends on your application's 'Solution Platform' setting and the used computer/Windows version.
+
+- All library events now use .Net system generic eventhandlers.
+In existing C# projects please remove anything directly in front of the word 'EventHandler', e.g. change:
+myPlayer1.MediaEnded += new Player.MediaEndedEventHandler(myPlayer1_MediaEnded);
+to:
+myPlayer1.MediaEnded += new EventHandler(myPlayer1_MediaEnded);
+You also can use:
+myPlayer1.MediaEnded += myPlayer1_MediaEnded;
+
+- Event MediaAudioChanged has been split into two events:
+MediaAudioVolumeChanged - signals that (only) the player's audio volume has changed, and
+MediaAudioBalanceChanged - signals that (only) the player's audio balance has changed;
+You still can use the same eventhandler for both events if you like to.
+
+- VideoBounds (DisplayMode.Manual) can be set/changed anytime when a player has a display (was: when a video is playing). If you want to use it in your application like before you can use: if (myPlayer1.VideoPresent) {...};
+
+- Added methods 'PlayNext' and 'PlayPrevious' (and events 'MediaNextRequested' and 'MediaPreviousRequested') to play 'next' or 'previous' media (e.g. myPlayer1.PlayNext();). For convienience only, the methods just generate an event (if media is playing) to be handled by the main application.
+
+- Applied some minor other changes.
+
+--------------------------------
+--------------------------------
+
+Version 0.26
+
+- the LastError property has been renamed to LastErrorCode:
+the new LastError property now returns a boolean to indicate if there was a last error; to get the last error code please use the LastErrorCode property:
+if (myPlayer1.LastError) handle error, or
+if (myPlayer1.LastErrorCode != 0) handle error
+
+- the default display (the videowindow if no display was specified while playing movies) is no longer available (this means you always have to specify a display (a Form or other Control) to play movies (not needed with audio only (music)).
+You can use a Form in your project to create a 'standalone' display like the (former) default display (myPlayer1.Display = myForm2;).
+
+- fixed AudioPresent (was changed by optimization and worked only after audio setting was changed).
+
+- improved Display Overlay handling:
+Display Overlays don't obscure overlapping child windows (like a MessageBox or OpenFileDialog) anymore when activated (shown/reshown/changed) and other improvements.
+
+- the default display overlay mode has changed to OverlayMode.Video (was OverlayMode.Display).
+
+- methods and properties no longer available (their functions may be realized otherwise):
+PlayerStartInfo
+DisplaySize
+OverlayAutoScale
+OverlayEnabled
+OverlaySize
+GetMediaFileLength
+PositionSliderCustom
+PositionSliderFocus
+AudioVolumeSliderFocus
+AudioBalanceSliderFocus
+SpeedSliderFocus
+
+- events added: MediaDisplayChanged, MediaOverlayChanged, MediaOverlayModeChanged, MediaVideoEnabledChanged, MediaAudioEnabledChanged, MediaRepeatChanged, MediaVideoBoundsChanged, MediaFullScreenChanged, MediaFullScreenModeChanged.
+
+- properties renamed: DeviceID, DeviceType and DeviceName to MCIDeviceID, MCIDeviceType and MCIDeviceName.
+
+--------------------------------
+--------------------------------
+
+Version 0.25
+
+- Some errorcodes may differ from previous versions
+- The Step method (and the shuttle slider) now also signals audio file positions (position events)
+- Provides direct access to all MCI devices and functions both with and without the use of a PVS.AVPlayer Player (for special purposes only):
+
+--------
+
+Using the direct MCI access functions:
+
+Note: It is not recommended to use these options unless you really need some special MCI functions not provided by the PVS.AVPlayer Player. You might also consider using 'external' functions instead of MCI to 'get the job done', like retrieving information directly from the playing mediafile with .NET methods.
+Most of the MCI functions that are not available with the PVS.AVPlayer library are not supported by the mpegvideo type device.
+For more information about MCI functions you can start at http://msdn.microsoft.com/en-us/library/dd743572%28v=VS.85%29.aspx
+
+Some examples:
+
+--------
+
+1. Using direct MCI access functions without a PVS.AVPlayer Player:
+You can use these functions at all times, even if you have not created a PVS.AVPlayer Player.
+
+MCI.SendString("set CDAudio door open", null, IntPtr.Zero);
+MCI.SendString("set CDAudio door closed", null, IntPtr.Zero);
+
+----
+
+string myMovie = @"C:\MyMovies\MyMovie.mpg";
+StringBuilder resultText = new StringBuilder(512);
+
+int errorCode = MCI.SendString("Open \"" + myMovie + "\" type mpegvideo alias MyPlayer", null, IntPtr.Zero);
+if (errorCode == 0) errorCode = MCI.SendString("Play MyPlayer", null, IntPtr.Zero);
+if (errorCode != 0)
+{
+    MCI.GetErrorString(errorCode, resultText);
+    MessageBox.Show(resultText.ToString());
+}
+
+--------
+
+2. Using direct MCI access functions with a PVS.AVPlayer Player:
+You can only use these functions when a mediafile is playing (opened). If you're using functions that are also available with a PVS.AVPlayer Player (or some of the other functions) you may cause the Player to malfunction. Errorcodes are returned as with all other Player functions (also with myPlayer1.LastError(String)).
+
+myPlayer1.MCICommand("pause"); // example, please use the player's pause command.
+
+----
+
+myPlayer1.MCICommand("setaudio", "stream to 1"); // example, no other streams are available with 'mpegvideo'.
+if (myPlayer1.LastError != 0) MessageBox.Show(myPlayer1.LastErrorString);
+
+----
+
+string result;
+myPlayer1.MCIRequest("status", "mode", out result);
+MessageBox.Show(result);
+
+--------------------------------
+--------------------------------
+
+Version 0.24
+
+- The libraries are now signed (strong named, thanks Gernod (comments))
+- Changing size of display overlays with video- to musicfiles fixed
+- The example application now allows URLs to be added to the playlist (and a few other minor changes).
+
+--------------------------------
+--------------------------------
+
+Version 0.23
+
+- Fullscreen display on secondary screens has been fixed
+- 'Smooth' activating (show) of display overlays has been improved
+- Easy cancel (closing) of contextmenus on non-focusable display overlays has been fixed
+- Plays one or two more types of mediafiles (thanks Marco (comments))
+- The example application (version 3.3) now uses library version 0.23 and has also has been cleaned up a little bit.
+
+--------------------------------
+--------------------------------
+
+Version 0.22
+
+- Redraw of video with certain displaymodes when paused has been fixed
+- Zooming video has changed (internally)
+- An option (ResizeFormRefresh) has been added to redraw the main Form when the player's display is resized, because MCI sometimes 'spills' video on adjacent controls (to the right of the display) when doing so.
+
+--------------------------------
+--------------------------------
+
+Version 0.21
+
+This version cleans up the 'interface' (like some method names, parameters and intellisense text) a little bit more, fixes a few issues and comes compiled for different .NET versions.
+
+- All time information (previously in milliseconds) now use the TimeSpan structure
+- MediaEvent names have changed (a little bit), MediaEventArgs are replaced by (empty) EventArgs
+- The Start- and EndPosition properties are now used for the next mediafile to play only and reset to 0 after media has started playing, the start- and/or end position of the playing media can be changed with the StartPositionMedia and/or EndPositionMedia properties
+- Starting media (Play) with PlayerStartInfo no longer shows up with Visual Studio intellisense, but is still available.
+
+--------------------------------
+

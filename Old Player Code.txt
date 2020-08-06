@@ -1,0 +1,26 @@
+        'This is checking if there is currently any mp3 files being played
+        'If waveout.PlaybackState = PlaybackState.Playing Then
+        '    RadioButton6.Checked = True
+        'End If
+
+        ''This secction of code is checking if the synced song path ends in a .wav format or a .mp3 format
+        ''If the synced song ends with a .wav then it Calles the PLAYMUSIC sub and unchecks the radiobutton if it is already not done
+
+        'If Label5.Text.EndsWith(".wav") Then
+        '    PLAYMUSIC(sound)
+        '    RadioButton6.Checked = False
+        'ElseIf Label5.Text.EndsWith(".mp3") Then
+
+        '    'Here a hole lot happens here
+        '    'First it call the MusicStop sub to make sure there is no .wav files playing
+        '    'next is one of 3-4 waveout.stop's with stopes the .mp3 files from playing
+        '    'it then turnes of the raddiobutton
+        '    'calles the nAudionPlay sub
+        '    'lastly it begins to play the .mp3 file
+
+        '    MusicStop()
+        '    waveout.Stop()
+        '    RadioButton6.Checked = False
+        '    nAudioPlay()
+        '    waveout.Play()
+        'End If

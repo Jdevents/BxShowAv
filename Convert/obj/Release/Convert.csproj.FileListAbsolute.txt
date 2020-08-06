@@ -1,0 +1,6 @@
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Release\Convert.csprojResolveAssemblyReference.cache
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Release\Convert.Form1.resources
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Release\Convert.Properties.Resources.resources
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Release\Convert.csproj.GenerateResource.Cache
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Release\Convert.exe
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Release\Convert.pdb

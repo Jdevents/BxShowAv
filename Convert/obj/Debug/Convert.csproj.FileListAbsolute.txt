@@ -1,0 +1,8 @@
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\bin\Debug\Convert.exe.config
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\bin\Debug\Convert.exe
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\bin\Debug\Convert.pdb
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\bin\Debug\NAudio.dll
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Debug\Convert.csprojResolveAssemblyReference.cache
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Debug\Convert.Form1.resources
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Debug\Convert.Properties.Resources.resources
+D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Debug\Convert.csproj.GenerateResource.Cache
