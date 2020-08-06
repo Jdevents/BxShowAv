@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsVidList" targetNamespace="http://tempuri.org/dsVidList.xsd" xmlns:mstns="http://tempuri.org/dsVidList.xsd" xmlns="http://tempuri.org/dsVidList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="testdbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="testdbConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BxShowAv.My.MySettings.GlobalReference.Default.testdbConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsVidList" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dsVidList" msprop:Generator_UserDSName="dsVidList">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsVid" msprop:Generator_TableClassName="dsVidDataTable" msprop:Generator_TableVarName="tabledsVid" msprop:Generator_TablePropName="dsVid" msprop:Generator_RowDeletingName="dsVidRowDeleting" msprop:Generator_RowChangingName="dsVidRowChanging" msprop:Generator_RowEvHandlerName="dsVidRowChangeEventHandler" msprop:Generator_RowDeletedName="dsVidRowDeleted" msprop:Generator_UserTableName="dsVid" msprop:Generator_RowChangedName="dsVidRowChanged" msprop:Generator_RowEvArgName="dsVidRowChangeEvent" msprop:Generator_RowClassName="dsVidRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VidID" msprop:Generator_ColumnVarNameInTable="columnVidID" msprop:Generator_ColumnPropNameInRow="VidID" msprop:Generator_ColumnPropNameInTable="VidIDColumn" msprop:Generator_UserColumnName="VidID" type="xs:string" />
+              <xs:element name="VidName" msprop:Generator_ColumnVarNameInTable="columnVidName" msprop:Generator_ColumnPropNameInRow="VidName" msprop:Generator_ColumnPropNameInTable="VidNameColumn" msprop:Generator_UserColumnName="VidName" type="xs:string" minOccurs="0" />
+              <xs:element name="VidPath" msprop:Generator_ColumnVarNameInTable="columnVidPath" msprop:Generator_ColumnPropNameInRow="VidPath" msprop:Generator_ColumnPropNameInTable="VidPathColumn" msprop:Generator_UserColumnName="VidPath" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dsVid" />
+      <xs:field xpath="mstns:VidID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BxShowAv
+</name>
+</assembly>
+<members>
+<member name="T:BxShowAv.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BxShowAv.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BxShowAv.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:BxShowAv.My.Resources.Resources.demo">
+<summary>
+  Looks up a localized string similar to D:\icyzt\Music\demo.mp3.
+</summary>
+</member>
+<member name="T:BxShowAv.AVPlayer">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:BxShowAv.dsSongList">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:BxShowAv.dsSongList.dtSongsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BxShowAv.dsSongList.dtSongsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BxShowAv.dsSongList.dtSongsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BxShowAv.dsVidList">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:BxShowAv.dsVidList.dsVidDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BxShowAv.dsVidList.dsVidRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BxShowAv.dsVidList.dsVidRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BxShowAv.testdbDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+</members>
+</doc>
