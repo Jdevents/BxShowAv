@@ -157,12 +157,12 @@ Public Class Form2
                 Rus = False
 
             ElseIf Rus = False Then
-                txtSongtottime.Text = ""
+                songtimetotlabe.Text = ""
                 PLAYMUSIC(sound)
             End If
         ElseIf songPlay = True Then
             PLAYMUSIC(sound)
-            txtSongtottime.Text = ""
+            songtimetotlabe.Text = ""
             songPlay = False
         End If
     End Sub
@@ -956,12 +956,12 @@ Public Class Form2
     Private Sub AudioTrcTimer_Tick(sender As Object, e As EventArgs) Handles AudioTrcTimer.Tick
         Try
             TrcSong.Value = CInt(Me.AxPlayerAudio.Ctlcontrols.currentPosition)
-            txtSongCurrentTime.Text = AxPlayerAudio.Ctlcontrols.currentPositionString
-            txtSongtottime.Text = AxPlayerAudio.currentMedia.durationString
+            songtimecurlabe.Text = AxPlayerAudio.Ctlcontrols.currentPositionString
+            songtimetotlabe.Text = AxPlayerAudio.currentMedia.durationString
         Catch ex As Exception
             'This is need because it gets the shits if you close the video
             'so it just resets the text-box text to nothing
-            txtSongtottime.Text = ""
+            songtimetotlabe.Text = ""
         End Try
 
         If AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsStopped Or AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsPaused Then
