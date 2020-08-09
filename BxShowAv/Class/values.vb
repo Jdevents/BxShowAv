@@ -1,11 +1,6 @@
 ﻿Imports NAudio
 Imports NAudio.CoreAudioApi
 Public Class values
-
-
-
-
-
     Public vidFormat As String = "mp4|*.mp4|m4a|*.m4a|m4v|*.m4v|mkv|*.mkv|WMV|*.wmv|wma|*.wma|FLV|*.flv|AVI|*.avi|QuickTime|*.mov|QuickTime|*.qt"
 
     Public BASSRegEmail As String = "icyztv@gmail.com"
@@ -13,9 +8,6 @@ Public Class values
     Public RchVal As String = 0
     Public de As New MMDeviceEnumerator
     Public Device As MMDevice = de.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia)
-
-
-
     Public Sub tester()
         MsgBox("This is a test MsgBox", MsgBoxStyle.Information, "Test MsgBox")
     End Sub

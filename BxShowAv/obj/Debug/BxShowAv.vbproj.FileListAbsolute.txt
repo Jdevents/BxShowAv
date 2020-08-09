@@ -643,3 +643,4 @@ D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\obj\Debug\BxShowAv.exe
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\obj\Debug\BxShowAv.xml
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\obj\Debug\BxShowAv.pdb
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\obj\Debug\BxShowAv.Form3_Settings.resources
+D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\obj\Debug\Interop.MediaPlayer.dll

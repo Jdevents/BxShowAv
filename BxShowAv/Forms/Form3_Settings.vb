@@ -1,6 +1,14 @@
 ﻿Public Class Form3_Settings
-    Dim val As New values
+    Dim val As Butt_settings
 
+    Public Sub New(_val As Butt_settings)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        val = _val
+    End Sub
 
     Private Sub Form3_Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -16,8 +24,6 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
-        MsgBox("test")
     End Sub
 
     Private Sub Form3_Settings_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -38,11 +44,20 @@
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.DialogResult = DialogResult.OK
-
+        val.Group1button1 = songpath.Text
+        Me.Close()
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         Me.DialogResult = DialogResult.Cancel
+    End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'val.Group1button1 = songpath.Text
+        'Label1.Text = val.Group1button1
+    End Sub
+
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+        songpath.BackColor = Color.Green
     End Sub
 End Class

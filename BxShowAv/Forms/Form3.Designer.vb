@@ -19,6 +19,7 @@ Partial Class Form3
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Me.Gourp1 = New DevExpress.XtraEditors.GroupControl()
         Me.Group_Settings = New DevExpress.XtraEditors.SimpleButton()
@@ -132,6 +133,9 @@ Partial Class Form3
         Me.Group4_but3 = New DevExpress.XtraEditors.SimpleButton()
         Me.Group4_but2 = New DevExpress.XtraEditors.SimpleButton()
         Me.Group4_but1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.testplayer = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.Songname = New System.Windows.Forms.ToolTip(Me.components)
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.Gourp1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Gourp1.SuspendLayout()
         CType(Me.SeparatorControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,6 +148,7 @@ Partial Class Form3
         CType(Me.Group4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Group4.SuspendLayout()
         CType(Me.SeparatorControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.testplayer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Gourp1
@@ -370,6 +375,7 @@ Partial Class Form3
         Me.Group1_but2.Name = "Group1_but2"
         Me.Group1_but2.Size = New System.Drawing.Size(114, 32)
         Me.Group1_but2.TabIndex = 1
+        Me.Group1_but2.Tag = "2"
         '
         'Group1_but1
         '
@@ -377,6 +383,7 @@ Partial Class Form3
         Me.Group1_but1.Name = "Group1_but1"
         Me.Group1_but1.Size = New System.Drawing.Size(114, 32)
         Me.Group1_but1.TabIndex = 0
+        Me.Group1_but1.Tag = "1"
         '
         'Group2
         '
@@ -1074,11 +1081,30 @@ Partial Class Form3
         Me.Group4_but1.Size = New System.Drawing.Size(114, 32)
         Me.Group4_but1.TabIndex = 24
         '
+        'testplayer
+        '
+        Me.testplayer.Enabled = True
+        Me.testplayer.Location = New System.Drawing.Point(496, 324)
+        Me.testplayer.Name = "testplayer"
+        Me.testplayer.OcxState = CType(resources.GetObject("testplayer.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.testplayer.Size = New System.Drawing.Size(75, 23)
+        Me.testplayer.TabIndex = 2
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(518, 232)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(37, 32)
+        Me.SimpleButton1.TabIndex = 3
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1071, 688)
+        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.testplayer)
         Me.Controls.Add(Me.Group4)
         Me.Controls.Add(Me.Group3)
         Me.Controls.Add(Me.Group2)
@@ -1101,6 +1127,7 @@ Partial Class Form3
         Me.Group4.ResumeLayout(False)
         Me.Group4.PerformLayout()
         CType(Me.SeparatorControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.testplayer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1217,4 +1244,7 @@ Partial Class Form3
     Friend WithEvents Group4_but3 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Group4_but2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Group4_but1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents testplayer As AxWMPLib.AxWindowsMediaPlayer
+    Friend WithEvents Songname As ToolTip
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

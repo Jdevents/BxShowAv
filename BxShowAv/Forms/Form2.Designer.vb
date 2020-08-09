@@ -136,7 +136,6 @@ Partial Class Form2
         Me.sbExFullScreen = New DevExpress.XtraEditors.SimpleButton()
         Me.sbFullScreen = New DevExpress.XtraEditors.SimpleButton()
         Me.sbVideoBrows = New DevExpress.XtraEditors.SimpleButton()
-        Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
         Me.GroupControl7 = New DevExpress.XtraEditors.GroupControl()
         Me.SimpleButton15 = New DevExpress.XtraEditors.SimpleButton()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
@@ -160,12 +159,14 @@ Partial Class Form2
         Me.lblFaidProgress = New System.Windows.Forms.Label()
         Me.GroupControl10 = New DevExpress.XtraEditors.GroupControl()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.AxNameGet = New AxWMPLib.AxWindowsMediaPlayer()
-        Me.AxPlayerAudio = New AxWMPLib.AxWindowsMediaPlayer()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.songtimecurlabe = New System.Windows.Forms.Label()
         Me.songtimetotlabe = New System.Windows.Forms.Label()
+        Me.AxNameGet = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.AxPlayerAudio = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.testopen = New DevExpress.XtraEditors.XtraOpenFileDialog(Me.components)
+        Me.Button2 = New System.Windows.Forms.Button()
         SongIDLabel = New System.Windows.Forms.Label()
         SongNameLabel = New System.Windows.Forms.Label()
         SongPathLabel = New System.Windows.Forms.Label()
@@ -196,7 +197,6 @@ Partial Class Form2
         CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrVidBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl7.SuspendLayout()
         CType(Me.CheckEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -211,6 +211,7 @@ Partial Class Form2
         Me.GroupControl10.SuspendLayout()
         CType(Me.AxNameGet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxPlayerAudio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SongIDLabel
@@ -382,6 +383,7 @@ Partial Class Form2
         '
         'SongPathButtonEdit
         '
+        Me.BehaviorManager1.SetBehaviors(Me.SongPathButtonEdit, New DevExpress.Utils.Behaviors.Behavior() {CType(DevExpress.Utils.Behaviors.Common.OpenFileBehavior.Create(GetType(DevExpress.XtraEditors.Behaviors.OpenFileBehaviorSourceForButtonEdit), True, DevExpress.Utils.Behaviors.Common.FileIconSize.Small, Nothing, Nothing, DevExpress.Utils.Behaviors.Common.CompletionMode.FilesAndDirectories, Nothing, "mp3|*.mp3|wav|.*wav", DevExpress.Utils.CommonDialogs.FileBrowserStyle.Skinnable), DevExpress.Utils.Behaviors.Behavior)})
         Me.SongPathButtonEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.DtSongsBindingSource, "SongPath", True))
         Me.SongPathButtonEdit.Location = New System.Drawing.Point(83, 85)
         Me.SongPathButtonEdit.Name = "SongPathButtonEdit"
@@ -1285,16 +1287,6 @@ Partial Class Form2
         Me.sbVideoBrows.TabIndex = 88
         Me.sbVideoBrows.Text = "Brows Video"
         '
-        'AxWindowsMediaPlayer1
-        '
-        Me.AxWindowsMediaPlayer1.Enabled = True
-        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(7, 100)
-        Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
-        Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(416, 251)
-        Me.AxWindowsMediaPlayer1.TabIndex = 87
-        Me.AxWindowsMediaPlayer1.UseWaitCursor = True
-        '
         'GroupControl7
         '
         Me.GroupControl7.Controls.Add(Me.SimpleButton15)
@@ -1501,26 +1493,6 @@ Partial Class Form2
         Me.Label22.Text = "When Selecting A time you want to " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "dubble that selected time. For example" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "10sec" &
     " = 20sec"
         '
-        'AxNameGet
-        '
-        Me.AxNameGet.Enabled = True
-        Me.AxNameGet.Location = New System.Drawing.Point(247, 110)
-        Me.AxNameGet.Name = "AxNameGet"
-        Me.AxNameGet.OcxState = CType(resources.GetObject("AxNameGet.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxNameGet.Size = New System.Drawing.Size(75, 62)
-        Me.AxNameGet.TabIndex = 100
-        Me.AxNameGet.Visible = False
-        '
-        'AxPlayerAudio
-        '
-        Me.AxPlayerAudio.Enabled = True
-        Me.AxPlayerAudio.Location = New System.Drawing.Point(166, 110)
-        Me.AxPlayerAudio.Name = "AxPlayerAudio"
-        Me.AxPlayerAudio.OcxState = CType(resources.GetObject("AxPlayerAudio.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxPlayerAudio.Size = New System.Drawing.Size(75, 62)
-        Me.AxPlayerAudio.TabIndex = 94
-        Me.AxPlayerAudio.Visible = False
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(367, 135)
@@ -1529,12 +1501,6 @@ Partial Class Form2
         Me.Button1.TabIndex = 105
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
-        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'songtimecurlabe
         '
@@ -1556,12 +1522,56 @@ Partial Class Form2
         Me.songtimetotlabe.TabIndex = 107
         Me.songtimetotlabe.Text = "00:00:00"
         '
+        'AxNameGet
+        '
+        Me.AxNameGet.Enabled = True
+        Me.AxNameGet.Location = New System.Drawing.Point(247, 110)
+        Me.AxNameGet.Name = "AxNameGet"
+        Me.AxNameGet.OcxState = CType(resources.GetObject("AxNameGet.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxNameGet.Size = New System.Drawing.Size(75, 62)
+        Me.AxNameGet.TabIndex = 100
+        Me.AxNameGet.Visible = False
+        '
+        'AxPlayerAudio
+        '
+        Me.AxPlayerAudio.Enabled = True
+        Me.AxPlayerAudio.Location = New System.Drawing.Point(166, 110)
+        Me.AxPlayerAudio.Name = "AxPlayerAudio"
+        Me.AxPlayerAudio.OcxState = CType(resources.GetObject("AxPlayerAudio.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxPlayerAudio.Size = New System.Drawing.Size(75, 62)
+        Me.AxPlayerAudio.TabIndex = 94
+        Me.AxPlayerAudio.Visible = False
+        '
+        'AxWindowsMediaPlayer1
+        '
+        Me.AxWindowsMediaPlayer1.Enabled = True
+        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(7, 100)
+        Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
+        Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(416, 251)
+        Me.AxWindowsMediaPlayer1.TabIndex = 87
+        Me.AxWindowsMediaPlayer1.UseWaitCursor = True
+        '
+        'testopen
+        '
+        Me.testopen.FileName = "XtraOpenFileDialog1"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(449, 135)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 108
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1748, 1029)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.songtimetotlabe)
         Me.Controls.Add(Me.songtimecurlabe)
         Me.Controls.Add(Me.Button1)
@@ -1629,7 +1639,6 @@ Partial Class Form2
         CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrVidBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl7.ResumeLayout(False)
         CType(Me.CheckEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1646,6 +1655,7 @@ Partial Class Form2
         Me.GroupControl10.PerformLayout()
         CType(Me.AxNameGet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AxPlayerAudio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1790,7 +1800,8 @@ Partial Class Form2
     Friend WithEvents SimpleButton15 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton16 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Button1 As Button
-    Friend WithEvents ImageList1 As ImageList
     Friend WithEvents songtimecurlabe As Label
     Friend WithEvents songtimetotlabe As Label
+    Friend WithEvents testopen As DevExpress.XtraEditors.XtraOpenFileDialog
+    Friend WithEvents Button2 As Button
 End Class
