@@ -180,25 +180,35 @@ Partial Class Form2
         Me.Panel1.SuspendLayout()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl4.SuspendLayout()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl5.SuspendLayout()
         CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl6.SuspendLayout()
         CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrVidBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl7.SuspendLayout()
         CType(Me.CheckEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl8.SuspendLayout()
         CType(Me.TrcSong, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl9.SuspendLayout()
         CType(Me.FaidTime, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl10, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl10.SuspendLayout()
         CType(Me.AxNameGet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxPlayerAudio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -375,9 +385,6 @@ Partial Class Form2
         Me.SongPathButtonEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.DtSongsBindingSource, "SongPath", True))
         Me.SongPathButtonEdit.Location = New System.Drawing.Point(83, 85)
         Me.SongPathButtonEdit.Name = "SongPathButtonEdit"
-        '
-        '
-        '
         Me.SongPathButtonEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.SongPathButtonEdit.Properties.ReadOnly = True
         Me.SongPathButtonEdit.Size = New System.Drawing.Size(460, 20)
@@ -1135,9 +1142,6 @@ Partial Class Form2
         '
         Me.CheckEdit2.Location = New System.Drawing.Point(440, 136)
         Me.CheckEdit2.Name = "CheckEdit2"
-        '
-        '
-        '
         Me.CheckEdit2.Properties.Caption = "Mute Video Audio"
         Me.CheckEdit2.Size = New System.Drawing.Size(114, 20)
         Me.CheckEdit2.TabIndex = 103
@@ -1223,9 +1227,6 @@ Partial Class Form2
         '
         Me.CheckEdit1.Location = New System.Drawing.Point(440, 113)
         Me.CheckEdit1.Name = "CheckEdit1"
-        '
-        '
-        '
         Me.CheckEdit1.Properties.Caption = "Stop Music When Playing Video"
         Me.CheckEdit1.Size = New System.Drawing.Size(171, 20)
         Me.CheckEdit1.TabIndex = 94
@@ -1271,6 +1272,7 @@ Partial Class Form2
         Me.sbFullScreen.ImageOptions.Image = CType(resources.GetObject("sbFullScreen.ImageOptions.Image"), System.Drawing.Image)
         Me.sbFullScreen.Location = New System.Drawing.Point(542, 162)
         Me.sbFullScreen.Name = "sbFullScreen"
+        Me.sbFullScreen.Size = New System.Drawing.Size(75, 23)
         Me.sbFullScreen.TabIndex = 89
         Me.sbFullScreen.Text = "Fullscreen"
         '
@@ -1335,9 +1337,6 @@ Partial Class Form2
         '
         Me.CheckEdit3.Location = New System.Drawing.Point(95, 27)
         Me.CheckEdit3.Name = "CheckEdit3"
-        '
-        '
-        '
         Me.CheckEdit3.Properties.Caption = "Play Synced Song"
         Me.CheckEdit3.Size = New System.Drawing.Size(112, 20)
         Me.CheckEdit3.TabIndex = 96
@@ -1416,9 +1415,6 @@ Partial Class Form2
         '
         Me.CheckEdit4.Location = New System.Drawing.Point(96, 47)
         Me.CheckEdit4.Name = "CheckEdit4"
-        '
-        '
-        '
         Me.CheckEdit4.Properties.Caption = "Repeat Song"
         Me.CheckEdit4.Size = New System.Drawing.Size(87, 20)
         Me.CheckEdit4.TabIndex = 98
@@ -1612,25 +1608,42 @@ Partial Class Form2
         Me.Panel1.PerformLayout()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
+        Me.GroupControl2.PerformLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        Me.GroupControl3.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl4.ResumeLayout(False)
+        Me.GroupControl4.PerformLayout()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl5.ResumeLayout(False)
         CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl6.ResumeLayout(False)
+        Me.GroupControl6.PerformLayout()
         CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrVidBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl7.ResumeLayout(False)
         CType(Me.CheckEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl8.ResumeLayout(False)
+        Me.GroupControl8.PerformLayout()
         CType(Me.TrcSong, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl9.ResumeLayout(False)
         CType(Me.FaidTime, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl10, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl10.ResumeLayout(False)
+        Me.GroupControl10.PerformLayout()
         CType(Me.AxNameGet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AxPlayerAudio, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
