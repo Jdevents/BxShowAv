@@ -1,97 +1,163 @@
-﻿Public Class Form3
+﻿Imports System.IO
+Imports System.Xml
+Imports Newtonsoft.Json
+
+Public Class Form3
     Dim val As New Butt_settings
-    Dim songs As List(Of Strings)
+    Dim songs As New List(Of String)
+    Dim butt_data As String = Application.StartupPath & "\playlist_data\butt_data.json"
 
 
-    Dim test As String
+    Private Sub Group1_but1_Click(sender As Object, e As EventArgs) Handles Group1_but1.Click, Group1_but2.Click
 
-    Public Sub New()
+        Dim but = CType(sender, DevExpress.XtraEditors.SimpleButton)
 
-        ' This call is required by the designer.
-        InitializeComponent()
+        testplayer.URL = but.Tag
 
-        ' Add any initialization after the InitializeComponent() call.
-
-        For a As Integer = 0 To 95
-
-            songs.Add(val.b)
-            a = +1
-
-        Next
-
-    End Sub
-
-    Private Sub Group_Settings_Click(sender As Object, e As EventArgs) Handles Group_Settings.Click
-        val.Group1 = True
-        Dim From_set As New Form3_Settings(val)
-
-
-
-
-
-        For a As Integer = 0 To songs.Count - 1
-
-            MsgBox(songs(a))
-
-        Next
-
-        If From_set.ShowDialog = DialogResult.OK Then
-            'do ok things
-            test = val.Group1button1
-
-        Else
-            'user click cancel
-
-        End If
-
-        ' From_set.Dispose()
-
-    End Sub
-
-    Private Sub Group2_Settings_Click(sender As Object, e As EventArgs) Handles Group2_Settings.Click
-        Dim From_set As New Form3_Settings(val)
-        val.Group2 = True
-        From_set.ShowDialog()
-    End Sub
-
-    Private Sub Group3_Settings_Click(sender As Object, e As EventArgs) Handles Group3_Settings.Click
-        Dim From_set As New Form3_Settings(val)
-        val.Group3 = True
-        From_set.ShowDialog()
-    End Sub
-
-    Private Sub Group4_Settings_Click(sender As Object, e As EventArgs) Handles Group4_Settings.Click
-        Dim From_set As New Form3_Settings(val)
-        val.Group4 = True
-        From_set.ShowDialog()
-    End Sub
-
-    Private Sub Group1_but1_Click(sender As Object, e As EventArgs) Handles Group1_but1.Click
-        MsgBox(val.Group1button1)
-        testplayer.Ctlcontrols.play()
-        testplayer.settings.volume = 100
+        Exit Sub
     End Sub
 
     Private Sub Group1_but1_MouseHover(sender As Object, e As EventArgs) Handles Group1_but1.MouseHover
         songnametip()
-        Songname.SetToolTip(Group1_but1, val.Group1button1)
+        Songname.SetToolTip(Group1_but1, testplayer.URL)
     End Sub
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        testplayer.URL = val.Group1button1
-        testplayer.settings.autoStart = False
-        testplayer.Ctlcontrols.stop()
-        Group1_but1.Text = testplayer.currentMedia.name
+        If My.Computer.FileSystem.FileExists(butt_data) = True Then
+            load_butt()
+        End If
     End Sub
 
     Private Sub songnametip()
-        Songname.ToolTipTitle = "[" & testplayer.currentMedia.name & "]"
-        Songname.UseFading = True
-        Songname.UseAnimation = True
-        Songname.ShowAlways = True
+        'Songname.ToolTipTitle = "[" & testplayer.currentMedia.name & "]"
+        'Songname.UseFading = True
+        'Songname.UseAnimation = True
+        'Songname.ShowAlways = True
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         testplayer.Ctlcontrols.stop()
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        Dim mi = CType(sender, ToolStripMenuItem)
+        Dim cms = CType(mi.Owner, ContextMenuStrip)
+        For Each c As Control In Me.Controls
+            If TypeOf c Is DevExpress.XtraEditors.GroupControl Then
+                For Each but As Control In c.Controls
+                    If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
+                        If but.Name = cms.SourceControl.Name Then
+                            but.Text = ""
+                            but.Tag = ""
+                            Exit For
+                        End If
+                    End If
+                Next
+            End If
+        Next
+        save_butt_data()
+    End Sub
+
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+        Dim mi = CType(sender, ToolStripMenuItem)
+        Dim cms = CType(mi.Owner, ContextMenuStrip)
+        For Each c As Control In Me.Controls
+            If TypeOf c Is DevExpress.XtraEditors.GroupControl Then
+                For Each but As Control In c.Controls
+                    If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
+                        If but.Name = cms.SourceControl.Name Then
+                            'show edit form
+                            Dim form As New Form3_Settings
+                            form.SongNameTextEdit.Text = but.Text
+                            form.songpath.Text = but.Tag
+                            form.ColorPickEdit1.Color = but.BackColor
+                            If form.ShowDialog = DialogResult.OK Then
+                                but.BackColor = form.ColorPickEdit1.EditValue
+                                but.Text = form.SongNameTextEdit.Text
+                                but.Tag = form.songpath.Text
+                                Call save_butt_data()
+                            End If
+                            Exit For
+                        End If
+                    End If
+                Next
+            End If
+        Next
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        Dim mi = CType(sender, ToolStripMenuItem)
+        Dim cms = CType(mi.Owner, ContextMenuStrip)
+        For Each c As Control In Me.Controls
+            If TypeOf c Is DevExpress.XtraEditors.GroupControl Then
+                For Each but As Control In c.Controls
+                    If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
+                        If but.Name = cms.SourceControl.Name Then
+                            'show edit form
+                            Dim form As New Form3_Settings
+                            form.SongNameTextEdit.Text = but.Text
+                            form.songpath.Text = but.Tag
+                            form.ColorPickEdit1.Color = but.BackColor
+                            If form.ShowDialog = DialogResult.OK Then
+                                but.BackColor = form.ColorPickEdit1.EditValue
+                                but.Text = form.SongNameTextEdit.Text
+                                but.Tag = form.songpath.Text
+                                Call save_butt_data()
+                            End If
+                            Exit For
+                        End If
+                    End If
+                Next
+            End If
+        Next
+    End Sub
+
+    Private Sub load_butt()
+
+        Dim json As String = File.ReadAllText(butt_data)
+        Dim list As List(Of butt_list) = JsonConvert.DeserializeObject(Of List(Of butt_list))(json)
+        For a As Integer = 0 To list.Count - 1
+
+
+            For Each c As Control In Me.Controls
+                If TypeOf c Is DevExpress.XtraEditors.GroupControl Then
+                    For Each but As Control In c.Controls
+                        If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
+
+                            If but.Name = list(a).Buttname Then
+                                but.Text = list(a).Butt_text
+                                but.Tag = list(a).Path
+                                but.BackColor = System.Drawing.Color.FromName(list(a).Colour)
+
+                                Exit For
+                            End If
+                        End If
+                    Next
+                End If
+            Next
+        Next
+    End Sub
+
+    Sub save_butt_data()
+        Dim list As New List(Of butt_list)
+
+
+        For Each c As Control In Me.Controls
+            If TypeOf c Is DevExpress.XtraEditors.GroupControl Then
+                For Each but As Control In c.Controls
+                    If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
+
+                        Dim item As New butt_list
+                        item.Path = but.Tag
+                        item.Colour = but.BackColor.ToString
+                        item.Buttname = but.Name
+                        item.Butt_text = but.Text
+                        list.Add(item)
+
+                    End If
+                Next
+            End If
+        Next
+        File.WriteAllText(butt_data, JsonConvert.SerializeObject(list))
     End Sub
 End Class

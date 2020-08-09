@@ -26,6 +26,10 @@ Partial Class Form3
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SeparatorControl1 = New DevExpress.XtraEditors.SeparatorControl()
         Me.Group1_but24 = New DevExpress.XtraEditors.SimpleButton()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Group1_but23 = New DevExpress.XtraEditors.SimpleButton()
         Me.Group1_but22 = New DevExpress.XtraEditors.SimpleButton()
         Me.Group1_but21 = New DevExpress.XtraEditors.SimpleButton()
@@ -139,6 +143,7 @@ Partial Class Form3
         CType(Me.Gourp1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Gourp1.SuspendLayout()
         CType(Me.SeparatorControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.Group2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Group2.SuspendLayout()
         CType(Me.SeparatorControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -217,13 +222,39 @@ Partial Class Form3
         '
         'Group1_but24
         '
+        Me.Group1_but24.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but24.Location = New System.Drawing.Point(368, 220)
         Me.Group1_but24.Name = "Group1_but24"
         Me.Group1_but24.Size = New System.Drawing.Size(114, 32)
         Me.Group1_but24.TabIndex = 23
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.EditToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(100, 70)
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(99, 22)
+        Me.ToolStripMenuItem1.Text = "add"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(99, 22)
+        Me.ToolStripMenuItem2.Text = "clear"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(99, 22)
+        Me.EditToolStripMenuItem.Text = "edit"
+        '
         'Group1_but23
         '
+        Me.Group1_but23.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but23.Location = New System.Drawing.Point(248, 220)
         Me.Group1_but23.Name = "Group1_but23"
         Me.Group1_but23.Size = New System.Drawing.Size(114, 32)
@@ -231,6 +262,7 @@ Partial Class Form3
         '
         'Group1_but22
         '
+        Me.Group1_but22.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but22.Location = New System.Drawing.Point(125, 220)
         Me.Group1_but22.Name = "Group1_but22"
         Me.Group1_but22.Size = New System.Drawing.Size(114, 32)
@@ -238,6 +270,7 @@ Partial Class Form3
         '
         'Group1_but21
         '
+        Me.Group1_but21.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but21.Location = New System.Drawing.Point(5, 220)
         Me.Group1_but21.Name = "Group1_but21"
         Me.Group1_but21.Size = New System.Drawing.Size(114, 32)
@@ -245,6 +278,7 @@ Partial Class Form3
         '
         'Group1_but20
         '
+        Me.Group1_but20.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but20.Location = New System.Drawing.Point(368, 182)
         Me.Group1_but20.Name = "Group1_but20"
         Me.Group1_but20.Size = New System.Drawing.Size(114, 32)
@@ -252,6 +286,7 @@ Partial Class Form3
         '
         'Group1_but19
         '
+        Me.Group1_but19.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but19.Location = New System.Drawing.Point(248, 182)
         Me.Group1_but19.Name = "Group1_but19"
         Me.Group1_but19.Size = New System.Drawing.Size(114, 32)
@@ -259,6 +294,7 @@ Partial Class Form3
         '
         'Group1_but18
         '
+        Me.Group1_but18.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but18.Location = New System.Drawing.Point(125, 182)
         Me.Group1_but18.Name = "Group1_but18"
         Me.Group1_but18.Size = New System.Drawing.Size(114, 32)
@@ -266,6 +302,7 @@ Partial Class Form3
         '
         'Group1_but17
         '
+        Me.Group1_but17.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but17.Location = New System.Drawing.Point(5, 182)
         Me.Group1_but17.Name = "Group1_but17"
         Me.Group1_but17.Size = New System.Drawing.Size(114, 32)
@@ -273,6 +310,7 @@ Partial Class Form3
         '
         'Group1_but16
         '
+        Me.Group1_but16.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but16.Location = New System.Drawing.Point(368, 144)
         Me.Group1_but16.Name = "Group1_but16"
         Me.Group1_but16.Size = New System.Drawing.Size(114, 32)
@@ -280,6 +318,7 @@ Partial Class Form3
         '
         'Group1_but15
         '
+        Me.Group1_but15.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but15.Location = New System.Drawing.Point(248, 144)
         Me.Group1_but15.Name = "Group1_but15"
         Me.Group1_but15.Size = New System.Drawing.Size(114, 32)
@@ -287,6 +326,7 @@ Partial Class Form3
         '
         'Group1_but14
         '
+        Me.Group1_but14.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but14.Location = New System.Drawing.Point(125, 144)
         Me.Group1_but14.Name = "Group1_but14"
         Me.Group1_but14.Size = New System.Drawing.Size(114, 32)
@@ -294,6 +334,7 @@ Partial Class Form3
         '
         'Group1_but13
         '
+        Me.Group1_but13.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but13.Location = New System.Drawing.Point(5, 144)
         Me.Group1_but13.Name = "Group1_but13"
         Me.Group1_but13.Size = New System.Drawing.Size(114, 32)
@@ -301,6 +342,7 @@ Partial Class Form3
         '
         'Group1_but12
         '
+        Me.Group1_but12.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but12.Location = New System.Drawing.Point(368, 106)
         Me.Group1_but12.Name = "Group1_but12"
         Me.Group1_but12.Size = New System.Drawing.Size(114, 32)
@@ -308,6 +350,7 @@ Partial Class Form3
         '
         'Group1_but11
         '
+        Me.Group1_but11.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but11.Location = New System.Drawing.Point(248, 106)
         Me.Group1_but11.Name = "Group1_but11"
         Me.Group1_but11.Size = New System.Drawing.Size(114, 32)
@@ -315,6 +358,7 @@ Partial Class Form3
         '
         'Group1_but10
         '
+        Me.Group1_but10.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but10.Location = New System.Drawing.Point(125, 106)
         Me.Group1_but10.Name = "Group1_but10"
         Me.Group1_but10.Size = New System.Drawing.Size(114, 32)
@@ -322,6 +366,7 @@ Partial Class Form3
         '
         'Group1_but9
         '
+        Me.Group1_but9.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but9.Location = New System.Drawing.Point(5, 106)
         Me.Group1_but9.Name = "Group1_but9"
         Me.Group1_but9.Size = New System.Drawing.Size(114, 32)
@@ -329,6 +374,7 @@ Partial Class Form3
         '
         'Group1_but8
         '
+        Me.Group1_but8.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but8.Location = New System.Drawing.Point(368, 68)
         Me.Group1_but8.Name = "Group1_but8"
         Me.Group1_but8.Size = New System.Drawing.Size(114, 32)
@@ -336,6 +382,7 @@ Partial Class Form3
         '
         'Group1_but7
         '
+        Me.Group1_but7.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but7.Location = New System.Drawing.Point(248, 68)
         Me.Group1_but7.Name = "Group1_but7"
         Me.Group1_but7.Size = New System.Drawing.Size(114, 32)
@@ -343,6 +390,7 @@ Partial Class Form3
         '
         'Group1_but6
         '
+        Me.Group1_but6.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but6.Location = New System.Drawing.Point(125, 68)
         Me.Group1_but6.Name = "Group1_but6"
         Me.Group1_but6.Size = New System.Drawing.Size(114, 32)
@@ -350,6 +398,7 @@ Partial Class Form3
         '
         'Group1_but5
         '
+        Me.Group1_but5.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but5.Location = New System.Drawing.Point(5, 68)
         Me.Group1_but5.Name = "Group1_but5"
         Me.Group1_but5.Size = New System.Drawing.Size(114, 32)
@@ -357,6 +406,7 @@ Partial Class Form3
         '
         'Group1_but4
         '
+        Me.Group1_but4.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but4.Location = New System.Drawing.Point(368, 30)
         Me.Group1_but4.Name = "Group1_but4"
         Me.Group1_but4.Size = New System.Drawing.Size(114, 32)
@@ -364,6 +414,7 @@ Partial Class Form3
         '
         'Group1_but3
         '
+        Me.Group1_but3.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but3.Location = New System.Drawing.Point(248, 30)
         Me.Group1_but3.Name = "Group1_but3"
         Me.Group1_but3.Size = New System.Drawing.Size(114, 32)
@@ -371,19 +422,22 @@ Partial Class Form3
         '
         'Group1_but2
         '
+        Me.Group1_but2.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but2.Location = New System.Drawing.Point(125, 30)
         Me.Group1_but2.Name = "Group1_but2"
         Me.Group1_but2.Size = New System.Drawing.Size(114, 32)
         Me.Group1_but2.TabIndex = 1
-        Me.Group1_but2.Tag = "2"
+        Me.Group1_but2.Tag = ""
         '
         'Group1_but1
         '
+        Me.Group1_but1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group1_but1.Location = New System.Drawing.Point(5, 30)
+        Me.Group1_but1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D
         Me.Group1_but1.Name = "Group1_but1"
         Me.Group1_but1.Size = New System.Drawing.Size(114, 32)
         Me.Group1_but1.TabIndex = 0
-        Me.Group1_but1.Tag = "1"
+        Me.Group1_but1.Tag = ""
         '
         'Group2
         '
@@ -451,6 +505,7 @@ Partial Class Form3
         '
         'Group2_but25
         '
+        Me.Group2_but25.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but25.Location = New System.Drawing.Point(368, 220)
         Me.Group2_but25.Name = "Group2_but25"
         Me.Group2_but25.Size = New System.Drawing.Size(114, 32)
@@ -458,6 +513,7 @@ Partial Class Form3
         '
         'Group2_but24
         '
+        Me.Group2_but24.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but24.Location = New System.Drawing.Point(248, 220)
         Me.Group2_but24.Name = "Group2_but24"
         Me.Group2_but24.Size = New System.Drawing.Size(114, 32)
@@ -465,6 +521,7 @@ Partial Class Form3
         '
         'Group2_but23
         '
+        Me.Group2_but23.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but23.Location = New System.Drawing.Point(125, 220)
         Me.Group2_but23.Name = "Group2_but23"
         Me.Group2_but23.Size = New System.Drawing.Size(114, 32)
@@ -472,6 +529,7 @@ Partial Class Form3
         '
         'Group2_but22
         '
+        Me.Group2_but22.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but22.Location = New System.Drawing.Point(5, 220)
         Me.Group2_but22.Name = "Group2_but22"
         Me.Group2_but22.Size = New System.Drawing.Size(114, 32)
@@ -479,6 +537,7 @@ Partial Class Form3
         '
         'Group2_but21
         '
+        Me.Group2_but21.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but21.Location = New System.Drawing.Point(368, 182)
         Me.Group2_but21.Name = "Group2_but21"
         Me.Group2_but21.Size = New System.Drawing.Size(114, 32)
@@ -486,6 +545,7 @@ Partial Class Form3
         '
         'Group2_but20
         '
+        Me.Group2_but20.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but20.Location = New System.Drawing.Point(248, 182)
         Me.Group2_but20.Name = "Group2_but20"
         Me.Group2_but20.Size = New System.Drawing.Size(114, 32)
@@ -493,6 +553,7 @@ Partial Class Form3
         '
         'Group2_but19
         '
+        Me.Group2_but19.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but19.Location = New System.Drawing.Point(125, 182)
         Me.Group2_but19.Name = "Group2_but19"
         Me.Group2_but19.Size = New System.Drawing.Size(114, 32)
@@ -500,6 +561,7 @@ Partial Class Form3
         '
         'Group2_but18
         '
+        Me.Group2_but18.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but18.Location = New System.Drawing.Point(5, 182)
         Me.Group2_but18.Name = "Group2_but18"
         Me.Group2_but18.Size = New System.Drawing.Size(114, 32)
@@ -507,6 +569,7 @@ Partial Class Form3
         '
         'Group2_but17
         '
+        Me.Group2_but17.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but17.Location = New System.Drawing.Point(368, 144)
         Me.Group2_but17.Name = "Group2_but17"
         Me.Group2_but17.Size = New System.Drawing.Size(114, 32)
@@ -514,6 +577,7 @@ Partial Class Form3
         '
         'Group2_but16
         '
+        Me.Group2_but16.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but16.Location = New System.Drawing.Point(248, 144)
         Me.Group2_but16.Name = "Group2_but16"
         Me.Group2_but16.Size = New System.Drawing.Size(114, 32)
@@ -521,6 +585,7 @@ Partial Class Form3
         '
         'Group2_but15
         '
+        Me.Group2_but15.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but15.Location = New System.Drawing.Point(125, 144)
         Me.Group2_but15.Name = "Group2_but15"
         Me.Group2_but15.Size = New System.Drawing.Size(114, 32)
@@ -528,6 +593,7 @@ Partial Class Form3
         '
         'Group2_but14
         '
+        Me.Group2_but14.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but14.Location = New System.Drawing.Point(5, 144)
         Me.Group2_but14.Name = "Group2_but14"
         Me.Group2_but14.Size = New System.Drawing.Size(114, 32)
@@ -535,6 +601,7 @@ Partial Class Form3
         '
         'Group2_but13
         '
+        Me.Group2_but13.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but13.Location = New System.Drawing.Point(368, 106)
         Me.Group2_but13.Name = "Group2_but13"
         Me.Group2_but13.Size = New System.Drawing.Size(114, 32)
@@ -542,6 +609,7 @@ Partial Class Form3
         '
         'Group2_but12
         '
+        Me.Group2_but12.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but12.Location = New System.Drawing.Point(248, 106)
         Me.Group2_but12.Name = "Group2_but12"
         Me.Group2_but12.Size = New System.Drawing.Size(114, 32)
@@ -549,6 +617,7 @@ Partial Class Form3
         '
         'Group2_but10
         '
+        Me.Group2_but10.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but10.Location = New System.Drawing.Point(125, 106)
         Me.Group2_but10.Name = "Group2_but10"
         Me.Group2_but10.Size = New System.Drawing.Size(114, 32)
@@ -556,6 +625,7 @@ Partial Class Form3
         '
         'Group2_but9
         '
+        Me.Group2_but9.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but9.Location = New System.Drawing.Point(5, 106)
         Me.Group2_but9.Name = "Group2_but9"
         Me.Group2_but9.Size = New System.Drawing.Size(114, 32)
@@ -563,6 +633,7 @@ Partial Class Form3
         '
         'Group2_but8
         '
+        Me.Group2_but8.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but8.Location = New System.Drawing.Point(368, 68)
         Me.Group2_but8.Name = "Group2_but8"
         Me.Group2_but8.Size = New System.Drawing.Size(114, 32)
@@ -570,6 +641,7 @@ Partial Class Form3
         '
         'Group2_but7
         '
+        Me.Group2_but7.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but7.Location = New System.Drawing.Point(248, 68)
         Me.Group2_but7.Name = "Group2_but7"
         Me.Group2_but7.Size = New System.Drawing.Size(114, 32)
@@ -577,6 +649,7 @@ Partial Class Form3
         '
         'Group2_but6
         '
+        Me.Group2_but6.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but6.Location = New System.Drawing.Point(125, 68)
         Me.Group2_but6.Name = "Group2_but6"
         Me.Group2_but6.Size = New System.Drawing.Size(114, 32)
@@ -584,6 +657,7 @@ Partial Class Form3
         '
         'Group2_but5
         '
+        Me.Group2_but5.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but5.Location = New System.Drawing.Point(5, 68)
         Me.Group2_but5.Name = "Group2_but5"
         Me.Group2_but5.Size = New System.Drawing.Size(114, 32)
@@ -591,6 +665,7 @@ Partial Class Form3
         '
         'Group2_but4
         '
+        Me.Group2_but4.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but4.Location = New System.Drawing.Point(368, 30)
         Me.Group2_but4.Name = "Group2_but4"
         Me.Group2_but4.Size = New System.Drawing.Size(114, 32)
@@ -598,6 +673,7 @@ Partial Class Form3
         '
         'Group2_but3
         '
+        Me.Group2_but3.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but3.Location = New System.Drawing.Point(248, 30)
         Me.Group2_but3.Name = "Group2_but3"
         Me.Group2_but3.Size = New System.Drawing.Size(114, 32)
@@ -605,6 +681,7 @@ Partial Class Form3
         '
         'Group2_but2
         '
+        Me.Group2_but2.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but2.Location = New System.Drawing.Point(125, 30)
         Me.Group2_but2.Name = "Group2_but2"
         Me.Group2_but2.Size = New System.Drawing.Size(114, 32)
@@ -612,6 +689,7 @@ Partial Class Form3
         '
         'Group2_but1
         '
+        Me.Group2_but1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group2_but1.Location = New System.Drawing.Point(5, 30)
         Me.Group2_but1.Name = "Group2_but1"
         Me.Group2_but1.Size = New System.Drawing.Size(114, 32)
@@ -683,6 +761,7 @@ Partial Class Form3
         '
         'Group3_but25
         '
+        Me.Group3_but25.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but25.Location = New System.Drawing.Point(368, 220)
         Me.Group3_but25.Name = "Group3_but25"
         Me.Group3_but25.Size = New System.Drawing.Size(114, 32)
@@ -690,6 +769,7 @@ Partial Class Form3
         '
         'Group3_but24
         '
+        Me.Group3_but24.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but24.Location = New System.Drawing.Point(248, 220)
         Me.Group3_but24.Name = "Group3_but24"
         Me.Group3_but24.Size = New System.Drawing.Size(114, 32)
@@ -697,6 +777,7 @@ Partial Class Form3
         '
         'Group3_but23
         '
+        Me.Group3_but23.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but23.Location = New System.Drawing.Point(125, 220)
         Me.Group3_but23.Name = "Group3_but23"
         Me.Group3_but23.Size = New System.Drawing.Size(114, 32)
@@ -704,6 +785,7 @@ Partial Class Form3
         '
         'Group3_but22
         '
+        Me.Group3_but22.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but22.Location = New System.Drawing.Point(5, 220)
         Me.Group3_but22.Name = "Group3_but22"
         Me.Group3_but22.Size = New System.Drawing.Size(114, 32)
@@ -711,6 +793,7 @@ Partial Class Form3
         '
         'Group3_but21
         '
+        Me.Group3_but21.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but21.Location = New System.Drawing.Point(368, 182)
         Me.Group3_but21.Name = "Group3_but21"
         Me.Group3_but21.Size = New System.Drawing.Size(114, 32)
@@ -718,6 +801,7 @@ Partial Class Form3
         '
         'Group3_but20
         '
+        Me.Group3_but20.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but20.Location = New System.Drawing.Point(248, 182)
         Me.Group3_but20.Name = "Group3_but20"
         Me.Group3_but20.Size = New System.Drawing.Size(114, 32)
@@ -725,6 +809,7 @@ Partial Class Form3
         '
         'Group3_but19
         '
+        Me.Group3_but19.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but19.Location = New System.Drawing.Point(125, 182)
         Me.Group3_but19.Name = "Group3_but19"
         Me.Group3_but19.Size = New System.Drawing.Size(114, 32)
@@ -732,6 +817,7 @@ Partial Class Form3
         '
         'Group3_but17
         '
+        Me.Group3_but17.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but17.Location = New System.Drawing.Point(5, 182)
         Me.Group3_but17.Name = "Group3_but17"
         Me.Group3_but17.Size = New System.Drawing.Size(114, 32)
@@ -739,6 +825,7 @@ Partial Class Form3
         '
         'Group3_but16
         '
+        Me.Group3_but16.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but16.Location = New System.Drawing.Point(368, 144)
         Me.Group3_but16.Name = "Group3_but16"
         Me.Group3_but16.Size = New System.Drawing.Size(114, 32)
@@ -746,6 +833,7 @@ Partial Class Form3
         '
         'Group3_but15
         '
+        Me.Group3_but15.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but15.Location = New System.Drawing.Point(248, 144)
         Me.Group3_but15.Name = "Group3_but15"
         Me.Group3_but15.Size = New System.Drawing.Size(114, 32)
@@ -753,6 +841,7 @@ Partial Class Form3
         '
         'Group3_but14
         '
+        Me.Group3_but14.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but14.Location = New System.Drawing.Point(125, 144)
         Me.Group3_but14.Name = "Group3_but14"
         Me.Group3_but14.Size = New System.Drawing.Size(114, 32)
@@ -760,6 +849,7 @@ Partial Class Form3
         '
         'Group3_but13
         '
+        Me.Group3_but13.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but13.Location = New System.Drawing.Point(5, 144)
         Me.Group3_but13.Name = "Group3_but13"
         Me.Group3_but13.Size = New System.Drawing.Size(114, 32)
@@ -767,6 +857,7 @@ Partial Class Form3
         '
         'Group3_but12
         '
+        Me.Group3_but12.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but12.Location = New System.Drawing.Point(368, 106)
         Me.Group3_but12.Name = "Group3_but12"
         Me.Group3_but12.Size = New System.Drawing.Size(114, 32)
@@ -774,6 +865,7 @@ Partial Class Form3
         '
         'Group3_but11
         '
+        Me.Group3_but11.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but11.Location = New System.Drawing.Point(248, 106)
         Me.Group3_but11.Name = "Group3_but11"
         Me.Group3_but11.Size = New System.Drawing.Size(114, 32)
@@ -781,6 +873,7 @@ Partial Class Form3
         '
         'Group3_but10
         '
+        Me.Group3_but10.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but10.Location = New System.Drawing.Point(125, 106)
         Me.Group3_but10.Name = "Group3_but10"
         Me.Group3_but10.Size = New System.Drawing.Size(114, 32)
@@ -788,6 +881,7 @@ Partial Class Form3
         '
         'Group3_but9
         '
+        Me.Group3_but9.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but9.Location = New System.Drawing.Point(5, 106)
         Me.Group3_but9.Name = "Group3_but9"
         Me.Group3_but9.Size = New System.Drawing.Size(114, 32)
@@ -795,6 +889,7 @@ Partial Class Form3
         '
         'Group3_but8
         '
+        Me.Group3_but8.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but8.Location = New System.Drawing.Point(368, 68)
         Me.Group3_but8.Name = "Group3_but8"
         Me.Group3_but8.Size = New System.Drawing.Size(114, 32)
@@ -802,6 +897,7 @@ Partial Class Form3
         '
         'Group3_but7
         '
+        Me.Group3_but7.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but7.Location = New System.Drawing.Point(248, 68)
         Me.Group3_but7.Name = "Group3_but7"
         Me.Group3_but7.Size = New System.Drawing.Size(114, 32)
@@ -809,6 +905,7 @@ Partial Class Form3
         '
         'Group3_but6
         '
+        Me.Group3_but6.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but6.Location = New System.Drawing.Point(125, 68)
         Me.Group3_but6.Name = "Group3_but6"
         Me.Group3_but6.Size = New System.Drawing.Size(114, 32)
@@ -816,6 +913,7 @@ Partial Class Form3
         '
         'Group3_but5
         '
+        Me.Group3_but5.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but5.Location = New System.Drawing.Point(5, 68)
         Me.Group3_but5.Name = "Group3_but5"
         Me.Group3_but5.Size = New System.Drawing.Size(114, 32)
@@ -823,6 +921,7 @@ Partial Class Form3
         '
         'Group3_but4
         '
+        Me.Group3_but4.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but4.Location = New System.Drawing.Point(368, 30)
         Me.Group3_but4.Name = "Group3_but4"
         Me.Group3_but4.Size = New System.Drawing.Size(114, 32)
@@ -830,6 +929,7 @@ Partial Class Form3
         '
         'Group3_but3
         '
+        Me.Group3_but3.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but3.Location = New System.Drawing.Point(248, 30)
         Me.Group3_but3.Name = "Group3_but3"
         Me.Group3_but3.Size = New System.Drawing.Size(114, 32)
@@ -837,6 +937,7 @@ Partial Class Form3
         '
         'Group3_but2
         '
+        Me.Group3_but2.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but2.Location = New System.Drawing.Point(125, 30)
         Me.Group3_but2.Name = "Group3_but2"
         Me.Group3_but2.Size = New System.Drawing.Size(114, 32)
@@ -844,6 +945,7 @@ Partial Class Form3
         '
         'Group3_but1
         '
+        Me.Group3_but1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group3_but1.Location = New System.Drawing.Point(5, 30)
         Me.Group3_but1.Name = "Group3_but1"
         Me.Group3_but1.Size = New System.Drawing.Size(114, 32)
@@ -915,6 +1017,7 @@ Partial Class Form3
         '
         'Group4_but24
         '
+        Me.Group4_but24.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but24.Location = New System.Drawing.Point(368, 220)
         Me.Group4_but24.Name = "Group4_but24"
         Me.Group4_but24.Size = New System.Drawing.Size(114, 32)
@@ -922,6 +1025,7 @@ Partial Class Form3
         '
         'Group4_but23
         '
+        Me.Group4_but23.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but23.Location = New System.Drawing.Point(248, 220)
         Me.Group4_but23.Name = "Group4_but23"
         Me.Group4_but23.Size = New System.Drawing.Size(114, 32)
@@ -929,6 +1033,7 @@ Partial Class Form3
         '
         'Group4_but22
         '
+        Me.Group4_but22.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but22.Location = New System.Drawing.Point(125, 220)
         Me.Group4_but22.Name = "Group4_but22"
         Me.Group4_but22.Size = New System.Drawing.Size(114, 32)
@@ -936,6 +1041,7 @@ Partial Class Form3
         '
         'Group4_but21
         '
+        Me.Group4_but21.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but21.Location = New System.Drawing.Point(5, 220)
         Me.Group4_but21.Name = "Group4_but21"
         Me.Group4_but21.Size = New System.Drawing.Size(114, 32)
@@ -943,6 +1049,7 @@ Partial Class Form3
         '
         'Group4_but20
         '
+        Me.Group4_but20.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but20.Location = New System.Drawing.Point(368, 182)
         Me.Group4_but20.Name = "Group4_but20"
         Me.Group4_but20.Size = New System.Drawing.Size(114, 32)
@@ -950,6 +1057,7 @@ Partial Class Form3
         '
         'Group4_but19
         '
+        Me.Group4_but19.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but19.Location = New System.Drawing.Point(248, 182)
         Me.Group4_but19.Name = "Group4_but19"
         Me.Group4_but19.Size = New System.Drawing.Size(114, 32)
@@ -957,6 +1065,7 @@ Partial Class Form3
         '
         'Group4_but18
         '
+        Me.Group4_but18.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but18.Location = New System.Drawing.Point(125, 182)
         Me.Group4_but18.Name = "Group4_but18"
         Me.Group4_but18.Size = New System.Drawing.Size(114, 32)
@@ -964,6 +1073,7 @@ Partial Class Form3
         '
         'Group4_but17
         '
+        Me.Group4_but17.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but17.Location = New System.Drawing.Point(5, 182)
         Me.Group4_but17.Name = "Group4_but17"
         Me.Group4_but17.Size = New System.Drawing.Size(114, 32)
@@ -971,6 +1081,7 @@ Partial Class Form3
         '
         'Group4_but16
         '
+        Me.Group4_but16.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but16.Location = New System.Drawing.Point(368, 144)
         Me.Group4_but16.Name = "Group4_but16"
         Me.Group4_but16.Size = New System.Drawing.Size(114, 32)
@@ -978,6 +1089,7 @@ Partial Class Form3
         '
         'Group4_but15
         '
+        Me.Group4_but15.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but15.Location = New System.Drawing.Point(248, 144)
         Me.Group4_but15.Name = "Group4_but15"
         Me.Group4_but15.Size = New System.Drawing.Size(114, 32)
@@ -985,6 +1097,7 @@ Partial Class Form3
         '
         'Group4_but14
         '
+        Me.Group4_but14.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but14.Location = New System.Drawing.Point(125, 144)
         Me.Group4_but14.Name = "Group4_but14"
         Me.Group4_but14.Size = New System.Drawing.Size(114, 32)
@@ -992,6 +1105,7 @@ Partial Class Form3
         '
         'Group4_but13
         '
+        Me.Group4_but13.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but13.Location = New System.Drawing.Point(5, 144)
         Me.Group4_but13.Name = "Group4_but13"
         Me.Group4_but13.Size = New System.Drawing.Size(114, 32)
@@ -999,6 +1113,7 @@ Partial Class Form3
         '
         'Group4_but12
         '
+        Me.Group4_but12.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but12.Location = New System.Drawing.Point(368, 106)
         Me.Group4_but12.Name = "Group4_but12"
         Me.Group4_but12.Size = New System.Drawing.Size(114, 32)
@@ -1006,6 +1121,7 @@ Partial Class Form3
         '
         'Group4_but11
         '
+        Me.Group4_but11.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but11.Location = New System.Drawing.Point(248, 106)
         Me.Group4_but11.Name = "Group4_but11"
         Me.Group4_but11.Size = New System.Drawing.Size(114, 32)
@@ -1013,6 +1129,7 @@ Partial Class Form3
         '
         'Group4_but10
         '
+        Me.Group4_but10.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but10.Location = New System.Drawing.Point(125, 106)
         Me.Group4_but10.Name = "Group4_but10"
         Me.Group4_but10.Size = New System.Drawing.Size(114, 32)
@@ -1020,6 +1137,7 @@ Partial Class Form3
         '
         'Group4_but9
         '
+        Me.Group4_but9.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but9.Location = New System.Drawing.Point(5, 106)
         Me.Group4_but9.Name = "Group4_but9"
         Me.Group4_but9.Size = New System.Drawing.Size(114, 32)
@@ -1027,6 +1145,7 @@ Partial Class Form3
         '
         'Group4_but8
         '
+        Me.Group4_but8.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but8.Location = New System.Drawing.Point(368, 68)
         Me.Group4_but8.Name = "Group4_but8"
         Me.Group4_but8.Size = New System.Drawing.Size(114, 32)
@@ -1034,6 +1153,7 @@ Partial Class Form3
         '
         'Group4_but7
         '
+        Me.Group4_but7.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but7.Location = New System.Drawing.Point(248, 68)
         Me.Group4_but7.Name = "Group4_but7"
         Me.Group4_but7.Size = New System.Drawing.Size(114, 32)
@@ -1041,6 +1161,7 @@ Partial Class Form3
         '
         'Group4_but6
         '
+        Me.Group4_but6.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but6.Location = New System.Drawing.Point(125, 68)
         Me.Group4_but6.Name = "Group4_but6"
         Me.Group4_but6.Size = New System.Drawing.Size(114, 32)
@@ -1048,6 +1169,7 @@ Partial Class Form3
         '
         'Group4_but5
         '
+        Me.Group4_but5.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but5.Location = New System.Drawing.Point(5, 68)
         Me.Group4_but5.Name = "Group4_but5"
         Me.Group4_but5.Size = New System.Drawing.Size(114, 32)
@@ -1055,6 +1177,7 @@ Partial Class Form3
         '
         'Group4_but4
         '
+        Me.Group4_but4.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but4.Location = New System.Drawing.Point(368, 30)
         Me.Group4_but4.Name = "Group4_but4"
         Me.Group4_but4.Size = New System.Drawing.Size(114, 32)
@@ -1062,6 +1185,7 @@ Partial Class Form3
         '
         'Group4_but3
         '
+        Me.Group4_but3.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but3.Location = New System.Drawing.Point(248, 30)
         Me.Group4_but3.Name = "Group4_but3"
         Me.Group4_but3.Size = New System.Drawing.Size(114, 32)
@@ -1069,6 +1193,7 @@ Partial Class Form3
         '
         'Group4_but2
         '
+        Me.Group4_but2.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but2.Location = New System.Drawing.Point(125, 30)
         Me.Group4_but2.Name = "Group4_but2"
         Me.Group4_but2.Size = New System.Drawing.Size(114, 32)
@@ -1076,6 +1201,7 @@ Partial Class Form3
         '
         'Group4_but1
         '
+        Me.Group4_but1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Group4_but1.Location = New System.Drawing.Point(5, 30)
         Me.Group4_but1.Name = "Group4_but1"
         Me.Group4_but1.Size = New System.Drawing.Size(114, 32)
@@ -1109,12 +1235,14 @@ Partial Class Form3
         Me.Controls.Add(Me.Group3)
         Me.Controls.Add(Me.Group2)
         Me.Controls.Add(Me.Gourp1)
+        Me.IconOptions.Image = CType(resources.GetObject("Form3.IconOptions.Image"), System.Drawing.Image)
         Me.Name = "Form3"
         Me.Text = "Form3"
         CType(Me.Gourp1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Gourp1.ResumeLayout(False)
         Me.Gourp1.PerformLayout()
         CType(Me.SeparatorControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.Group2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Group2.ResumeLayout(False)
         Me.Group2.PerformLayout()
@@ -1247,4 +1375,8 @@ Partial Class Form3
     Friend WithEvents testplayer As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents Songname As ToolTip
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
 End Class

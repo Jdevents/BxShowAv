@@ -13,6 +13,7 @@ Imports Microsoft.VisualBasic.Devices
 Imports NAudio.Wave
 Imports WMPLib
 Imports System.ComponentModel
+Imports Newtonsoft.Json
 
 Public Class Form2
     Private myXmlFilePath = myXmlFilePath
@@ -1184,6 +1185,10 @@ Public Class Form2
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
     End Sub
 
