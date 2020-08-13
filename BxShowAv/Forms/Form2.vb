@@ -1218,26 +1218,6 @@ Public Class Form2
         LableVolStat.Text = GetVol() & "%"
         TrackBar1.Value = GetVol()
     End Sub
-
-
-    'Private Sub Button1_Click(sender As Object, e As EventArgs)
-    '    ScanSoundCards()
-    'End Sub
-    'Private Sub ScanSoundCards()
-
-    '    ComboBox1.Items.Clear()
-
-    '    For i As Integer = 0 To NAudio.Wave.WaveIn.DeviceCount - 1
-    '        ComboBox1.Items.Add(NAudio.Wave.WaveIn.GetCapabilities(i).ProductName)
-    '    Next
-
-    '    If ComboBox1.Items.Count > 0 Then
-    '        ComboBox1.SelectedIndex = 0
-    '    Else
-    '        MessageBox.Show("ERROR: no recording devices available")
-    '    End If
-    'End Sub
-
     Sub saveXML()
         'This sub is for Saving the Selected/opened XML file within the DsSongList DataGrid
         'Fist it closes the Playlist Viewer if it is not already closed
@@ -1299,16 +1279,6 @@ Public Class Form2
             MsgBox("c73", MsgBoxStyle.Critical, "Error")
             MsgBox("Could not save", MsgBoxStyle.Critical, MsgBoxStyle.OkOnly)
         End Try
-
-        'Try
-        '    Dim txtXMLFilePath As String = lbCurrentPlaylist.Text
-        '    lblstatus.Text = ""
-        '    DsSongList.WriteXml(txtXMLFilePath)
-        '    MessageBox.Show("XML data saved to " + txtXMLFilePath)
-        'Catch ex As Exception
-        '    MsgBox("c73", MsgBoxStyle.Critical, "Error")
-        '    MsgBox("Could not save", MsgBoxStyle.Critical, MsgBoxStyle.OkOnly)
-        'End Try
     End Sub
     Sub Pcheck()
         'Checks to see if the Playlsit_View boolean OPas is true

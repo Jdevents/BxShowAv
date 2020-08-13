@@ -21,7 +21,7 @@ Partial Class Form3
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
-        Me.Gourp1 = New DevExpress.XtraEditors.GroupControl()
+        Me.Group1 = New DevExpress.XtraEditors.GroupControl()
         Me.Group1_but24 = New DevExpress.XtraEditors.SimpleButton()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -130,8 +130,19 @@ Partial Class Form3
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
-        CType(Me.Gourp1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Gourp1.SuspendLayout()
+        Me.Clear_all_panel = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.SimpleButton8 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton7 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton6 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        CType(Me.Group1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Group1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.Group2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Group2.SuspendLayout()
@@ -140,39 +151,40 @@ Partial Class Form3
         CType(Me.Group4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Group4.SuspendLayout()
         CType(Me.testplayer, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Clear_all_panel.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Gourp1
+        'Group1
         '
-        Me.Gourp1.Controls.Add(Me.Group1_but24)
-        Me.Gourp1.Controls.Add(Me.Group1_but23)
-        Me.Gourp1.Controls.Add(Me.Group1_but22)
-        Me.Gourp1.Controls.Add(Me.Group1_but21)
-        Me.Gourp1.Controls.Add(Me.Group1_but20)
-        Me.Gourp1.Controls.Add(Me.Group1_but19)
-        Me.Gourp1.Controls.Add(Me.Group1_but18)
-        Me.Gourp1.Controls.Add(Me.Group1_but17)
-        Me.Gourp1.Controls.Add(Me.Group1_but16)
-        Me.Gourp1.Controls.Add(Me.Group1_but15)
-        Me.Gourp1.Controls.Add(Me.Group1_but14)
-        Me.Gourp1.Controls.Add(Me.Group1_but13)
-        Me.Gourp1.Controls.Add(Me.Group1_but12)
-        Me.Gourp1.Controls.Add(Me.Group1_but11)
-        Me.Gourp1.Controls.Add(Me.Group1_but10)
-        Me.Gourp1.Controls.Add(Me.Group1_but9)
-        Me.Gourp1.Controls.Add(Me.Group1_but8)
-        Me.Gourp1.Controls.Add(Me.Group1_but7)
-        Me.Gourp1.Controls.Add(Me.Group1_but6)
-        Me.Gourp1.Controls.Add(Me.Group1_but5)
-        Me.Gourp1.Controls.Add(Me.Group1_but4)
-        Me.Gourp1.Controls.Add(Me.Group1_but3)
-        Me.Gourp1.Controls.Add(Me.Group1_but2)
-        Me.Gourp1.Controls.Add(Me.Group1_but1)
-        Me.Gourp1.Location = New System.Drawing.Point(12, 12)
-        Me.Gourp1.Name = "Gourp1"
-        Me.Gourp1.Size = New System.Drawing.Size(487, 263)
-        Me.Gourp1.TabIndex = 0
-        Me.Gourp1.Text = "Group &1"
+        Me.Group1.Controls.Add(Me.Group1_but24)
+        Me.Group1.Controls.Add(Me.Group1_but23)
+        Me.Group1.Controls.Add(Me.Group1_but22)
+        Me.Group1.Controls.Add(Me.Group1_but21)
+        Me.Group1.Controls.Add(Me.Group1_but20)
+        Me.Group1.Controls.Add(Me.Group1_but19)
+        Me.Group1.Controls.Add(Me.Group1_but18)
+        Me.Group1.Controls.Add(Me.Group1_but17)
+        Me.Group1.Controls.Add(Me.Group1_but16)
+        Me.Group1.Controls.Add(Me.Group1_but15)
+        Me.Group1.Controls.Add(Me.Group1_but14)
+        Me.Group1.Controls.Add(Me.Group1_but13)
+        Me.Group1.Controls.Add(Me.Group1_but12)
+        Me.Group1.Controls.Add(Me.Group1_but11)
+        Me.Group1.Controls.Add(Me.Group1_but10)
+        Me.Group1.Controls.Add(Me.Group1_but9)
+        Me.Group1.Controls.Add(Me.Group1_but8)
+        Me.Group1.Controls.Add(Me.Group1_but7)
+        Me.Group1.Controls.Add(Me.Group1_but6)
+        Me.Group1.Controls.Add(Me.Group1_but5)
+        Me.Group1.Controls.Add(Me.Group1_but4)
+        Me.Group1.Controls.Add(Me.Group1_but3)
+        Me.Group1.Controls.Add(Me.Group1_but2)
+        Me.Group1.Controls.Add(Me.Group1_but1)
+        Me.Group1.Location = New System.Drawing.Point(12, 12)
+        Me.Group1.Name = "Group1"
+        Me.Group1.Size = New System.Drawing.Size(487, 263)
+        Me.Group1.TabIndex = 0
+        Me.Group1.Text = "Group &1"
         '
         'Group1_but24
         '
@@ -1105,11 +1117,125 @@ Partial Class Form3
         Me.SimpleButton3.TabIndex = 5
         Me.SimpleButton3.Text = "Clear All"
         '
+        'Clear_all_panel
+        '
+        Me.Clear_all_panel.Controls.Add(Me.Label5)
+        Me.Clear_all_panel.Controls.Add(Me.SimpleButton8)
+        Me.Clear_all_panel.Controls.Add(Me.SimpleButton7)
+        Me.Clear_all_panel.Controls.Add(Me.SimpleButton6)
+        Me.Clear_all_panel.Controls.Add(Me.SimpleButton5)
+        Me.Clear_all_panel.Controls.Add(Me.SimpleButton4)
+        Me.Clear_all_panel.Controls.Add(Me.Label4)
+        Me.Clear_all_panel.Controls.Add(Me.Label3)
+        Me.Clear_all_panel.Controls.Add(Me.Label2)
+        Me.Clear_all_panel.Controls.Add(Me.Label1)
+        Me.Clear_all_panel.Location = New System.Drawing.Point(380, 232)
+        Me.Clear_all_panel.Name = "Clear_all_panel"
+        Me.Clear_all_panel.Size = New System.Drawing.Size(311, 192)
+        Me.Clear_all_panel.TabIndex = 6
+        Me.Clear_all_panel.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(121, 70)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(79, 19)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Clear All"
+        '
+        'SimpleButton8
+        '
+        Me.SimpleButton8.ImageOptions.Image = CType(resources.GetObject("SimpleButton8.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton8.Location = New System.Drawing.Point(107, 90)
+        Me.SimpleButton8.Name = "SimpleButton8"
+        Me.SimpleButton8.Size = New System.Drawing.Size(107, 21)
+        Me.SimpleButton8.TabIndex = 11
+        Me.SimpleButton8.Text = "Clear All"
+        '
+        'SimpleButton7
+        '
+        Me.SimpleButton7.ImageOptions.Image = CType(resources.GetObject("SimpleButton7.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton7.Location = New System.Drawing.Point(192, 160)
+        Me.SimpleButton7.Name = "SimpleButton7"
+        Me.SimpleButton7.Size = New System.Drawing.Size(107, 23)
+        Me.SimpleButton7.TabIndex = 10
+        Me.SimpleButton7.Text = "Clear Group &3"
+        '
+        'SimpleButton6
+        '
+        Me.SimpleButton6.ImageOptions.Image = CType(resources.GetObject("SimpleButton6.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton6.Location = New System.Drawing.Point(192, 35)
+        Me.SimpleButton6.Name = "SimpleButton6"
+        Me.SimpleButton6.Size = New System.Drawing.Size(107, 23)
+        Me.SimpleButton6.TabIndex = 9
+        Me.SimpleButton6.Text = "Clear Group &4"
+        '
+        'SimpleButton5
+        '
+        Me.SimpleButton5.ImageOptions.Image = CType(resources.GetObject("SimpleButton5.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton5.Location = New System.Drawing.Point(7, 38)
+        Me.SimpleButton5.Name = "SimpleButton5"
+        Me.SimpleButton5.Size = New System.Drawing.Size(107, 23)
+        Me.SimpleButton5.TabIndex = 8
+        Me.SimpleButton5.Text = "Clear Group &1"
+        '
+        'SimpleButton4
+        '
+        Me.SimpleButton4.ImageOptions.Image = CType(resources.GetObject("SimpleButton4.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton4.Location = New System.Drawing.Point(7, 160)
+        Me.SimpleButton4.Name = "SimpleButton4"
+        Me.SimpleButton4.Size = New System.Drawing.Size(107, 23)
+        Me.SimpleButton4.TabIndex = 7
+        Me.SimpleButton4.Text = "Clear Group &2"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(187, 13)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(121, 19)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Clear Group 4"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(187, 135)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(121, 19)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Clear Group 3"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 135)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(121, 19)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Clear Group 2"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 13)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(121, 19)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Clear Group 1"
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1071, 608)
+        Me.Controls.Add(Me.Clear_all_panel)
         Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.SimpleButton1)
@@ -1117,12 +1243,12 @@ Partial Class Form3
         Me.Controls.Add(Me.Group4)
         Me.Controls.Add(Me.Group3)
         Me.Controls.Add(Me.Group2)
-        Me.Controls.Add(Me.Gourp1)
+        Me.Controls.Add(Me.Group1)
         Me.IconOptions.Image = CType(resources.GetObject("Form3.IconOptions.Image"), System.Drawing.Image)
         Me.Name = "Form3"
         Me.Text = "Button Matrix"
-        CType(Me.Gourp1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Gourp1.ResumeLayout(False)
+        CType(Me.Group1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Group1.ResumeLayout(False)
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.Group2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Group2.ResumeLayout(False)
@@ -1131,11 +1257,13 @@ Partial Class Form3
         CType(Me.Group4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Group4.ResumeLayout(False)
         CType(Me.testplayer, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Clear_all_panel.ResumeLayout(False)
+        Me.Clear_all_panel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Gourp1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents Group1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents Group2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents Group3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents Group4 As DevExpress.XtraEditors.GroupControl
@@ -1244,4 +1372,15 @@ Partial Class Form3
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Clear_all_panel As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents SimpleButton8 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton7 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class

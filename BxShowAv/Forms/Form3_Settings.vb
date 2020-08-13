@@ -3,7 +3,7 @@ Imports DevExpress.XtraEditors.Controls
 
 Public Class Form3_Settings
     Dim val As butt_list
-    Dim placeholder As String
+    Public placeholder As String
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Me.DialogResult = DialogResult.OK
         AxNameGet.Ctlcontrols.stop()
@@ -18,17 +18,57 @@ Public Class Form3_Settings
 
     Private Sub songpath_EditValueChanged(sender As Object, e As EventArgs) Handles songpath.EditValueChanged
 
-        If songpath.Text = "" Then
-            SongNameTextEdit.Text = SongNameTextEdit.Text
+
+        If songpath.Text = Nothing Then
             placeholder = songpath.Text
-            SimpleButton4.Enabled = False
-        Else
-            SongNameTextEdit.Text = SongNameTextEdit.Text
-            placeholder = songpath.Text
-            AxNameGet.URL = placeholder
-            AxNameGet.Ctlcontrols.stop()
+        ElseIf songpath.Text = placeholder Then
+            If SongNameTextEdit.Text = val.Butt_text Then
+
+                AxNameGet.URL = val.Path
+                AxNameGet.Ctlcontrols.stop()
+                SongNameTextEdit.Text = AxNameGet.currentMedia.name.ToString
+                Label5.Text = "True"
+                Label5.ForeColor = Color.Green
+                SimpleButton4.Enabled = True
+                SimpleButton3.Enabled = True
+
+            Else
+
+                AxNameGet.URL = val.Path
+                AxNameGet.Ctlcontrols.stop()
+                Label5.Text = "True"
+                Label5.ForeColor = Color.Green
+                SimpleButton4.Enabled = True
+                SimpleButton3.Enabled = True
+
+            End If
         End If
 
+
+        'If songpath.Text = Nothing Then
+        '    SongNameTextEdit.Text = SongNameTextEdit.Text
+        '    placeholder = songpath.Text
+        '    SimpleButton4.Enabled = False
+        'Else
+        '    SongNameTextEdit.Text = SongNameTextEdit.Text
+        '    placeholder = songpath.Text
+        '    AxNameGet.URL = placeholder
+        '    AxNameGet.Ctlcontrols.stop()
+        '    SongNameTextEdit.Text = AxNameGet.currentMedia.name.ToString
+        '    Label5.Text = "True"
+        '    Label5.ForeColor = Color.Green
+        '    SimpleButton4.Enabled = True
+        '    SimpleButton3.Enabled = True
+
+        '    If SongNameTextEdit.Text Is val.Butt_text Then
+
+        '        Label5.Text = "True"
+        '        Label5.ForeColor = Color.Green
+        '        SimpleButton4.Enabled = True
+        '        SimpleButton3.Enabled = True
+
+        '    End If
+        'End If
     End Sub
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
@@ -55,20 +95,21 @@ Public Class Form3_Settings
     End Sub
 
     Private Sub namegetplayer_CurrentItemChange(sender As Object, e As AxWMPLib._WMPOCXEvents_CurrentItemChangeEvent) Handles AxNameGet.CurrentItemChange
-        '    SongNameTextEdit.Text = AxNameGet.currentMedia.name.ToString
         If val.Butt_text IsNot SongNameTextEdit.Text Then
             SongNameTextEdit.Text = AxNameGet.currentMedia.name.ToString
         Else
             Label5.Text = "True"
             Label5.ForeColor = Color.Green
             SimpleButton4.Enabled = True
-            SimpleButton4.Enabled = True
+            SimpleButton3.Enabled = True
+            SongNameTextEdit.Text = AxNameGet.currentMedia.name.ToString
         End If
-
-
     End Sub
     Private Sub Form3_Settings_Load(sender As Object, e As EventArgs) Handles Me.Load
         AxNameGet.settings.volume = 0
+
+        MsgBox(placeholder)
+
         If placeholder = Nothing Then
             Label5.Text = "False"
             Label5.ForeColor = Color.Red
@@ -79,10 +120,6 @@ Public Class Form3_Settings
             Label5.ForeColor = Color.Green
             SimpleButton4.Enabled = True
             SimpleButton3.Enabled = True
-        End If
-
-        If songpath.Text = "" Then
-
         End If
 
     End Sub

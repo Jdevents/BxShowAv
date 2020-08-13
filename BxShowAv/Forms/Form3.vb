@@ -29,10 +29,6 @@ Public Class Form3
     End Sub
 #End Region
 
-    Private Sub Group1_but1_MouseHover(sender As Object, e As EventArgs) Handles Group1_but1.MouseHover
-
-    End Sub
-
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If My.Computer.FileSystem.FileExists(butt_data) = True Then
             load_butt()
@@ -83,6 +79,7 @@ Public Class Form3
                             Dim form As New Form3_Settings
                             form.SongNameTextEdit.Text = but.Text
                             form.songpath.Text = but.Tag
+                            form.placeholder = but.Text
                             If form.ShowDialog = DialogResult.OK Then
                                 but.Text = form.SongNameTextEdit.Text
                                 but.Tag = form.songpath.Text
@@ -176,9 +173,45 @@ Public Class Form3
         Next
         File.WriteAllText(butt_data, JsonConvert.SerializeObject(list))
     End Sub
-
+#Region "Clear Region"
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
-        If MsgBox("clear all?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.No Then Exit Sub
+        If Clear_all_panel.Visible = False Then
+            Clear_all_panel.Visible = True
+        ElseIf Clear_all_panel.Visible = True Then
+            Clear_all_panel.Visible = False
+        End If
+
+        If testplayer.playState = WMPLib.WMPPlayState.wmppsPlaying Then
+            testplayer.Ctlcontrols.stop()
+        End If
+
+    End Sub
+
+    Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
+        If MsgBox("Clear Group 1?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.No Then Exit Sub
+
+        For Each c As Control In Me.Controls
+            If c Is Group1 Then
+                For Each but As Control In c.Controls
+                    If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
+
+                        Dim but1 As DevExpress.XtraEditors.SimpleButton
+                        but1 = CType(but, DevExpress.XtraEditors.SimpleButton)
+
+                        but.Text = ""
+                        but.Tag = ""
+                        but1.ToolTip = ""
+                        but1.ToolTipTitle = ""
+
+                    End If
+                Next
+            End If
+        Next
+        save_butt_data()
+    End Sub
+
+    Private Sub SimpleButton8_Click(sender As Object, e As EventArgs) Handles SimpleButton8.Click
+        If MsgBox("Clear All?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.No Then Exit Sub
 
         For Each c As Control In Me.Controls
             If TypeOf c Is DevExpress.XtraEditors.GroupControl Then
@@ -199,4 +232,105 @@ Public Class Form3
         Next
         save_butt_data()
     End Sub
+
+    Private Sub SimpleButton4_Click(sender As Object, e As EventArgs) Handles SimpleButton4.Click
+        If MsgBox("Clear Group 2?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.No Then Exit Sub
+
+        For Each c As Control In Me.Controls
+            If c Is Group2 Then
+                For Each but As Control In c.Controls
+                    If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
+
+                        Dim but1 As DevExpress.XtraEditors.SimpleButton
+                        but1 = CType(but, DevExpress.XtraEditors.SimpleButton)
+
+                        but.Text = ""
+                        but.Tag = ""
+                        but1.ToolTip = ""
+                        but1.ToolTipTitle = ""
+
+                    End If
+                Next
+            End If
+        Next
+        save_butt_data()
+    End Sub
+
+    Private Sub SimpleButton7_Click(sender As Object, e As EventArgs) Handles SimpleButton7.Click
+        If MsgBox("Clear Group 3?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.No Then Exit Sub
+
+        For Each c As Control In Me.Controls
+            If c Is Group3 Then
+                For Each but As Control In c.Controls
+                    If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
+
+                        Dim but1 As DevExpress.XtraEditors.SimpleButton
+                        but1 = CType(but, DevExpress.XtraEditors.SimpleButton)
+
+                        but.Text = ""
+                        but.Tag = ""
+                        but1.ToolTip = ""
+                        but1.ToolTipTitle = ""
+
+                    End If
+                Next
+            End If
+        Next
+        save_butt_data()
+    End Sub
+
+    Private Sub SimpleButton6_Click(sender As Object, e As EventArgs) Handles SimpleButton6.Click
+        If MsgBox("Clear Group 4?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.No Then Exit Sub
+
+        For Each c As Control In Me.Controls
+            If c Is Group4 Then
+                For Each but As Control In c.Controls
+                    If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
+
+                        Dim but1 As DevExpress.XtraEditors.SimpleButton
+                        but1 = CType(but, DevExpress.XtraEditors.SimpleButton)
+
+                        but.Text = ""
+                        but.Tag = ""
+                        but1.ToolTip = ""
+                        but1.ToolTipTitle = ""
+
+                    End If
+                Next
+            End If
+        Next
+        save_butt_data()
+    End Sub
+#End Region
+#Region "Close Clear panel"
+    Private Sub Form3_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
+        If Clear_all_panel.Visible = True Then
+            Clear_all_panel.Visible = False
+        End If
+    End Sub
+
+    Private Sub Group3_MouseClick(sender As Object, e As MouseEventArgs) Handles Group3.MouseClick
+        If Clear_all_panel.Visible = True Then
+            Clear_all_panel.Visible = False
+        End If
+    End Sub
+
+    Private Sub Gourp1_MouseClick(sender As Object, e As MouseEventArgs) Handles Group1.MouseClick
+        If Clear_all_panel.Visible = True Then
+            Clear_all_panel.Visible = False
+        End If
+    End Sub
+
+    Private Sub Group2_MouseClick(sender As Object, e As MouseEventArgs) Handles Group2.MouseClick
+        If Clear_all_panel.Visible = True Then
+            Clear_all_panel.Visible = False
+        End If
+    End Sub
+
+    Private Sub Group4_MouseClick(sender As Object, e As MouseEventArgs) Handles Group4.MouseClick
+        If Clear_all_panel.Visible = True Then
+            Clear_all_panel.Visible = False
+        End If
+    End Sub
+#End Region
 End Class
