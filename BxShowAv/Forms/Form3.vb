@@ -173,7 +173,7 @@ Public Class Form3
         Next
         File.WriteAllText(butt_data, JsonConvert.SerializeObject(list))
     End Sub
-#Region "Clear Region"
+#Region "Clear groups"
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
         If Clear_all_panel.Visible = False Then
             Clear_all_panel.Visible = True
