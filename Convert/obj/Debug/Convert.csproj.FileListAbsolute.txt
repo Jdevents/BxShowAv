@@ -6,3 +6,10 @@ D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Debug\Conver
 D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Debug\Convert.Form1.resources
 D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Debug\Convert.Properties.Resources.resources
 D:\icyzt\Documents\Visual Studio 2015\Projects\BxShowAv\Convert\obj\Debug\Convert.csproj.GenerateResource.Cache
+D:\icyzt\Documents\GitHub\BxShowAv\Convert\obj\Debug\Convert.csprojAssemblyReference.cache
+D:\icyzt\Documents\GitHub\BxShowAv\Convert\obj\Debug\Convert.Form1.resources
+D:\icyzt\Documents\GitHub\BxShowAv\Convert\obj\Debug\Convert.Properties.Resources.resources
+D:\icyzt\Documents\GitHub\BxShowAv\Convert\obj\Debug\Convert.csproj.GenerateResource.cache
+D:\icyzt\Documents\GitHub\BxShowAv\Convert\obj\Debug\Convert.csproj.CoreCompileInputs.cache
+D:\icyzt\Documents\GitHub\BxShowAv\Convert\obj\Debug\Convert.exe
+D:\icyzt\Documents\GitHub\BxShowAv\Convert\obj\Debug\Convert.pdb
