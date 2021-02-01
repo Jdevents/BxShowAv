@@ -474,7 +474,6 @@ D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\BxShowAv.exe
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\BxShowAv.pdb
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\BxShowAv.xml
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\AxInterop.WMPLib.dll
-D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\ClassLibrary1.dll
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\DevExpress.Data.v20.1.dll
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\DevExpress.Diagram.v20.1.Core.dll
