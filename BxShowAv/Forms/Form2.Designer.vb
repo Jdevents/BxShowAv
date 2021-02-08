@@ -166,8 +166,6 @@ Partial Class Form2
         Me.AxNameGet = New AxWMPLib.AxWindowsMediaPlayer()
         Me.AxPlayerAudio = New AxWMPLib.AxWindowsMediaPlayer()
         Me.testopen = New DevExpress.XtraEditors.XtraOpenFileDialog(Me.components)
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         SongIDLabel = New System.Windows.Forms.Label()
         SongNameLabel = New System.Windows.Forms.Label()
         SongPathLabel = New System.Windows.Forms.Label()
@@ -1506,12 +1504,12 @@ Partial Class Form2
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(367, 135)
+        Me.Button1.Location = New System.Drawing.Point(486, 145)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 105
         Me.Button1.Tag = "123"
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "But Matrix"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'songtimecurlabe
@@ -1558,34 +1556,12 @@ Partial Class Form2
         '
         Me.testopen.FileName = "XtraOpenFileDialog1"
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(449, 135)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 108
-        Me.Button2.Tag = "456"
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(468, 192)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 109
-        Me.Button3.Tag = "789"
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1748, 1029)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.songtimetotlabe)
         Me.Controls.Add(Me.songtimecurlabe)
         Me.Controls.Add(Me.Button1)
@@ -1817,6 +1793,4 @@ Partial Class Form2
     Friend WithEvents songtimecurlabe As Label
     Friend WithEvents songtimetotlabe As Label
     Friend WithEvents testopen As DevExpress.XtraEditors.XtraOpenFileDialog
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
 End Class
