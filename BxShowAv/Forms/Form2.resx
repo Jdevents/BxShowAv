@@ -734,8 +734,16 @@
   <metadata name="testopen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="SimpleButton17.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJpJREFUOE9j
+        oBZwAuIACJMoAFIL0gMHK4HYEMIkCoDUgvTAwWIoTQpA0UNVA5SBWBeILYDYB4hZgRjkZzsgRgY4DWgB
+        4jdAvB6IPwLxLSBeDcTfgTgEiGEArwGbIUyGOUC8EMJkWAPEIDkYwGvAMgiTYSoUgwBIjD4GgAJRB8Jk
+        0IBiEACJgeRgAKcBxALqGkBxUqY4M5EJGBgAupElQvlG1csAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>86</value>
+    <value>83</value>
   </metadata>
   <data name="Form2.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -160,12 +160,12 @@ Partial Class Form2
         Me.lblFaidProgress = New System.Windows.Forms.Label()
         Me.GroupControl10 = New DevExpress.XtraEditors.GroupControl()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.songtimecurlabe = New System.Windows.Forms.Label()
         Me.songtimetotlabe = New System.Windows.Forms.Label()
         Me.AxNameGet = New AxWMPLib.AxWindowsMediaPlayer()
         Me.AxPlayerAudio = New AxWMPLib.AxWindowsMediaPlayer()
         Me.testopen = New DevExpress.XtraEditors.XtraOpenFileDialog(Me.components)
+        Me.SimpleButton17 = New DevExpress.XtraEditors.SimpleButton()
         SongIDLabel = New System.Windows.Forms.Label()
         SongNameLabel = New System.Windows.Forms.Label()
         SongPathLabel = New System.Windows.Forms.Label()
@@ -368,7 +368,7 @@ Partial Class Form2
         Me.SongIDLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DtSongsBindingSource, "SongID", True))
         Me.SongIDLabel1.Location = New System.Drawing.Point(83, 36)
         Me.SongIDLabel1.Name = "SongIDLabel1"
-        Me.SongIDLabel1.Size = New System.Drawing.Size(100, 23)
+        Me.SongIDLabel1.Size = New System.Drawing.Size(44, 17)
         Me.SongIDLabel1.TabIndex = 2
         Me.SongIDLabel1.Text = "Label1"
         '
@@ -1502,16 +1502,6 @@ Partial Class Form2
         Me.Label22.Text = "When Selecting A time you want to " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "dubble that selected time. For example" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "10sec" &
     " = 20sec"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(486, 145)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 105
-        Me.Button1.Tag = "123"
-        Me.Button1.Text = "But Matrix"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'songtimecurlabe
         '
         Me.songtimecurlabe.AutoSize = True
@@ -1556,15 +1546,24 @@ Partial Class Form2
         '
         Me.testopen.FileName = "XtraOpenFileDialog1"
         '
+        'SimpleButton17
+        '
+        Me.SimpleButton17.ImageOptions.Image = CType(resources.GetObject("SimpleButton17.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton17.Location = New System.Drawing.Point(460, 143)
+        Me.SimpleButton17.Name = "SimpleButton17"
+        Me.SimpleButton17.Size = New System.Drawing.Size(101, 25)
+        Me.SimpleButton17.TabIndex = 99
+        Me.SimpleButton17.Text = "Button Matrix"
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1748, 1029)
+        Me.Controls.Add(Me.SimpleButton17)
         Me.Controls.Add(Me.songtimetotlabe)
         Me.Controls.Add(Me.songtimecurlabe)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupControl10)
         Me.Controls.Add(Me.GroupControl9)
         Me.Controls.Add(Me.RadioButton5)
@@ -1789,8 +1788,8 @@ Partial Class Form2
     Friend WithEvents Label22 As Label
     Friend WithEvents SimpleButton15 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton16 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents Button1 As Button
     Friend WithEvents songtimecurlabe As Label
     Friend WithEvents songtimetotlabe As Label
     Friend WithEvents testopen As DevExpress.XtraEditors.XtraOpenFileDialog
+    Friend WithEvents SimpleButton17 As DevExpress.XtraEditors.SimpleButton
 End Class

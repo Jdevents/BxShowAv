@@ -984,7 +984,6 @@ Public Class Form2
         If AxPlayerAudio.openState = WMPLib.WMPOpenState.wmposMediaOpen Then
             TrcSong.Maximum = CInt(AxPlayerAudio.currentMedia.duration)
             AudioTrcTimer.Start()
-
         End If
 
     End Sub
@@ -1179,8 +1178,7 @@ Public Class Form2
     Private Sub SimpleButton16_Click(sender As Object, e As EventArgs) Handles SimpleButton16.Click
         AVP.Show()
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub SimpleButton17_Click(sender As Object, e As EventArgs) Handles SimpleButton17.Click
         Form3.Show()
     End Sub
 
