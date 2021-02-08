@@ -43,6 +43,7 @@ Public Class Form3
     End Sub
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        'Clear Selected Button
         Dim mi = CType(sender, ToolStripMenuItem)
         Dim cms = CType(mi.Owner, ContextMenuStrip)
         For Each c As Control In Me.Controls
@@ -102,6 +103,7 @@ Public Class Form3
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        'Add New Data To Selected Button
         Dim mi = CType(sender, ToolStripMenuItem)
         Dim cms = CType(mi.Owner, ContextMenuStrip)
 
@@ -110,7 +112,7 @@ Public Class Form3
                 For Each but As Control In c.Controls
                     If TypeOf but Is DevExpress.XtraEditors.SimpleButton Then
                         If but.Name = cms.SourceControl.Name Then
-                            'show edit form
+
 
                             Dim but1 As DevExpress.XtraEditors.SimpleButton
                             but1 = CType(but, DevExpress.XtraEditors.SimpleButton)
