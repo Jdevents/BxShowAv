@@ -125,7 +125,7 @@ Partial Class Form3
         Me.Group4_but3 = New DevExpress.XtraEditors.SimpleButton()
         Me.Group4_but2 = New DevExpress.XtraEditors.SimpleButton()
         Me.Group4_but1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.testplayer = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.AudioPlayer = New AxWMPLib.AxWindowsMediaPlayer()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
@@ -150,7 +150,7 @@ Partial Class Form3
         Me.Group3.SuspendLayout()
         CType(Me.Group4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Group4.SuspendLayout()
-        CType(Me.testplayer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AudioPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Clear_all_panel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -1078,15 +1078,15 @@ Partial Class Form3
         Me.Group4_but1.Size = New System.Drawing.Size(114, 32)
         Me.Group4_but1.TabIndex = 24
         '
-        'testplayer
+        'AudioPlayer
         '
-        Me.testplayer.Enabled = True
-        Me.testplayer.Location = New System.Drawing.Point(505, 12)
-        Me.testplayer.Name = "testplayer"
-        Me.testplayer.OcxState = CType(resources.GetObject("testplayer.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.testplayer.Size = New System.Drawing.Size(29, 23)
-        Me.testplayer.TabIndex = 2
-        Me.testplayer.Visible = False
+        Me.AudioPlayer.Enabled = True
+        Me.AudioPlayer.Location = New System.Drawing.Point(505, 12)
+        Me.AudioPlayer.Name = "AudioPlayer"
+        Me.AudioPlayer.OcxState = CType(resources.GetObject("AudioPlayer.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AudioPlayer.Size = New System.Drawing.Size(29, 23)
+        Me.AudioPlayer.TabIndex = 2
+        Me.AudioPlayer.Visible = False
         '
         'SimpleButton1
         '
@@ -1239,7 +1239,7 @@ Partial Class Form3
         Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.SimpleButton1)
-        Me.Controls.Add(Me.testplayer)
+        Me.Controls.Add(Me.AudioPlayer)
         Me.Controls.Add(Me.Group4)
         Me.Controls.Add(Me.Group3)
         Me.Controls.Add(Me.Group2)
@@ -1256,7 +1256,7 @@ Partial Class Form3
         Me.Group3.ResumeLayout(False)
         CType(Me.Group4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Group4.ResumeLayout(False)
-        CType(Me.testplayer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AudioPlayer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Clear_all_panel.ResumeLayout(False)
         Me.Clear_all_panel.PerformLayout()
         Me.ResumeLayout(False)
@@ -1363,7 +1363,7 @@ Partial Class Form3
     Friend WithEvents Group4_but3 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Group4_but2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Group4_but1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents testplayer As AxWMPLib.AxWindowsMediaPlayer
+    Friend WithEvents AudioPlayer As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem

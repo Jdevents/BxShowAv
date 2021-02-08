@@ -31,14 +31,15 @@ Partial Class Form3_Settings
         Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager(Me.components)
         Me.SongNameTextEdit = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.AxNameGet = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.NameGet = New AxWMPLib.AxWindowsMediaPlayer()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.songpath.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BehaviorManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxNameGet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NameGet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -101,14 +102,14 @@ Partial Class Form3_Settings
         Me.Label2.TabIndex = 30
         Me.Label2.Text = "Button &Name:"
         '
-        'AxNameGet
+        'NameGet
         '
-        Me.AxNameGet.Enabled = True
-        Me.AxNameGet.Location = New System.Drawing.Point(593, 88)
-        Me.AxNameGet.Name = "AxNameGet"
-        Me.AxNameGet.OcxState = CType(resources.GetObject("AxNameGet.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxNameGet.Size = New System.Drawing.Size(75, 23)
-        Me.AxNameGet.TabIndex = 33
+        Me.NameGet.Enabled = True
+        Me.NameGet.Location = New System.Drawing.Point(573, 87)
+        Me.NameGet.Name = "NameGet"
+        Me.NameGet.OcxState = CType(resources.GetObject("NameGet.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.NameGet.Size = New System.Drawing.Size(95, 24)
+        Me.NameGet.TabIndex = 33
         '
         'SimpleButton3
         '
@@ -146,17 +147,27 @@ Partial Class Form3_Settings
         Me.SimpleButton4.TabIndex = 37
         Me.SimpleButton4.Text = "Set Name To Original"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(443, 88)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form3_Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.SimpleButton2
         Me.ClientSize = New System.Drawing.Size(668, 114)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.SimpleButton4)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.SimpleButton3)
-        Me.Controls.Add(Me.AxNameGet)
+        Me.Controls.Add(Me.NameGet)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.SongNameTextEdit)
         Me.Controls.Add(Me.songpath)
@@ -170,7 +181,7 @@ Partial Class Form3_Settings
         Me.Text = "Add / Edit Sound Path"
         CType(Me.songpath.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BehaviorManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxNameGet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NameGet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -183,9 +194,10 @@ Partial Class Form3_Settings
     Friend WithEvents BehaviorManager1 As DevExpress.Utils.Behaviors.BehaviorManager
     Friend WithEvents SongNameTextEdit As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents AxNameGet As AxWMPLib.AxWindowsMediaPlayer
+    Friend WithEvents NameGet As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Button1 As Button
 End Class

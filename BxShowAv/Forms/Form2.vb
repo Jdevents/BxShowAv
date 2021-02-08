@@ -1023,6 +1023,7 @@ Public Class Form2
             BackgroundWorker2.RunWorkerAsync()
         End If
     End Sub
+#Region "Fade In/out"
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
         'Sets the Sleep-time string to the NumUpDown and multiples it by 100
         'The it checks if AxPlayerAudio volume is set to 0 or 5
@@ -1168,6 +1169,7 @@ Public Class Form2
             PgFaid.Visible = False
         End If
     End Sub
+
     Private Sub BackgroundWorker1_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
         PgFaid.Value = e.ProgressPercentage
     End Sub
@@ -1198,7 +1200,7 @@ Public Class Form2
             MsgBox("Can't go below or to 0", MsgBoxStyle.Information)
         End If
     End Sub
-
+#End Region
     Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
         'Every 1ms it calls for the GetVol sub
         'it then keeps cheeking if GetVol sub and setting the Volume text

@@ -10,22 +10,22 @@ Public Class Form3
 #Region "Group Button's"
     Private Sub Group1_but1_Click(sender As Object, e As EventArgs) Handles Group1_but1.Click, Group1_but2.Click, Group1_but3.Click, Group1_but4.Click, Group1_but5.Click, Group1_but6.Click, Group1_but7.Click, Group1_but8.Click, Group1_but9.Click, Group1_but10.Click, Group1_but11.Click, Group1_but12.Click, Group1_but13.Click, Group1_but14.Click, Group1_but15.Click, Group1_but16.Click, Group1_but17.Click, Group1_but18.Click, Group1_but19.Click, Group1_but20.Click, Group1_but21.Click, Group1_but22.Click, Group1_but23.Click, Group1_but24.Click
         Dim but = CType(sender, DevExpress.XtraEditors.SimpleButton)
-        testplayer.URL = but.Tag
+        AudioPlayer.URL = but.Tag
     End Sub
 
     Private Sub Group2_but1_Click(sender As Object, e As EventArgs) Handles Group2_but1.Click, Group2_but2.Click, Group2_but3.Click, Group2_but4.Click, Group2_but5.Click, Group2_but6.Click, Group2_but7.Click, Group2_but8.Click, Group2_but9.Click, Group2_but10.Click, Group2_but25.Click, Group2_but12.Click, Group2_but13.Click, Group2_but14.Click, Group2_but15.Click, Group2_but16.Click, Group2_but17.Click, Group2_but18.Click, Group2_but19.Click, Group2_but20.Click, Group2_but21.Click, Group2_but22.Click, Group2_but23.Click, Group2_but24.Click
         Dim but = CType(sender, DevExpress.XtraEditors.SimpleButton)
-        testplayer.URL = but.Tag
+        AudioPlayer.URL = but.Tag
     End Sub
 
     Private Sub Group3_but1_Click(sender As Object, e As EventArgs) Handles Group3_but1.Click, Group3_but2.Click, Group3_but3.Click, Group3_but4.Click, Group3_but5.Click, Group3_but6.Click, Group3_but7.Click, Group3_but8.Click, Group3_but9.Click, Group3_but10.Click, Group3_but11.Click, Group3_but12.Click, Group3_but13.Click, Group3_but14.Click, Group3_but15.Click, Group3_but16.Click, Group3_but17.Click, Group3_but25.Click, Group3_but19.Click, Group3_but20.Click, Group3_but21.Click, Group3_but22.Click, Group3_but23.Click, Group3_but24.Click
         Dim but = CType(sender, DevExpress.XtraEditors.SimpleButton)
-        testplayer.URL = but.Tag
+        AudioPlayer.URL = but.Tag
     End Sub
 
     Private Sub Group4_but1_Click(sender As Object, e As EventArgs) Handles Group4_but1.Click, Group4_but2.Click, Group4_but3.Click, Group4_but4.Click, Group4_but5.Click, Group4_but6.Click, Group4_but7.Click, Group4_but8.Click, Group4_but9.Click, Group4_but10.Click, Group4_but11.Click, Group4_but12.Click, Group4_but13.Click, Group4_but14.Click, Group4_but15.Click, Group4_but16.Click, Group4_but17.Click, Group4_but18.Click, Group4_but19.Click, Group4_but20.Click, Group4_but21.Click, Group4_but22.Click, Group4_but23.Click, Group4_but24.Click
         Dim but = CType(sender, DevExpress.XtraEditors.SimpleButton)
-        testplayer.URL = but.Tag
+        AudioPlayer.URL = but.Tag
     End Sub
 #End Region
 
@@ -35,7 +35,11 @@ Public Class Form3
         End If
     End Sub
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        testplayer.Ctlcontrols.stop()
+        AudioPlayer.Ctlcontrols.stop()
+    End Sub
+
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        AudioPlayer.Ctlcontrols.stop()
     End Sub
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
@@ -64,6 +68,7 @@ Public Class Form3
     End Sub
 
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+        'Edit Button
         Dim mi = CType(sender, ToolStripMenuItem)
         Dim cms = CType(mi.Owner, ContextMenuStrip)
         For Each c As Control In Me.Controls
@@ -77,9 +82,10 @@ Public Class Form3
                             but1 = CType(but, DevExpress.XtraEditors.SimpleButton)
 
                             Dim form As New Form3_Settings
-                            form.SongNameTextEdit.Text = but.Text
+                            form.Songname = but.Text
                             form.songpath.Text = but.Tag
-                            form.placeholder = but.Text
+                            form.Path = but.Tag
+                            form.NameGet.URL = but.Tag
                             If form.ShowDialog = DialogResult.OK Then
                                 but.Text = form.SongNameTextEdit.Text
                                 but.Tag = form.songpath.Text
@@ -181,8 +187,8 @@ Public Class Form3
             Clear_all_panel.Visible = False
         End If
 
-        If testplayer.playState = WMPLib.WMPPlayState.wmppsPlaying Then
-            testplayer.Ctlcontrols.stop()
+        If AudioPlayer.playState = WMPLib.WMPPlayState.wmppsPlaying Then
+            AudioPlayer.Ctlcontrols.stop()
         End If
 
     End Sub
