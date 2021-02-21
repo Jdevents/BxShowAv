@@ -37,6 +37,8 @@ Partial Class Form3_Settings
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.songpath_lbl = New System.Windows.Forms.Label()
         CType(Me.songpath.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BehaviorManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NameGet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +57,7 @@ Partial Class Form3_Settings
         'SimpleButton1
         '
         Me.SimpleButton1.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(14, 87)
+        Me.SimpleButton1.Location = New System.Drawing.Point(14, 102)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(75, 23)
         Me.SimpleButton1.TabIndex = 1
@@ -65,7 +67,7 @@ Partial Class Form3_Settings
         '
         Me.SimpleButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.SimpleButton2.ImageOptions.Image = CType(resources.GetObject("SimpleButton2.ImageOptions.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(95, 87)
+        Me.SimpleButton2.Location = New System.Drawing.Point(95, 102)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(75, 23)
         Me.SimpleButton2.TabIndex = 2
@@ -105,7 +107,7 @@ Partial Class Form3_Settings
         'NameGet
         '
         Me.NameGet.Enabled = True
-        Me.NameGet.Location = New System.Drawing.Point(573, 87)
+        Me.NameGet.Location = New System.Drawing.Point(573, 102)
         Me.NameGet.Name = "NameGet"
         Me.NameGet.OcxState = CType(resources.GetObject("NameGet.OcxState"), System.Windows.Forms.AxHost.State)
         Me.NameGet.Size = New System.Drawing.Size(95, 24)
@@ -114,7 +116,7 @@ Partial Class Form3_Settings
         'SimpleButton3
         '
         Me.SimpleButton3.ImageOptions.Image = CType(resources.GetObject("SimpleButton3.ImageOptions.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(314, 88)
+        Me.SimpleButton3.Location = New System.Drawing.Point(314, 103)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(81, 23)
         Me.SimpleButton3.TabIndex = 34
@@ -141,7 +143,7 @@ Partial Class Form3_Settings
         'SimpleButton4
         '
         Me.SimpleButton4.ImageOptions.Image = CType(resources.GetObject("SimpleButton4.ImageOptions.Image"), System.Drawing.Image)
-        Me.SimpleButton4.Location = New System.Drawing.Point(176, 87)
+        Me.SimpleButton4.Location = New System.Drawing.Point(176, 102)
         Me.SimpleButton4.Name = "SimpleButton4"
         Me.SimpleButton4.Size = New System.Drawing.Size(132, 23)
         Me.SimpleButton4.TabIndex = 37
@@ -149,19 +151,39 @@ Partial Class Form3_Settings
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(443, 88)
+        Me.Button1.Location = New System.Drawing.Point(443, 103)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 38
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 86)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(63, 13)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "Audio Path:"
+        '
+        'songpath_lbl
+        '
+        Me.songpath_lbl.AutoSize = True
+        Me.songpath_lbl.Location = New System.Drawing.Point(92, 86)
+        Me.songpath_lbl.Name = "songpath_lbl"
+        Me.songpath_lbl.Size = New System.Drawing.Size(44, 13)
+        Me.songpath_lbl.TabIndex = 40
+        Me.songpath_lbl.Text = "Nothing"
+        '
         'Form3_Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.SimpleButton2
-        Me.ClientSize = New System.Drawing.Size(668, 114)
+        Me.ClientSize = New System.Drawing.Size(668, 137)
+        Me.Controls.Add(Me.songpath_lbl)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.SimpleButton4)
         Me.Controls.Add(Me.Label5)
@@ -200,4 +222,6 @@ Partial Class Form3_Settings
     Friend WithEvents Label5 As Label
     Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents songpath_lbl As Label
 End Class

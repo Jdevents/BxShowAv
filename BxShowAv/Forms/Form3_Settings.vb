@@ -74,6 +74,7 @@ Public Class Form3_Settings
     Private Sub Form3_Settings_Load(sender As Object, e As EventArgs) Handles Me.Load
         NameGet.settings.autoStart = False
         SongNameTextEdit.Text = Songname
+        songpath_lbl.Text = NameGet.URL.ToString
         Try
             NameGet.URL = val.Path
         Catch ex As Exception
