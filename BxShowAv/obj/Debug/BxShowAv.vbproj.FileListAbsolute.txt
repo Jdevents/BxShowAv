@@ -496,10 +496,6 @@ D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\DevExpress.XtraPrinting.v2
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\DevExpress.XtraTreeList.v20.1.dll
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\DevExpress.XtraVerticalGrid.v20.1.dll
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\MadMilkman.Ini.dll
-D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\MySql.Data.dll
-D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\MySql.Data.EntityFramework.dll
-D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.dll
-D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\MySQL.Data.EntityFrameworkCore.dll
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\Topshelf.dll
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
 D:\icyzt\Documents\GitHub\BxShowAv\BxShowAv\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
