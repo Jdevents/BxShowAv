@@ -175,7 +175,7 @@ Partial Class Form3_Settings
         Me.GroupControl1.Controls.Add(Me.Label6)
         Me.GroupControl1.Controls.Add(Me.TrackBar1)
         Me.GroupControl1.Controls.Add(Me.SeparatorControl1)
-        Me.GroupControl1.Location = New System.Drawing.Point(212, 77)
+        Me.GroupControl1.Location = New System.Drawing.Point(212, 86)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(670, 80)
         Me.GroupControl1.TabIndex = 41
