@@ -8,7 +8,4 @@ Public Class values
     Public RchVal As String = 0
     Public de As New MMDeviceEnumerator
     Public Device As MMDevice = de.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia)
-    Public Sub tester()
-        MsgBox("This is a test MsgBox", MsgBoxStyle.Information, "Test MsgBox")
-    End Sub
 End Class
