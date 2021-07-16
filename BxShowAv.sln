@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BxShowAv", "BxShowAv\BxShow
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert", "Convert\Convert.csproj", "{1E4B2D73-E188-49E0-8A6C-E4FB2A10E243}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BxshowAV_Spotify", "BxshowAV_Spotify\BxshowAV_Spotify.csproj", "{33304DBC-738F-432F-B9DD-3D874FFFB406}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{1E4B2D73-E188-49E0-8A6C-E4FB2A10E243}.Release|x64.Build.0 = Release|x64
 		{1E4B2D73-E188-49E0-8A6C-E4FB2A10E243}.Release|x86.ActiveCfg = Release|Any CPU
 		{1E4B2D73-E188-49E0-8A6C-E4FB2A10E243}.Release|x86.Build.0 = Release|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Debug|x64.Build.0 = Debug|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Debug|x86.Build.0 = Debug|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Release|x64.ActiveCfg = Release|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Release|x64.Build.0 = Release|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Release|x86.ActiveCfg = Release|Any CPU
+		{33304DBC-738F-432F-B9DD-3D874FFFB406}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
