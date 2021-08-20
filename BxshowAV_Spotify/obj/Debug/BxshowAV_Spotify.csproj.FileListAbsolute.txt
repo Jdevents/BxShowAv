@@ -54,3 +54,11 @@ C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\obj\Debug\Bxs
 C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\obj\Debug\BxshowAV_Spotify.csproj.CopyComplete
 C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\obj\Debug\BxshowAV_Spotify.exe
 C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\obj\Debug\BxshowAV_Spotify.pdb
+C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\bin\Debug\EmbedIO.dll
+C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\bin\Debug\SpotifyAPI.Web.Auth.dll
+C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\bin\Debug\Swan.Lite.dll
+C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\bin\Debug\System.ValueTuple.dll
+C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\bin\Debug\EmbedIO.xml
+C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\bin\Debug\SpotifyAPI.Web.Auth.xml
+C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\bin\Debug\Swan.Lite.xml
+C:\Users\icyzt\OneDrive\Documents\GitHub\BxShowAv\BxshowAV_Spotify\bin\Debug\System.ValueTuple.xml
